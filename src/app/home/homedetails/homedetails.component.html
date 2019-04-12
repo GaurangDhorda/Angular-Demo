@@ -1,0 +1,16 @@
+<div class="container">
+    <button (click) = "goBack()">GoBack</button> <h1>you selected id: {{empId}}</h1> 
+</div>
+
+
+ 
+  <div class= "flat"  *ngFor = "let employee of emp">
+      <div className="flat-title"><h4> <br>Name: {{ employee.name }}  <br>Price:  {{employee.price}} </h4> </div>
+    <div class="flat-picture" 
+    [style.background-image]="'url(' + employee.imageUrl + ')'"    > </div>
+    
+
+  </div>
+  
+
+  

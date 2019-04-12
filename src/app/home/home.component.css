@@ -1,0 +1,57 @@
+h1, h2{
+  text-align: center;
+  color: royalblue;
+}
+
+.main {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flat {
+  flex-basis: calc(50% - 20px);
+  margin: 10x;
+}
+.flats {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.flat-picture {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .flat-title {
+    margin-top: 10px;
+    font-weight: bold;
+    margin-left: 2px;
+  }
+
+  .divbtnstyle{
+      padding: 5px;
+      margin-left: 0px;
+      margin-right: 10px;
+  }
+  .btnstyle{
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 26px;
+      margin-left: 0px;
+      border-radius: 4px;
+      transition-duration: 0.4s;
+      width: 97.5%;
+      height: 40px;
+    }
+
+  .btnstyle:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+  }

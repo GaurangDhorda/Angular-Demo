@@ -1,0 +1,23 @@
+
+<h1>Home componet</h1>
+<h2>Employee List</h2>
+<h4>{{ errorMessage }}</h4>
+<div class="main">
+<div class= "flats">
+     <div class="flat" (click)="detailsData(employee)" *ngFor = "let employee of Employee">
+          
+          <div class="flat-picture" [title]="employee.name + ' Tooltip: Click here for more details.. '"
+          [style.background-image]="'url(' + employee.imageUrl + ')'"    > </div>
+    <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 
+     
+     <div className="flat-title"> {{ employee.name }} - {{employee.price}} </div>
+     </div>
+      
+</div>
+
+          <button class="btnstyle" (click)="firstClick()">Click me</button>
+          
+</div>
+
+
+

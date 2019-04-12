@@ -1,0 +1,24 @@
+<div class="productheader" >
+  <h3>
+  Product List
+</h3>
+</div>
+
+<div class="productlist" *ngFor="let product of products; index as productId">
+    
+<h4>
+    <a  [title]="product.name + ' details'" [routerLink]="['product-details', productId]" >
+      {{ product.name }}
+    </a>
+    <label *ngIf=" product.name === selectedProductName "  >Product has been shared.</label>
+  </h4>
+  
+    <p *ngIf="product.description">
+      Description: {{ product.description }}
+    </p>
+    <button (click)="share(product.name,i)">
+        Share
+    </button>
+       
+    <app-product-alerts [product]="product" (notifyMe)="onNotify()"></app-product-alerts> 
+</div>

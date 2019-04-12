@@ -1,0 +1,41 @@
+@import '../styles.css';
+div{
+    width: 100%;
+}
+.productlist {
+    padding-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(53, 52, 52);
+    margin-left: 1.5em;
+    border-left-width: 10em;
+}
+.productlist label{
+  color: red;
+  text-align: end;
+  align-items: end;
+  margin-left: 2em;
+}
+
+.productheader{
+    text-align: center;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    align-content: center;
+    color: rgb(83, 46, 4);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(53, 52, 52);
+  }
+div a{
+      font-size: 20px;
+      cursor: pointer;
+      color: #1976d2;
+      text-decoration: none;       
+}
+div a:hover {
+      opacity: 0.8;
+} 
+div p{
+  padding: 0 0.9em;
+}

@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+/* below body written by angular material theme.. */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body,html{
+    height: 100%;
+    margin: 0 auto;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+a {
+    text-decoration: none;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.3em;
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-column-gap: 10rem;
+    height: auto; 
+}
+.container a{
+    color: #e8dfe9;
+    
+}
+
+.icon{
+    display: none;
+}
+.container a h1{
+    font-size: 20px;
+}
+
+section {
+    width: 70%;
+    margin: 0 auto;
+}
+nav ul li a.active{
+   color: wheat; 
+   background-color:  rgb(67, 6, 138); 
+   border-radius: 25px; 
+   width: auto;
+   height: auto;
+}
+
+@media screen and (max-width:450px){
+    .myContainer{
+        display: none;
+    }
+    .container{
+        grid-column-gap: .1em;
+        align-content: center;
+    }
+    .icon{
+        display: flex;
+        color: wheat;
+        flex-direction:column;
+        flex:initial;
+        margin-top: .5em;
+    }
+   .myContainer ul li a:hover {
+        background: #1E25AA;
+    }
+    .responsive{
+        display: grid;
+        grid-auto-flow: column;
+        grid-column: 1/1;
+        grid-column-gap: 4em;
+        min-height: 50px;
+        font-size: 4px;
+        text-align: center;
+    }
+    .responsive li{
+        width: 1rem;
+    }
+}
+
+

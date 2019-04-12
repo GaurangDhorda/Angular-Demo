@@ -1,0 +1,23 @@
+
+
+
+
+
+<header>
+    <div class="container">
+     <a [routerLink]="['/']" class="icon" (click)="myFunction()"> <i class="fas fa-bars"></i></a>  
+      <a routerLink="/" class="logo" >
+         {{appTitle}} 
+      </a>
+  
+      <nav class="myContainer" id="myTopnav">
+          <ul>
+            <li><a [routerLink]="['/home']"  routerLinkActive="active">Home</a></li>
+            <li><a [routerLink]="['/shopping/shopping-topbar']"  routerLinkActive="active">Shop</a></li>
+            <li><a [routerLink]="['/about']" routerLinkActive="active" >About</a></li>
+            <li><a [routerLink]="['/contact']" routerLinkActive="active" >Contact</a></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+   <!-- <button (click) = "fireEvent()">Data ChildComponet</button> -->

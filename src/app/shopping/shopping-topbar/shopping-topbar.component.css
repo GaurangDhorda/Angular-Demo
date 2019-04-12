@@ -1,0 +1,12 @@
+@import '../styles.css';
+/* Hyperlink */
+section{
+  width: 100%;
+  margin: 0 auto;
+}
+.shopping-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+ 
