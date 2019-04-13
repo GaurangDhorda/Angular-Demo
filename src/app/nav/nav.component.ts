@@ -15,7 +15,7 @@ export class NavComponent implements OnInit {
   fireEvent() {
     this.childEvent.emit('Child component message');
   }
- myFunction(val) {
+ myFunction() {
         const x = document.getElementById('myTopnav');
         if (x.className === 'myContainer') {
           x.className = 'responsive';
