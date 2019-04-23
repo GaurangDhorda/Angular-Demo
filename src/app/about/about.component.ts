@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent implements OnInit, OnChanges {
 
-
+  public date = new Date();
   constructor(private routes: ActivatedRoute) { // activateRoute used to get parameters and values defined in routerLink..
     console.log('Constructor of aboutComponent');
    }
@@ -17,6 +17,7 @@ export class AboutComponent implements OnInit, OnChanges {
     console.log('ngOnChanges of aboutComponent');
    }
   ngOnInit() {
+    
     console.log('ngOnInit of aboutComponent');
     this.routes.paramMap
     .subscribe(params => {

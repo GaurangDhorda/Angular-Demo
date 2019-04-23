@@ -1,5 +1,5 @@
 header {
-    background:  rgb(14, 6, 63); ;
+    background:  rgb(14, 6, 63);
     }
 header .logo {
     font-weight: bold;
@@ -35,6 +35,17 @@ header nav ul li a:hover {
     color: white;
     margin: auto 2em;
     align-content: space-between;
+  }
+  .menuRightSide{
+    flex: 1 1 auto;
+  }
+  .menuRightdiv{
+      flex: 1 1 auto;
+      
+  }
+  .example-icon{
+      padding: 0 12px;
+      cursor: pointer;
   }
 
 @media screen and (max-width:450px){

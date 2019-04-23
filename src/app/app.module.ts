@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingModule } from './app-routing.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule, MatIconModule } from '@angular/material';
 import { ShoppingModule } from './shopping/shopping.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -27,6 +27,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
     ShoppingModule,

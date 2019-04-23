@@ -9,7 +9,7 @@ export class AppComponent {
   name = 'gaurang';
   message = '';
   title = 'HelloWorld';
-  public date = new Date();
+  
   constructor() {
         this.name = 'Angular Tutorial!';
   }

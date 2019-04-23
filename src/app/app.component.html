@@ -12,28 +12,6 @@
         <router-outlet></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
 
     </section>
-<div class="container">
-    <h1> App Component {{name}} </h1>
-    <table style="width: 100%">
-        <caption>Date Pipes</caption>
-        <th>Normal</th>
-        <th>Long</th>
-        <th>Medium</th>
-        <th>Short</th>
-        <th>ShortDate</th>
-        <th>ShortTime</th>
-      <tr>
-        <td>{{date}}</td>
-        <td> {{date| date: 'long' }}</td>
-        <td> {{date| date: 'medium' }}</td>
-        <td> {{date| date: 'short' }}</td>
-        <td> {{date| date: 'shortDate' }}</td>
-        <td> {{date| date: 'shortTime' }}</td>
-    
-      </tr>
-    
-    </table>    
-</div>
 
 <h2>{{message}}</h2>
 

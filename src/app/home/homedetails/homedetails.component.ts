@@ -32,8 +32,8 @@ public errorMessage:string;
 
   ngAfterContentChecked () {
     // this.imageUrl = this.employee.find(x => x.id === this.empId);
-    this.emp = this.employee.filter( empid =>{
-      return empid.id === this.empId;
+    this.emp = this.employee.filter( employeedata =>{
+      return employeedata.id === this.empId;
     } );
     console.log( this.emp ) ;
   }

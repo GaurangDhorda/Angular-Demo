@@ -11,31 +11,4 @@
 div h1{
   text-align: center;
 }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding:15px;
-    color:rgb(51, 20, 20);
-  }
-  table td{
-    font-size: .9em;
-    font-weight: 10em;
-  }
-  table, th{
-    padding: 10px;
-    color:white;
-    background-color: rgb(49, 73, 25);
-  }
-  caption{
-    font-size: 1.5em;
-    padding: 5px;
-    margin: 10px;
-    color:red;
-  }
-  table tr:nth-child(even){
-    background-color: white;
-  }
-  table tr:nth-child(odd){
-    background-color: rgb(185, 238, 133);;
-  }
   

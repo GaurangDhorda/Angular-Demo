@@ -1,16 +1,17 @@
-<div class="container">
-    <button (click) = "goBack()">GoBack</button> <h1>you selected id: {{empId}}</h1> 
+<div class= "fla"  *ngFor = "let employee of emp">
+      <div class="flat-body">
+         <div> 
+            <i class="fas fa-arrow-circle-left fa-4x" (click)="goBack()" ></i>
+          </div>
+        <div>
+            <h3> <p> Name: {{ employee.name }}  <br>
+                 <p> Price: {{employee.price | currency: employee.priceCurrency}} </h3> 
+        </div>
+      </div>
+      <div class="flat-picture" 
+                [style.background-image]="'url(' + employee.imageUrl + ')'" > 
+      </div>
 </div>
-
-
- 
-  <div class= "flat"  *ngFor = "let employee of emp">
-      <div className="flat-title"><h4> <br>Name: {{ employee.name }}  <br>Price:  {{employee.price}} </h4> </div>
-    <div class="flat-picture" 
-    [style.background-image]="'url(' + employee.imageUrl + ')'"    > </div>
-    
-
-  </div>
   
 
   
