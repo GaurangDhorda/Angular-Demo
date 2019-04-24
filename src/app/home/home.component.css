@@ -2,22 +2,18 @@ h1, h2{
   text-align: center;
   color: royalblue;
 }
-
-.main {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 60%;
-}
-
 .flats {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: space-between;
   margin: 10px;
+  height: 100vh;
 }
+
 .flat {
-  flex-basis: calc(50% - 20px);
+  /*flex-basis: calc(50% - 20px);*/
+  flex:0 0 calc(50% - 10px);
   margin: 10x;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -30,6 +26,16 @@ h1, h2{
   border-radius: 4px;
   border:1px solid royalblue;
   opacity: .8px;
+}
+.flat-picture {
+  height: 11.4rem;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+}
+.flat-title {
+  font-weight: bold;
+  margin: 10px;
 }
 .card-body ul{
   display: flex;
@@ -73,16 +79,7 @@ h1, h2{
   text-decoration: none;
   color: white;
 }
-.flat-picture {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    margin: 10px;
-  }
-  .flat-title {
-    font-weight: bold;
-    margin: 10px;
-  }
+
 
   .divbtnstyle{
       padding: 5px;
@@ -109,4 +106,10 @@ h1, h2{
     background-color: white;
     color: black;
     border: 2px solid #4CAF50; /* Green */
+  }
+
+  @media only screen and (max-width: 780px){
+    .flats{
+      display: inline-block;
+    }
   }
