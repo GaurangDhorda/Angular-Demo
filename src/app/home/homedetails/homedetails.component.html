@@ -1,18 +1,16 @@
 <div class= "fla"  *ngFor = "let employee of emp">
       <div class="flat-body">
          <div> 
-            <i class="fas fa-arrow-circle-left fa-4x" (click)="goBack()" ></i>
+            <i class="fas fa-arrow-circle-left fa-3x" (click)="goBack()" ></i>
           </div>
         <div>
             <h3> <p> Name: {{ employee.name }}  <br>
                  <p> Price: {{employee.price | currency: employee.priceCurrency}} </h3> 
         </div>
       </div>
-      <div class="fla-overflow">
       <div class="flat-picture" 
                 [style.background-image]="'url(' + employee.imageUrl + ')'" > 
       </div>
-    </div>
 </div>
   
 

@@ -47,8 +47,7 @@ header nav ul li a:hover {
       padding: 0 12px;
       cursor: pointer;
   }
-
-@media screen and (max-width:450px){
+@media only screen and (max-width:780px){
     header nav ul li  {
         float: left;
         padding: 1.5rem 2.5rem;

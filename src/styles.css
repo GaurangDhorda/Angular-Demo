@@ -25,7 +25,6 @@ a {
 }
 .container a{
     color: #e8dfe9;
-    
 }
 
 .icon{
@@ -36,7 +35,7 @@ a {
 }
 
 section {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 nav ul li a.active{
@@ -47,9 +46,12 @@ nav ul li a.active{
    height: auto;
 }
 
-@media screen and (max-width:450px){
+@media only screen and (max-width:780px){
     .myContainer{
         display: none;
+    }
+    section{
+        width: 100%;
     }
     .container{
         grid-column-gap: .1em;

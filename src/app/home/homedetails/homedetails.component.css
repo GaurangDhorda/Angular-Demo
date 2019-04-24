@@ -14,28 +14,36 @@ h3{
   width: 50vw;
   margin-left: 20px;
 }
-.fla-overflow{
-  overflow: auto;
-  height: 100vh;
-}
   
 .flat-picture {
-    background-size: cover;
-    background-position: center;
-    height:100vh;
-    width:100vw;
-    margin-top:10px;
+    height:90vh;
+    max-width: 90vw;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     border-radius: 4px;
     opacity: .8px;
+    margin-bottom: 10px;
   }
  
-  @media only screen and (max-width: 450px){
+  @media only screen and (max-width: 780px){
     .flat-picture{
-      width:200vw;
-      height:100vh;
-      background-size: cover;
+      height: 15.4rem;
+      background-size: contain;
       background-position: center;
-      overflow: auto;
-
+      margin: 10px;
     }
+    .flat-body h3{
+      font-size: 15px;
+    }
+    .icon-mobile{
+      font-size: 1pt;
+      color: blue;
+    }
+    .flat-body{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
   }
