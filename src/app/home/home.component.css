@@ -25,7 +25,11 @@ h1, h2{
 }
 .flat:hover {
   margin-top: -5px;
-  color:royalblue;
+  color:rgb(236, 14, 14);
+  font-weight: bold;
+  border-radius: 4px;
+  border:1px solid royalblue;
+  opacity: .8px;
 }
 .card-body ul{
   display: flex;
