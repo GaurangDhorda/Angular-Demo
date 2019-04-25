@@ -9,6 +9,8 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 export class ShoppingTopbarComponent implements OnInit {
   public showView;
   public padding;
+  public w;
+public fontFamily;
 
   constructor(public breakpointObserver: BreakpointObserver) { }
 
@@ -16,11 +18,13 @@ export class ShoppingTopbarComponent implements OnInit {
     this.breakpointObserver.observe(['(max-width: 992px)'])
                            .subscribe((state: BreakpointState) => {
                                 if ( state.matches ) {
-                                  this.showView = '90%';
+                                  this.showView = '0px';
+                                  this.fontFamily = 'Roboto, "Helvetica Neue", sans-serif' ;
                                   this.padding = '8px 20px';
+                                  this.w='92.5%';
                                   console.log(this.showView);
                                 } else {
-                                  this.showView= '100%' ;
+                                  this.w= '100%' ;
                                   this.padding= '8px 16px';
                                   console.log('not fire 780');
                                 }

@@ -1,4 +1,7 @@
-<div class="shopping-topnavbar" >
+<html>
+  <head></head>
+  <body [ngStyle]="{'margin':showView}">
+<div class="shopping-topnavbar" [ngStyle]="{'width':w}" >
     <a [routerLink]="['/shopping/shopping-topbar']">
       <h1>My Store</h1>
     </a>
@@ -10,3 +13,5 @@
      <!-- <app-product-list></app-product-list> -->
     </div>
   </section>
+</body>
+</html>
