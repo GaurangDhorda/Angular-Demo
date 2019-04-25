@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 
   imports: [
     BrowserModule,
+    LayoutModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,

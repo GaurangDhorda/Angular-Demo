@@ -1,12 +1,12 @@
-<div class="shopping-topnavbar">
+<div class="shopping-topnavbar" >
     <a [routerLink]="['/shopping/shopping-topbar']">
       <h1>My Store</h1>
     </a>
-    <a [routerLink]="['cart']" class="button fancy-button"> <i class=" fas fa-shopping-cart"> </i>Checkout</a>
+    <a [routerLink]="['cart']" class="button fancy-button" [ngStyle]="{'padding':padding}"> <i class=" fas fa-shopping-cart"> </i>Checkout</a>
 </div>
 <section>
     <div class=".shopping-container">
       <router-outlet ></router-outlet>
      <!-- <app-product-list></app-product-list> -->
     </div>
-</section>
+  </section>

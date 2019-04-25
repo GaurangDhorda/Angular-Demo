@@ -35,7 +35,7 @@ a {
 }
 
 section {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 nav ul li a.active{
@@ -54,6 +54,7 @@ nav ul li a.active{
         width: 100%;
     }
     .container{
+        width: 100%;
         grid-column-gap: .1em;
         align-content: center;
     }
@@ -79,6 +80,14 @@ nav ul li a.active{
     .responsive li{
         width: 1rem;
     }
+        .shopping-topnavbar{
+          width: 100vw;
+        }
+        .button, button{
+          padding: 8px 20px;
+        }
+      
+      
 }
 
 

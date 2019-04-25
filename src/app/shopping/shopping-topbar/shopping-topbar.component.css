@@ -2,9 +2,10 @@
 /* Hyperlink */
 section{
   width: 100%;
-  margin: 0 auto;
+  margin: 0 0;
 }
 .shopping-container {
+  width:80%;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
