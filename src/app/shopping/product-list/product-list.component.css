@@ -1,13 +1,10 @@
 @import '../styles.css';
-div{
-    width: 100%;
-}
 .productlist {
     padding-bottom: 20px;
     border-bottom-style: solid;
     border-bottom-width: 3px;
     border-bottom-color: rgb(53, 52, 52);
-    margin-left: 1.5em;
+    margin:20px;
     border-left-width: 10em;
 }
 .productlist label{
@@ -22,6 +19,7 @@ div{
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
     align-content: center;
+    margin:10px;
     color: rgb(83, 46, 4);
     border-bottom-style: solid;
     border-bottom-width: 3px;

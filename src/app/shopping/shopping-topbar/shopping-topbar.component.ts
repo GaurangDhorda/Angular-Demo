@@ -21,10 +21,10 @@ public fontFamily;
                                   this.showView = '0px';
                                   this.fontFamily = 'Roboto, "Helvetica Neue", sans-serif' ;
                                   this.padding = '8px 20px';
-                                  this.w='92.5%';
+                                  this.w = 'auto';
                                   console.log(this.showView);
                                 } else {
-                                  this.w= '100%' ;
+                                  this.w = 'auto' ;
                                   this.padding= '8px 16px';
                                   console.log('not fire 780');
                                 }

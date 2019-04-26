@@ -1,6 +1,6 @@
 
 .shopping-topnavbar {
-  width: 100%;
+  width: 60%;
   height: 40px;
   background-color: #5c1da3 ;
   padding: 16px;
@@ -69,13 +69,14 @@ a:hover {
     border-bottom-style: solid;
     border-bottom-width: 3px;
     border-bottom-color: rgb(53, 52, 52);
+    margin:10px;
   }
   .productlist {
     padding-bottom: 20px;
     border-bottom-style: solid;
     border-bottom-width: 3px;
     border-bottom-color: rgb(53, 52, 52);
-    margin-left: 1.5em;
+    margin: 30px;
     border-left-width: 10em;
 }
 

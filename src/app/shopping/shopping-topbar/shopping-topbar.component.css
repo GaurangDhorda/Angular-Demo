@@ -1,11 +1,10 @@
 @import '../styles.css';
 /* Hyperlink */
 section{
-  width: 100%;
+  width: auto;
   margin: 0 0;
 }
 .shopping-container {
-  width:80%;
     display: flex;
     flex-direction: row;
     margin: 0 auto;

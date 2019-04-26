@@ -15,8 +15,10 @@ h1, h2{
   /*flex-basis: calc(50% - 20px);*/
   flex:0 0 calc(50% - 10px);
   margin: 10x;
+  
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 0px 40px rgba(0, 0, 0, 0.3),
+              -20px 0px 40px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
 .flat:hover {
@@ -31,11 +33,12 @@ h1, h2{
   height: 11.4rem;
   background-size: cover;
   background-position: center;
-  margin: 10px;
+  margin: 0px;
+  
 }
 .flat-title {
   font-weight: bold;
-  margin: 10px;
+  margin: 30px;
 }
 .card-body ul{
   display: flex;

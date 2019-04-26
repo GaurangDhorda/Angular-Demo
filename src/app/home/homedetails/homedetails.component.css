@@ -1,7 +1,7 @@
 .flat-body{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
 }
 .fa-arrow-circle-left{
   color: #4CAF50;
@@ -17,7 +17,7 @@ h3{
   
 .flat-picture {
     height:90vh;
-    max-width: 90vw;
+    max-width: 100vw;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -27,11 +27,22 @@ h3{
   }
  
   @media only screen and (max-width: 780px){
+    .fla{
+      height: 100vh;
+    }
+    .flat-body{
+      height: 30vh;
+      margin:10px;
+    }
     .flat-picture{
-      height: 15.4rem;
-      background-size: contain;
-      background-position: center;
-      margin: 10px;
+      display: block;
+      height: 250px;
+      width: 100vw;
+      background-size: 100%;
+      margin:0px;
+      box-shadow: 20px 0px 40px rgba(0, 0, 0, 0.3),
+      -20px 0px 40px rgba(0,0,0,0.3);
+      border-radius: 4px;
     }
     .flat-body h3{
       font-size: 15px;

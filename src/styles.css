@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 /* below body written by angular material theme.. */
-html, body { height: 100%; width: 100% }
+html, body { height: 100vh; }
 body { 
         margin: 0; 
         font-family: Roboto, "Helvetica Neue", sans-serif; 
+        height: 100vh;
     }
 
 a {
@@ -42,12 +43,11 @@ nav ul li a.active{
 }
 
 @media only screen and (max-width:780px){
-    html, body { height: 100%; width: 100% }
-body { 
-        margin: 0px;
-        padding: 0px; 
-        font-family: Roboto, "Helvetica Neue", sans-serif; 
-    }
+    .column, .columns {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    
+      }
 
     .myContainer{
         display: none;
@@ -85,9 +85,6 @@ body {
     .responsive li{
         width: 1rem;
     }
-        .shopping-topnavbar{
-          width: 100vw;
-        }
         .button, button{
           padding: 8px 20px;
         }
