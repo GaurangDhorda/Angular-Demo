@@ -9,10 +9,10 @@
   
       <nav class="myContainer" id="myTopnav">
           <ul>
-            <li><a [routerLink]="['/home']"  routerLinkActive="active">Home</a></li>
-            <li><a [routerLink]="['/shopping/shopping-topbar']"  routerLinkActive="active">Shop</a></li>
-            <li><a [routerLink]="['/about']" routerLinkActive="active" >About</a></li>
-            <li><a [routerLink]="['/contact']" routerLinkActive="active" >Contact</a></li>
+            <li><a [routerLink]="['/home']"  routerLinkActive="active" (click)="myFunction()">Home</a></li>
+            <li><a [routerLink]="['/shopping/shopping-topbar']"  routerLinkActive="active" (click)="myFunction()">Shop</a></li>
+            <li><a [routerLink]="['/about']" routerLinkActive="active" (click)="myFunction()" >About</a></li>
+            <li><a [routerLink]="['/contact']" routerLinkActive="active" (click)="myFunction()" >Contact</a></li>
           </ul>
         </nav>
     </div>

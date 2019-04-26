@@ -59,8 +59,9 @@ nav ul li a.active{
         width: 100%;
     }
     .container{
-        width: 90%;
-        grid-column-gap: .1em;
+        width: auto;
+        margin-left: 15px;
+        grid-column-gap: .5em;
         align-content: center;
     }
     .icon{
@@ -77,13 +78,13 @@ nav ul li a.active{
         display: grid;
         grid-auto-flow: column;
         grid-column: 1/1;
-        grid-column-gap: 4em;
+        grid-column-gap: 4.5em;
         min-height: 50px;
-        font-size: 4px;
+        font-size: 3px;
         text-align: center;
     }
     .responsive li{
-        width: 1rem;
+        width: .9rem;
     }
         .button, button{
           padding: 8px 20px;
