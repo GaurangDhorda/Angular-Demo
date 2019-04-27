@@ -15,15 +15,13 @@ input , textarea {
         font-size: .9em;
         margin-bottom: 20px;
     }
-
-
 .cta {
     background: #7700FF;
     border: none;
     color: white;
-
-    text-transform: uppercase;
+    margin-left: 15px;
     border-radius: 4px;
+    text-transform: uppercase;
     padding: 1em;
     cursor: pointer;
     font-family: 'Montserrat';
@@ -39,3 +37,18 @@ input , textarea {
         margin-bottom: 20px;
         display: block;
     }
+    
+@media screen and (max-width:780px){
+    h1{
+        text-align: center;
+    }
+    form{
+        margin-left:30px;
+    }
+    input , textarea {
+        width: 80%;
+    }
+    .results{
+        margin-left: 30px;
+    }
+}
