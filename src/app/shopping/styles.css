@@ -29,6 +29,7 @@ router-outlet + *  {
   background-color: #1976d2;
   color: white;
   border: none;
+  margin-top: 10px;
 }
 
 .button:hover, button:hover {
@@ -79,4 +80,3 @@ a:hover {
     margin: 30px;
     border-left-width: 10em;
 }
-

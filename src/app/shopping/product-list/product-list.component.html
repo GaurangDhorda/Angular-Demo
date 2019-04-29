@@ -5,17 +5,19 @@
 </div>
 
 <div class="productlist" *ngFor="let product of products; index as productId">
-    
+    <label *ngIf=" product.name === selectedProductName "  >Product has been shared.</label>
 <h4>
     <a  [title]="product.name + ' details'" [routerLink]="['product-details', productId]" >
       {{ product.name }}
     </a>
-    <label *ngIf=" product.name === selectedProductName "  >Product has been shared.</label>
+    
   </h4>
   
     <p *ngIf="product.description">
-      Description: {{ product.description }}
+      Description: {{ product.description }} <br>
+     <ng-container *ngIf=product.star> Ratings: {{product.star}} Star.</ng-container>
     </p>
+    
     <button (click)="share(product.name,i)">
         Share
     </button>

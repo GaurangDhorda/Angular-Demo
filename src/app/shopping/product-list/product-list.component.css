@@ -12,6 +12,7 @@
   text-align: end;
   align-items: end;
   margin-left: 2em;
+  font-weight: bold;
 }
 
 .productheader{
@@ -29,11 +30,20 @@ div a{
       font-size: 20px;
       cursor: pointer;
       color: #1976d2;
-      text-decoration: none;       
+      text-decoration: none;
+      padding: 0px;       
 }
 div a:hover {
       opacity: 0.8;
 } 
 div p{
   padding: 0 0.9em;
+  margin-bottom: 5px;
+}
+
+h4{
+  margin:0px auto;
+}
+@media screen and(max-width:780px){
+  
 }
