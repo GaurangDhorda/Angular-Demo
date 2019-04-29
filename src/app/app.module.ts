@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
+import { CookingComponent } from './cooking-topbar/cooking/cooking.component';
 
 
 
@@ -21,7 +22,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
     NavComponent,
     routingModule,
     FooterComponent,
-    HomedetailsComponent
+    HomedetailsComponent,
   ],
 
   imports: [
