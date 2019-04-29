@@ -5,13 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingModule } from './app-routing.module';
 import { MatToolbarModule, MatIconModule } from '@angular/material';
 import { ShoppingModule } from './shopping/shopping.module';
+import { CookingModule } from './cooking/cooking.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
-import { CookingComponent } from './cooking-topbar/cooking/cooking.component';
 
 
 
@@ -34,6 +34,7 @@ import { CookingComponent } from './cooking-topbar/cooking/cooking.component';
     HttpClientModule,
     ReactiveFormsModule,
     ShoppingModule,
+    CookingModule,
     AppRoutingModule
   ],
   bootstrap: [AppComponent]
