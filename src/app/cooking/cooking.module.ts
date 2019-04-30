@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CookingTopbarComponent } from './cooking-topbar/cooking-topbar.component';
+import { CookingRoutingModule , cookingComponent } from './cooking-routing.module';
 
 @NgModule({
-  declarations: [CookingTopbarComponent],
+  declarations: [ cookingComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    CookingRoutingModule
   ]
 })
 export class CookingModule { }

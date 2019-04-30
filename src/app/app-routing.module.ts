@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ShoppingModule } from './shopping/shopping.module';
-import { ShoppingTopbarComponent } from './shopping/shopping-topbar/shopping-topbar.component';
+import { CookingModule } from './cooking/cooking.module';
 
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ShoppingModule],
+  imports: [RouterModule.forRoot(routes), ShoppingModule, CookingModule],
   exports: [RouterModule]
 })
 

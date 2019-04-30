@@ -1,0 +1,95 @@
+router-outlet + *  {
+    padding: 0 16px;
+  }
+section{
+    width: auto;
+    margin: 0 0;
+  }
+
+.cookingcontainer{
+  width:auto;
+    background-color: rgb(29, 77, 29);
+    color:white;
+    padding: 16px;
+    height: 40px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 10px;
+    opacity: .8px;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+input[type="text"]{
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+ button{
+  float: right;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+button:hover{
+  background: #0b7dda;
+}
+form.example::after {
+  content: "";
+  clear: both;
+  display: flex;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    padding:0.5em;
+    color: white;
+    float:left;   
+  }
+    
+  a:hover {
+    opacity: 0.8;
+  }
+  
+.cookingcontainer h1{
+    margin:0px;
+    font-size: 20px;
+}
+@media only screen and (max-width: 499px){
+  .cookingcontainer{
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 350px){
+  .cookingcontainer{
+    padding: 2px;
+    height: 100px;
+  }
+  input[type="text"]{
+    width: 70%;
+  }
+  button{
+    widows: 20%;
+  }
+  .float-right
+  {
+    float: left;
+  }
+}

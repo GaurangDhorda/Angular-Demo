@@ -1,3 +1,24 @@
-<p>
-  cooking-topbar works!
-</p>
+<html>
+<head>
+  <title>Cooking Recipe</title>
+</head>
+<body>
+    <div class="cookingcontainer">
+      
+          <div class="float-left">
+              <a [routerLink]="['/cooking/cooking-topbar']" > <h1>Cooking</h1></a>
+          </div>
+
+          <div class="float-right">
+              <input type="text" placeholder="Search.." name="search" >
+              <button ><i class="fa fa-search"></i></button>
+          </div>
+    </div>
+
+    <section>
+        <div >
+          <router-outlet ></router-outlet>
+        </div>
+    </section>
+</body>
+</html>
