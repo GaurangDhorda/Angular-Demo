@@ -27,8 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         err => this.errorMessage = err
       );
       // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
-
-
   }
 
   firstClick() {

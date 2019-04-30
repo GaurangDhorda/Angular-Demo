@@ -8,7 +8,8 @@ section{
 
 .cookingcontainer{
   width:auto;
-    background-color: rgb(29, 77, 29);
+    background:
+                      linear-gradient(Green, #f06d06);
     color:white;
     padding: 16px;
     height: 40px;
