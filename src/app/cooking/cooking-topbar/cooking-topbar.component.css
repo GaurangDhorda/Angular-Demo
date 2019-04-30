@@ -77,7 +77,7 @@ a {
     padding: 5px;
   }
 }
-@media only screen and (max-width: 350px){
+@media only screen and (max-width: 380px){
   .cookingcontainer{
     padding: 2px;
     height: 100px;
