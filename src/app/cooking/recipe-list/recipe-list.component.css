@@ -1,0 +1,17 @@
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  margin: 2px;
+  height: 100vh;
+}
+.flex div{ 
+    flex:1 0 calc(60% - 30px);
+    margin-bottom: 1x;
+    border-radius: 1px;
+    padding:10px;
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.3),
+                -50px 0px 40px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+} 

@@ -8,8 +8,7 @@ section{
 
 .cookingcontainer{
   width:auto;
-    background:
-                      linear-gradient(Green, #f06d06);
+    background:linear-gradient(Green, #f06d06);
     color:white;
     padding: 16px;
     height: 40px;
@@ -77,20 +76,36 @@ a {
   .cookingcontainer{
     padding: 5px;
   }
+  
 }
 @media only screen and (max-width: 380px){
   .cookingcontainer{
-    padding: 2px;
-    height: 100px;
+    padding: 5px;
+    height: 35px;
+  }
+  a {
+    padding: .2em;
+  }
+  .float-right{
+    float: left;
+    width:70%;
   }
   input[type="text"]{
-    width: 70%;
+    padding: 10px;
+  font-size: 10px;
+  border: 1px solid grey;
+  width:50%;
+  background: #f1f1f1;
   }
   button{
-    widows: 20%;
-  }
-  .float-right
-  {
-    float: left;
+    width: 30%;
+    float: right;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 10px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
   }
 }

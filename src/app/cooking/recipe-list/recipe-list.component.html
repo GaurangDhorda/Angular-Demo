@@ -1,3 +1,14 @@
-<p>
-  recipe-list works!
-</p>
+<div class="flex">
+  <ng-container class="flexc" *ngFor="let recipe of cooking">
+   <div>
+     <h4><label>Item Name:</label></h4>
+       <p> {{recipe.title}}</p> 
+       <h4> <label>Publisher:</label></h4>   
+       <p> {{recipe.publisher}}</p>
+       
+       <h4> <label>Social Rank:</label></h4>   
+       <p> {{recipe.social_rank}}</p>
+    </div>
+
+  </ng-container>
+</div>

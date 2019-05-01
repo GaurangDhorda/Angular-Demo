@@ -5,17 +5,18 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap  } from 'rxjs/operators';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CookingServiceService {
   apiKey = '6d755d24940fe3faca22412c957b01a6';
-  url = 'https://www.food2fork.com/api/search?key=' + this.apiKey +  '&q=shredded%20chicken&count=10';
+  url = 'https://www.food2fork.com/api/search?key=' + this.apiKey +  '&q=shredded%20chicken&count=5';
 
   constructor(private http: HttpClient) {}
 
   getRecipe(): Observable <ICooking[]> {
-      return this.http.get <ICooking[]>( this.url)
+      return this.http.get <ICooking[]>( 'assets/cooking-api.json ' )
       .pipe(
         tap(data => console.log('Server data', data ) ),
         catchError(this.errorhandler)
