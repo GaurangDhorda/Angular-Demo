@@ -1,13 +1,15 @@
 <div class="flex">
   <ng-container class="flexc" *ngFor="let recipe of cooking">
-   <div>
-     <h4><label>Item Name:</label></h4>
-       <p> {{recipe.title}}</p> 
-       <h4> <label>Publisher:</label></h4>   
-       <p> {{recipe.publisher}}</p>
-       
-       <h4> <label>Social Rank:</label></h4>   
-       <p> {{recipe.social_rank}}</p>
+   <div class="recipe-card">
+      <div class="recipe-image" [title]="recipe.title" [style.background-image]="'url(' + recipe.image_url + ')'"></div>
+      <div class="recipe-details" >
+        <h4><label>Item Name </label></h4>
+          <p> {{recipe.title}}</p> 
+          <h4> <label>Publisher </label></h4>   
+          <p> {{recipe.publisher}}</p>
+          <h4> <label>Social Rank </label></h4>   
+          <p> {{recipe.social_rank}}</p>
+      </div>
     </div>
 
   </ng-container>
