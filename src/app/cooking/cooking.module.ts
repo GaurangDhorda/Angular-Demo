@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { CookingRoutingModule , cookingComponent } from './cooking-routing.module';
 
 @NgModule({
@@ -8,6 +9,7 @@ import { CookingRoutingModule , cookingComponent } from './cooking-routing.modul
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     CookingRoutingModule
 
   ]

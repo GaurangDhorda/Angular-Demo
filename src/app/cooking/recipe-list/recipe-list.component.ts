@@ -9,17 +9,21 @@ import { ICooking } from '../icooking';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-public cooking : ICooking[];
+public cooking: ICooking[];
 public errorMessage: string;
+
   constructor(private cookingRecipe: CookingServiceService) { }
 
   ngOnInit() {
     this.cookingRecipe.getRecipe()
     .subscribe(
-          data => this.cooking = data["recipes"],
+          data => this.cooking = data['recipes'], // ' recipe ' is json object
           err => this.errorMessage = err
     );
-  
-  }
+    }
+search_title(){
+  // can call this from recipe-topbar.ts onActivate() method and we can pass value default.. 
+  console.log('called from cook-topbar');
+}
 
 }

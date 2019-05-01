@@ -10,14 +10,14 @@
           </div>
 
           <div class="float-right">
-              <input type="text" placeholder="Search.." name="search" >
-              <button ><i class="fa fa-search"></i></button>
+              <input type="text" placeholder="Search Item by Name.." name="search" [(ngModel)]="Angular" (ngModelChange)="searchRecipeByName($event)" >
+              <i class="fa fa-search fa-2x"></i>
           </div>
     </div>
 
     <section>
         <div >
-          <router-outlet ></router-outlet>
+          <router-outlet (activate)="onActivate($event)"></router-outlet>
         </div>
     </section>
 </body>

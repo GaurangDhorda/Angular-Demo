@@ -1,5 +1,7 @@
 <div class="flex">
   <ng-container class="flexc" *ngFor="let recipe of cooking">
+      <ng-container *ngIf="recipe.title.toLowerCase().includes(cookingRecipe.getSearchByItemName()) "
+      >
    <div class="recipe-card">
       <div class="recipe-image" [title]="recipe.title" [style.background-image]="'url(' + recipe.image_url + ')'"></div>
       <div class="recipe-details" >
@@ -11,6 +13,6 @@
           <p> {{recipe.social_rank}}</p>
       </div>
     </div>
-
+  </ng-container>
   </ng-container>
 </div>

@@ -1,4 +1,4 @@
-<app-nav (childEvent)="message=$event"></app-nav>
+<app-nav (childEvent)="message=$event" ></app-nav>
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +9,7 @@
 
 <body>
     <section>
-        <router-outlet></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
+        <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
     </section>
 
 <h2>{{message}}</h2>

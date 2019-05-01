@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookingServiceService } from '../cooking-service.service';
 
 @Component({
   selector: 'app-cooking-topbar',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cooking-topbar.component.css']
 })
 export class CookingTopbarComponent implements OnInit {
-
-  constructor() { }
+  public searchData: string;
+  constructor(private cookingService: CookingServiceService) { }
 
   ngOnInit() {
   }
-
+  onActivate(componentReference) {
+    // calling from router-outlet 
+    console.log('cooking reference ' , componentReference);
+    componentReference.search_title();
+  }
+    searchRecipeByName(searchData: string) {
+      this.cookingService.searchByItemName(searchData);
+    }
 }

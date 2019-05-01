@@ -28,25 +28,22 @@ section{
   align-items: center;
   justify-content: center;
   justify-items: center;
+  background-color: #f1f1f1;
 }
 input[type="text"]{
   padding: 10px;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 0px solid grey;
   float: left;
   width: 70%;
-  background: #f1f1f1;
+  background-color: #f1f1f1;
 }
- button{
+ i{
   float: right;
-  width: 20%;
   padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
+  color: #2196F3;   
+  font-size: 22px;
   border-left: none; /* Prevent double borders */
-  cursor: pointer;
 }
 button:hover{
   background: #0b7dda;
@@ -80,8 +77,7 @@ a {
 }
 @media only screen and (max-width: 380px){
   .cookingcontainer{
-    padding: 5px;
-    height: 35px;
+    height: 45px;
   }
   a {
     padding: .2em;
@@ -93,20 +89,15 @@ a {
   input[type="text"]{
     padding: 8px;
   font-size: 15px;
-  border: 1px solid grey;
-  width:60%;
-  background: #f1ebeb;
+  border: 0px solid grey;
+  width:70%;
+  background-color: #f1ebeb;
   font-weight: bold;
   }
-  button{
-    width: 30%;
+  i{
     float: right;
   padding: 12px;
-  background: #2196F3;
-  color: white;
-  font-size: 10px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
+  color: #2196F3;
+  font-size: 20px;
   }
 }

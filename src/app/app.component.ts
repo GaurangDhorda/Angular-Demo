@@ -13,4 +13,7 @@ export class AppComponent {
   constructor() {
         this.name = 'Angular Tutorial!';
   }
+
+  onActivate(componentReference) {
+  }
 }
