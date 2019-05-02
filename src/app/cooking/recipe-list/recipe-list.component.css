@@ -8,8 +8,8 @@
 }
 .recipe-card{
   flex: 0 1  calc(50% - 5px );
-  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.3),
-  -50px 0px 40px rgba(0,0,0,0.3);
+  box-shadow: 10px 0px 8px rgba(0, 0, 0, 0.3),
+  -10px 0px 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
   border-bottom: 4px solid rgba(0, 0, 12, 0.8);
   background-clip: padding-box;
@@ -36,6 +36,27 @@ p{
   font-weight: bold;
   opacity: .8;
 }
+:host ::ng-deep .highlightText {
+  background: yellow;
+  }
+.recipe_buttons {
+  border: solid 2px #e74c3c;
+  background: transparent;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0.2rem;
+  border-radius: 1px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: .8rem;
+  text-align: center;
+  float:right;
+  cursor: pointer;
+}
+.recipe_buttons:hover{
+  background-color: #e74c3c;
+}
+
 /*  .flex div{
     flex:1 0 calc(40% - 30px);
     margin-bottom: 1x;
@@ -50,7 +71,7 @@ p{
     display: block;
   }
   .recipe-card{
-    
+
   }
   .recipe-details{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -64,7 +85,13 @@ p{
   p{
     text-align: center;
     font-size: 14px;
-
+  }
+  .div-button{
+    text-align: center;
+  }
+  .recipe_buttons{
+    float: none;
+    margin-bottom: 0;
   }
 }
 

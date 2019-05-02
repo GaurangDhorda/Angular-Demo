@@ -10,7 +10,10 @@
           </div>
 
           <div class="float-right">
-              <input type="text" placeholder="Search Item by Name.." name="search" [(ngModel)]="Angular" (ngModelChange)="searchRecipeByName($event)" >
+              <input type="text" placeholder="Search Item by Name.." name="search" 
+                     [(ngModel)]="Angular" (ngModelChange)="searchRecipeByName($event)"
+                     title="Search recipe by Item Name matches..." 
+              >
               <i class="fa fa-search fa-2x"></i>
           </div>
     </div>

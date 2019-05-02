@@ -1,16 +1,20 @@
 <div class="flex">
   <ng-container class="flexc" *ngFor="let recipe of cooking">
-      <ng-container *ngIf="recipe.title.toLowerCase().includes(cookingRecipe.getSearchByItemName()) "
+      <ng-container *ngIf="recipe.title.toLowerCase().includes(cookingRecipe.getSearchByItemName().toLowerCase()) "
       >
    <div class="recipe-card">
       <div class="recipe-image" [title]="recipe.title" [style.background-image]="'url(' + recipe.image_url + ')'"></div>
       <div class="recipe-details" >
         <h4><label>Item Name </label></h4>
-          <p> {{recipe.title}}</p> 
+          <p [innerHTML]="highlight(recipe.title)">  {{recipe.title}}</p> 
           <h4> <label>Publisher </label></h4>   
           <p> {{recipe.publisher}}</p>
           <h4> <label>Social Rank </label></h4>   
           <p> {{recipe.social_rank}}</p>
+          <div class="div-button">
+            <button class="recipe_buttons" (click)="getRecipe(recipe.recipe_id)"> 
+                    Get Recipe <i class="fas fa-info-circle"></i>
+            </button></div>
       </div>
     </div>
   </ng-container>

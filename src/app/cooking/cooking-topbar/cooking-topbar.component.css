@@ -38,6 +38,7 @@ input[type="text"]{
   width: 70%;
   background-color: #f1f1f1;
 }
+
  i{
   float: right;
   padding: 10px;
@@ -58,7 +59,9 @@ a {
     text-decoration: none;
     padding:0.5em;
     color: white;
-    float:left;   
+    float:left;  
+    letter-spacing: 3px;
+     
   }
     
   a:hover {
@@ -67,11 +70,17 @@ a {
   
 .cookingcontainer h1{
     margin:0px;
-    font-size: 20px;
+    font-size: 25px;
 }
 @media only screen and (max-width: 499px){
   .cookingcontainer{
     padding: 5px;
+  }
+  a{
+    letter-spacing: 0px;
+  }
+  .cookingcontainer h1{
+    font-size: 20px;
   }
   
 }

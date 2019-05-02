@@ -8,6 +8,7 @@ import { CookingServiceService } from '../cooking-service.service';
 })
 export class CookingTopbarComponent implements OnInit {
   public searchData: string;
+  public Angular='';
   constructor(private cookingService: CookingServiceService) { }
 
   ngOnInit() {
