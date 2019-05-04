@@ -1,4 +1,5 @@
 <div class="flex">
+  
   <ng-container class="flexc" *ngFor="let recipe of cooking">
       <ng-container *ngIf="recipe.title.toLowerCase().includes(cookingRecipe.getSearchByItemName().toLowerCase())"
       >
