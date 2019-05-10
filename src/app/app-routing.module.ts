@@ -10,6 +10,8 @@ import { ShoppingModule } from './shopping/shopping.module';
 import { CookingModule } from './cooking/cooking.module';
 
 
+
+
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },

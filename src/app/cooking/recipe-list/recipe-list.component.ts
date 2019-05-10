@@ -37,7 +37,8 @@ public errorMessage: string;
             } else {
             // take input value form topbar search and replace it with current titile.
             // hightlightText is css property.
-            return title.replace(new RegExp(this.cookingRecipe.getSearchByItemName() , 'gi'), match => {
+        
+            return title.replace(new RegExp(this.cookingRecipe.getSearchByItemName().trim() , 'gi'), match => {
               return '<span class="highlightText">' + match + '</span>';
           });
         }

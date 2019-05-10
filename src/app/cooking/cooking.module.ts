@@ -14,4 +14,8 @@ import { CookingRoutingModule , cookingComponent } from './cooking-routing.modul
 
   ]
 })
-export class CookingModule { }
+export class CookingModule { 
+  constructor() {
+    console.log('Lazily Loaded : CookingModule');
+  }
+}

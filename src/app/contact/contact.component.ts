@@ -14,14 +14,21 @@ export class ContactComponent implements OnInit {
   submitted = false;
   success = false;
   currentDate = new Date();
-  constructor(private formBuilder: FormBuilder) { }
+  end = new Date();
+  constructor(private formBuilder: FormBuilder) {
+    this.currentDate.setHours(0,0,0,0);
+    this.end.setHours(23,59,59,999);
+   // alert( this.currentDate.toLocaleString() + ':' + this.end.toLocaleString() + ' CurrentTime: ' + this.currentDate.getDate() );
+    
+   }
 
   ngOnInit() {
     this.messageForm = this.formBuilder.group({
-        name: ['', Validators.required],
-        message: ['', Validators.required], // Validators.pattern(/^\s*/)],
-        currentDate: ['', Validators.required ]
+        'name': ['', Validators.required],
+        'message': ['', Validators.required], // Validators.pattern(/^\s*/)],
+        'myDate' : ['', Validators.required ]
     });
+        // (<HTMLInputElement>document.getElementById("dateControl")).value = this.currentDate.toLocaleDateString() + '/' + this.currentDate.getMonth();
     console.log( this.currentDate.getDate() + '/' + this.currentDate.getMonth() + '/' + this.currentDate.getFullYear() );
    // document.querySelector('#dateControl').nodeValue=new Date().toISOString().substr(0,10); //sets default date to control.
   }
