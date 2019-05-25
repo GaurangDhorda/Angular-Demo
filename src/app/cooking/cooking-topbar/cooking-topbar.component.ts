@@ -18,7 +18,9 @@ export class CookingTopbarComponent implements OnInit {
     console.log('cooking reference ' , componentReference);
     componentReference.search_title();
   }
-    searchRecipeByName(searchData: string) {
+    searchRecipeByName(searchData) {
+      console.log('SearchByName',searchData);
       this.cookingService.searchByItemName(searchData);
+      
     }
 }

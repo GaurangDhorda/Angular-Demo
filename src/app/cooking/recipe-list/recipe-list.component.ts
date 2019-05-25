@@ -3,6 +3,7 @@ import { CookingServiceService } from '../cooking-service.service';
 import { cookingComponent } from '../cooking-routing.module';
 import { ICooking } from '../icooking';
 
+
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -11,6 +12,7 @@ import { ICooking } from '../icooking';
 export class RecipeListComponent implements OnInit {
 public cooking: ICooking[];
 public errorMessage: string;
+public counter = 0;
 
   constructor(private cookingRecipe: CookingServiceService) { }
 
@@ -20,6 +22,29 @@ public errorMessage: string;
           data => this.cooking = data['recipes'], // ' recipe ' is json object
           err => this.errorMessage = err
     );
+    }
+
+    ngAfterContentInit(){
+      console.log("recipe-list - ngAfterContentInit()");
+    }
+    
+    ngAfterContentChecked(){
+      console.log("recipe-list - ngAfterContentChecked()");
+    }
+    
+    ngAfterViewInit(){
+      console.log("recipe-list - ngAfterViewInit()");
+    }
+    
+    ngAfterViewChecked() {
+      
+      console.log("recipe-list - ngAfterVIewChecked()", this.counter);
+    }
+    counterSearchResult(c){
+        return this.counter= this.counter + 1;
+    }
+    resetCounter(){
+     this.counter = 0;
     }
       search_title(){
         // can call this from recipe-topbar.ts onActivate() method and we can pass value default.. 
@@ -37,7 +62,6 @@ public errorMessage: string;
             } else {
             // take input value form topbar search and replace it with current titile.
             // hightlightText is css property.
-        
             return title.replace(new RegExp(this.cookingRecipe.getSearchByItemName().trim() , 'gi'), match => {
               return '<span class="highlightText">' + match + '</span>';
           });

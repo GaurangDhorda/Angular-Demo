@@ -38,7 +38,7 @@ public errorMessage:string;
     console.log( this.emp ) ;
   }
   goBack() {
-    this.router.navigate(['home']);
+    this.router.navigate(['../' , {id: this.empId}], { relativeTo: this.route });
 
   }
 }

@@ -15,7 +15,7 @@ import { CookingModule } from './cooking/cooking.module';
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
-  {path: 'home/homedetails/:id', component: HomedetailsComponent},
+  {path: 'home/:id', component: HomedetailsComponent},
   { path: 'shopping', loadChildren: './shopping/shopping.module#ShoppingModule' },
   { path: 'cooking', loadChildren: './cooking/cooking.module#CookingModule' },
   { path: 'about', component: AboutComponent},

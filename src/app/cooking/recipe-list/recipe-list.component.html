@@ -1,9 +1,12 @@
 <div class="flex">
-  
-  <ng-container class="flexc" *ngFor="let recipe of cooking">
+
+  <ng-container class="flexc" *ngFor="let recipe of cooking ; index as i">
       <ng-container *ngIf="recipe.title.trim().toLowerCase().includes(cookingRecipe.getSearchByItemName().trim().toLowerCase())"
       >
-   <div class="recipe-card">
+    <!--  <ng-container *ngIf= "cookingRecipe.getSearchByItemName() ; else reset;" > {{ counterSearchResult() }} </ng-container>
+      <ng-template #reset> {{ resetCounter() }} </ng-template> -->
+    
+      <div class="recipe-card">
       <div class="recipe-image" [title]="recipe.title" [style.background-image]="'url(' + recipe.image_url + ')'"></div>
       <div class="recipe-details" >
         <h4><label>Item Name </label></h4>
@@ -19,8 +22,8 @@
       </div>
     </div>
   </ng-container>
+
   
   </ng-container>
-  
 
 </div>

@@ -3,7 +3,8 @@
   <h5 *ngIf="success">Your form is valid!</h5>
   <label>
     Name:
-    <input type="text" formControlName="name">
+    <input #nameRef type="text" formControlName="name" [(ngModel)]="userName" >
+    <p>welcome <strong> {{userName}} </strong> </p>
     <div *ngIf="submitted && messageForm.controls.message.errors" class= "error">
         <div *ngIf="messageForm.controls.message.errors.required">A name is required</div>
     </div>
