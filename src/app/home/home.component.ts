@@ -33,9 +33,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   firstClick() {
     console.log('Clicked');
   }
-  detailsData( paramEmployee ) {
+  detailsData( paramEmployee , i  ) {
 //    this.router.navigate(['home/homedetails', paramEmployee.id]);
-      this.router.navigate([paramEmployee.id], { relativeTo: this.activatedRoute});
+      this.router.navigate([ i], { relativeTo: this.activatedRoute});
       //this is relative path navigation so that works always when path changes too.
   }
   ngOnDestroy(){

@@ -3,6 +3,12 @@
   align-items: center;
   justify-content: flex-start;
 }
+.nextprevious a{
+  justify-content:space-between;
+  padding: 22px;
+  color: blueviolet;
+  cursor: pointer;
+}
 .fa-arrow-circle-left{
   color: #4CAF50;
 }

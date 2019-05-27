@@ -1,15 +1,19 @@
-<div class= "fla"  *ngFor = "let employee of emp">
+<div class= "fla"  >
       <div class="flat-body">
          <div > 
             <i class="fas fa-arrow-circle-left fa-3x" (click)="goBack()" ></i>
           </div>
         <div>
-            <h3> <p> Name: {{ employee.name }}  <br>
-                 <p> Price: {{employee.price | currency: employee.priceCurrency}} </h3> 
+            <h3> <p> Name: {{ emp.name }}  <br>
+                 <p> Price: {{emp.price | currency: emp.priceCurrency}} </h3> 
+        </div>
+        <div class="nextprevious">
+          <a (click)="goNext()"> <i class="fas fa-angle-double-right fa-2x" ></i></a>
+          <a (click)="goPrevious()"><i class="fas fa-angle-double-left fa-2x"></i></a>
         </div>
       </div>
       <div class="flat-picture" 
-                [style.background-image]="'url(' + employee.imageUrl + ')'" > 
+                [style.background-image]="'url(' + emp.imageUrl + ')'" > 
       </div>
 </div>
   
