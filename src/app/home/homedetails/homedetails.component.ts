@@ -11,7 +11,7 @@ import { IEmployee } from 'src/app/iemployee';
 export class HomedetailsComponent implements OnInit {
 public empId;
 public employee = [];
-public emp: IEmployee[];
+public emp: IEmployee ;
 public imageUrl: string;
 public errorMessage:string;
   constructor(private empService: EmployeeService, private route: ActivatedRoute, private router: Router) { }
