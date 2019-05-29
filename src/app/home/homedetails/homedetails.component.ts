@@ -67,7 +67,7 @@ public errorMessage:string;
       return employeedata.id === this.empId;
       //return employeedata[index] === this.empId; 
     } ); */ 
-    console.log('afterinitChecked');
+    console.log('afterContentChecked');
     this.emp = this.employee [this.empId];
     //this.emp =  this.employee[this.empId];
   }

@@ -3,9 +3,14 @@
   align-items: center;
   justify-content: flex-start;
 }
+.nextprevious{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
 .nextprevious a{
-  justify-content:space-between;
-  padding: 22px;
+  
+  
   color: blueviolet;
   cursor: pointer;
 }

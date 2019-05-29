@@ -8,9 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ShoppingModule } from './shopping/shopping.module';
 import { CookingModule } from './cooking/cooking.module';
-
-
-
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},
@@ -18,6 +16,7 @@ const routes: Routes = [
   {path: 'home/:id', component: HomedetailsComponent},
   { path: 'shopping', loadChildren: './shopping/shopping.module#ShoppingModule' },
   { path: 'cooking', loadChildren: './cooking/cooking.module#CookingModule' },
+  { path: 'chat', component: ChatComponent },
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
   {path: '**', component: FooterComponent}
@@ -29,5 +28,5 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingModule = [HomeComponent, AboutComponent, ContactComponent, HomedetailsComponent ,
+export const routingModule = [HomeComponent, ChatComponent ,AboutComponent, ContactComponent, HomedetailsComponent ,
                               FooterComponent ];

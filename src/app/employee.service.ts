@@ -2,15 +2,32 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './iemployee';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap  } from 'rxjs/operators';
-
+import { catchError, tap, throttleTime, distinctUntilChanged   } from 'rxjs/operators';
+import * as io from 'socket.io-client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor(private http: HttpClient) { }
+  //private url = 'http://localhost:3000';
+  private url= 'https://chatnodejsappdemo.herokuapp.com/';
+  private socket;    
+
+  constructor(private http: HttpClient) {this.socket = io(this.url); }
+  
+  public sendMessage(message: string) {
+    this.socket.emit('new-message', message);
+  }
+
+  public getMessages = () => {
+    return Observable.create((observer) => {
+        this.socket.on('new-message', (message) => {
+            observer.next(message);
+        });
+    });
+}
+
   getEmployees(): Observable<IEmployee[]> {
     return this.http.get <IEmployee []>  ('https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json' )
     .pipe(

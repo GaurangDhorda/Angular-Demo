@@ -8,13 +8,12 @@ import { ShoppingModule } from './shopping/shopping.module';
 import { CookingModule } from './cooking/cooking.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
-
-
-
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +22,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
     routingModule,
     FooterComponent,
     HomedetailsComponent,
+    ChatComponent,
   ],
 
   imports: [
@@ -34,6 +34,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     ShoppingModule,
     CookingModule,

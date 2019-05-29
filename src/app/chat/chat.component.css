@@ -1,0 +1,98 @@
+.chatcontainer{
+    width:auto;
+      background:linear-gradient(20deg ,#033d2a , #572035);
+      color:white;
+      padding: 16px;
+      height: 30px;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+      margin-bottom: 10px;
+      opacity: .8px;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 3px;
+  }
+  .chatwraper{
+      display: flex;
+      margin: auto 10px;
+      border: 2px solid black;
+  }
+  .chatinput{
+      margin: 5px;
+      flex: 0 0 40%;
+      height: 80vh;
+      width: 100vw;
+      background: rgb(241, 236, 241);
+      justify-content: center;
+      color:black;
+      flex-direction: row;  
+  }
+  input[type="text"]{
+    padding: 10px;
+    font-size: 17px;
+    border: 0px solid grey;
+    float: left;
+    width: 90%;
+    background-color: #f1f1f1;
+  }
+  .chatinput button{
+      background-color: #572035;
+      color:white;
+      border: none;
+      margin-top: 15px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 1em;
+    cursor: pointer;
+    letter-spacing: 3px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+  }
+  .chatinput button:hover{
+      background-color: #5c2c3e;
+      font-weight: 300px;
+  }
+  .messages{
+      flex: 1;
+      height: 80vh;
+      flex-basis: 60%;
+      overflow-y: scroll;
+      margin: 5px;
+      border: 1px solid pink;
+      text-align: center;
+  }
+  .messageLable{
+        font-weight: bold;
+        align-items: center;
+        margin-bottom:5px;
+        width: 100%;
+        text-align: center;
+
+        justify-content: center;
+  }
+  .message{
+      font-weight: 100;
+      margin: 5px;
+      text-align: left;
+  }
+  @media only screen and (max-width: 770px){
+      .chatwraper{
+        flex-direction: column-reverse;
+        height: 100vh;
+        width: 95vw;
+      }
+      .chatinput{
+          flex:0 0 10%;
+          text-align: left;
+          width: 90vw;
+      }
+      .chatinput input{
+          width: 85vw;
+      }
+
+      .messages{
+       flex-basis: 75%; 
+      }
+  }

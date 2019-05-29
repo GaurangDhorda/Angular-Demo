@@ -6,14 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'gaurang';
-  message = '';
-  title = 'HelloWorld';
-  
   constructor() {
-        this.name = 'Angular Tutorial!';
   }
-
+  ngOnInit() {
+  }
   onActivate(componentReference) {
   }
 }
