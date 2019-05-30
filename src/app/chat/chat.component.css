@@ -42,6 +42,7 @@
       color:white;
       border: none;
       margin-top: 15px;
+      width: 100%;
     border-radius: 4px;
     text-transform: uppercase;
     padding: 1em;
@@ -76,11 +77,12 @@
       font-weight: 100;
       margin: 5px;
       text-align: left;
+      background-color: #E8EAF6;
   }
   @media only screen and (max-width: 770px){
       .chatwraper{
         flex-direction: column-reverse;
-        height: 100vh;
+        height: 85vh;
         width: 95vw;
       }
       .chatinput{
