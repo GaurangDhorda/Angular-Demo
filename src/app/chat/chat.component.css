@@ -15,37 +15,38 @@
       letter-spacing: 3px;
   }
   .chatwraper{
-      display: flex;
-      margin: auto 10px;
+      display: block;
+      margin: auto;
       border: 2px solid black;
+      height: 75vh;
   }
   .chatinput{
+      display: flex;
       margin: 5px;
-      flex: 0 0 40%;
-      height: 80vh;
-      width: 100vw;
+      height: 10%;
       background: rgb(241, 236, 241);
-      justify-content: center;
+      justify-content: space-between;
+      justify-items: center;
       color:black;
-      flex-direction: row;  
+      padding: 10px;
   }
   input[type="text"]{
     padding: 10px;
     font-size: 17px;
     border: 0px solid grey;
     float: left;
-    width: 90%;
+    width: 100%;
     background-color: #f1f1f1;
   }
   .chatinput button{
       background-color: #572035;
       color:white;
       border: none;
-      margin-top: 15px;
-      width: 100%;
-    border-radius: 4px;
+      margin-left: 10px;
+      width: 11%;
+    border-radius: 10px;
     text-transform: uppercase;
-    padding: 1em;
+    padding: .4em;
     cursor: pointer;
     letter-spacing: 3px;
     font-family: 'Montserrat';
@@ -56,9 +57,7 @@
       font-weight: 300px;
   }
   .messages{
-      flex: 1;
-      height: 80vh;
-      flex-basis: 60%;
+      height: 80%;
       overflow-y: scroll;
       margin: 5px;
       border: 1px solid pink;
@@ -88,10 +87,11 @@
       .chatinput{
           flex:0 0 10%;
           text-align: left;
-          width: 90vw;
       }
       .chatinput input{
-          width: 85vw;
+      }
+      .chatinput button{
+          width: auto;
       }
 
       .messages{

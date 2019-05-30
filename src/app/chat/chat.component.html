@@ -8,16 +8,16 @@
     Chatting Feature  
   </div>
   <div class="chatwraper">
-    <div class="chatinput" >
-        <input type="text" placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" />
-        <button (click)="sendMessage($event)">Send</button>
-    </div>
     <div class="messages"  id="messages">
         <label class="messageLable">Messages :</label>
         <div  class="message" *ngFor="let msg of messages">
             {{msg}}
         </div>
     </div>
+    <div class="chatinput" >
+      <input type="text" placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" />
+      <button (click)="sendMessage($event)">Send</button>
+  </div>
   </div>
 </body>
 </html>
