@@ -17,8 +17,9 @@
     <div class="chatinput" >
       <mat-form-field class="matInput">
         <input type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" />
+        
       </mat-form-field>
-      <button class="mat-button" color="primary" mat-raised-button (click)="sendMessage($event)">
+      <button class="mat-button" color="primary" mat-button (click)="sendMessage($event)">
         <mat-icon class="mat-icon">
           send
         </mat-icon>

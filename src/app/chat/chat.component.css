@@ -93,6 +93,7 @@
         flex-direction: column-reverse;
         height: 85vh;
         width: 95vw;
+        padding-bottom:10px;
       }
       .matInput{
         width: 85%;
@@ -102,10 +103,19 @@
           text-align: left;
       }
       .chatinput input{
+        width: 100%;
       }
       .mat-button{
-          width: 11%;
+        margin-left: 5px;
+        padding: 5px 0 0 0;
+          width: auto;
       }
+      .mat-icon{
+        height:30px !important;
+        width:auto !important;
+        font-size:35px !important;
+        float: right;
+    }
 
       .messages{
        flex-basis: 75%; 
