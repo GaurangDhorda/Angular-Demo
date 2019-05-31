@@ -27,6 +27,14 @@ export class EmployeeService {
         });
     });
 }
+public getTotalUser = () => {
+    return Observable.create((observer) => {
+            this.socket.on('totalUsers', (totalUsers) => {
+            observer.next(totalUsers);
+  });
+ });
+
+}
 
   getEmployees(): Observable<IEmployee[]> {
     return this.http.get <IEmployee []>  ('https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json' )

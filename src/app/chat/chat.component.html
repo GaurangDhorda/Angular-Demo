@@ -5,11 +5,14 @@
 <body>
 
   <div class="chatcontainer">
-    Chatting Feature  
+      Chatting Feature
   </div>
+  <h4> Online : {{ totalUser }} Users  </h4>
   <div class="chatwraper">
     <div class="messages"  id="messages">
-        <label class="messageLable">Messages :</label>
+      
+      <label class="messageLable">Messages : </label>
+        
         <div  class="message" *ngFor="let msg of messages">
             {{msg}}
         </div>

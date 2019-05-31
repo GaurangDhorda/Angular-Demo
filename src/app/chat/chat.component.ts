@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, AfterContentChecked } from '@angular/core';
 import { catchError, tap, throttleTime, distinctUntilChanged, filter, scan, skipWhile } from 'rxjs/operators';
 import * as moment from 'moment';
 import { EmployeeService } from '../employee.service';
@@ -12,7 +12,7 @@ import {   } from '@angular/material';
 export class ChatComponent implements OnInit, AfterViewChecked {
 
   container: HTMLElement;
- 
+  totalUser: number;
   message = '';
   messages: string[] = [];
   secretCode: string;
@@ -23,7 +23,13 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     this.container = document.getElementById('messages'); // id of div tag is messages
     this.container.scrollTop = this.container.scrollHeight;
   }
+  ngAfterContentChecked(){
+    
+  }
   ngOnInit() {
+    this.chatService.getTotalUser().subscribe((users:number) =>{
+      this.totalUser = users;
+    })  ;
     this.chatService.getMessages()
     .pipe(  throttleTime(1000), distinctUntilChanged(), filter((message: string ) => message.trim().length > 0)
             // , skipWhile((message) => message !== this.secretCode)
@@ -42,5 +48,6 @@ export class ChatComponent implements OnInit, AfterViewChecked {
          this.chatService.sendMessage(this.message);
           this.message = '';
   }
+
 
 }
