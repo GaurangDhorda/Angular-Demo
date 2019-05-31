@@ -93,13 +93,14 @@
         flex-direction: column-reverse;
         height: 85vh;
         width: 95vw;
-        padding-bottom:10px;
+        padding-bottom:3px;
       }
       .matInput{
         width: 85%;
       }
       .chatinput{
           flex:0 0 10%;
+          height: 12%;
           text-align: left;
       }
       .chatinput input{
@@ -118,6 +119,7 @@
     }
 
       .messages{
-       flex-basis: 75%; 
+       height: 75%; 
       }
+
   }
