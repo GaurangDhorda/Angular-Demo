@@ -36,8 +36,8 @@ public getTotalUser = () => {
  });
 
 }
-userIsTyping () {
-    this.socket.emit('typing', 'User'  );
+userIsTyping (userName: string) {
+    this.socket.emit('typing', userName  );
 }
  
 getUserisTyping  = () =>{

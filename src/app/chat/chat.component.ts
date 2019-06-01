@@ -2,7 +2,8 @@ import { Component, OnInit, AfterViewChecked, AfterContentChecked } from '@angul
 import { catchError, tap, throttleTime, distinctUntilChanged, filter, scan, skipWhile } from 'rxjs/operators';
 import * as moment from 'moment';
 import { EmployeeService } from '../employee.service';
-import {   } from '@angular/material';
+import { MatDialog } from '@angular/material';
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
   selector: 'app-chat',
@@ -12,15 +13,19 @@ import {   } from '@angular/material';
 export class ChatComponent implements OnInit, AfterViewChecked {
 
   container: HTMLElement;
+  userName: string;
   totalUser: number;
   message = '';
   messages: string[] = [];
   secretCode: string;
   typing: string;
   timeout ;
-  constructor(private chatService: EmployeeService ) { 
+  constructor(private chatService: EmployeeService, private dialog: MatDialog ) { 
       this.secretCode = 'DONT TELL';
-
+  }
+  openDialog() {
+    let Dref = this.dialog.open(DialogComponent);
+    Dref.afterClosed().subscribe(result => this.userName = result);
   }
   ngAfterViewChecked(){
     // auto scroll messages div when sending new messages.. 
@@ -35,10 +40,10 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   }
   ngOnInit() {
+    this.openDialog();
     console.log('Total Users :', this.totalUser);
     this.chatService.getTotalUser().subscribe((users: number ) => {
       this.totalUser = users;
-      
     });
     this.chatService.getMessages()
     .pipe(  throttleTime(1000), distinctUntilChanged(), filter((message: string ) => message.trim().length > 0)
@@ -63,7 +68,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   }
 
   UserTyping() {
-      this.chatService.userIsTyping();
+      this.chatService.userIsTyping(this.userName);
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => { this.chatService.timeout(); }, 5000);
       
