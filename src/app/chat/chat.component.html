@@ -13,7 +13,10 @@
     <div class="messages"  id="messages">
       
       <label class="messageLable">Messages : </label>
-      <h4> {{typing}} </h4>
+      <h4 *ngIf= "typing === userName; else notShow " > </h4>
+      <ng-template #notShow>
+        <h4 *ngIf="typing">  {{typing}} is Typing </h4> 
+      </ng-template>
         
         <div  class="message" *ngFor="let msg of messages">
             {{msg}}
