@@ -16,20 +16,30 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   message = '';
   messages: string[] = [];
   secretCode: string;
+  typing: string;
+  timeout ;
+  constructor(private chatService: EmployeeService ) { 
+      this.secretCode = 'DONT TELL';
 
-  constructor(private chatService: EmployeeService ) { this.secretCode = 'DONT TELL';}
+  }
   ngAfterViewChecked(){
     // auto scroll messages div when sending new messages.. 
     this.container = document.getElementById('messages'); // id of div tag is messages
     this.container.scrollTop = this.container.scrollHeight;
   }
-  ngAfterContentChecked(){
-    
+
+  ngAfterContentChecked() {
+    this.chatService.getUserisTyping().subscribe((useristyping: string) => {
+      this.typing = useristyping;
+  });
+
   }
   ngOnInit() {
-    this.chatService.getTotalUser().subscribe((users:number) =>{
+    console.log('Total Users :', this.totalUser);
+    this.chatService.getTotalUser().subscribe((users: number ) => {
       this.totalUser = users;
-    })  ;
+      
+    });
     this.chatService.getMessages()
     .pipe(  throttleTime(1000), distinctUntilChanged(), filter((message: string ) => message.trim().length > 0)
             // , skipWhile((message) => message !== this.secretCode)
@@ -48,6 +58,15 @@ export class ChatComponent implements OnInit, AfterViewChecked {
          this.chatService.sendMessage(this.message);
           this.message = '';
   }
+  timeoutFunction() {
+    this.chatService.timeout();
+  }
 
+  UserTyping() {
+      this.chatService.userIsTyping();
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => { this.chatService.timeout(); }, 5000);
+      
+  }
 
 }

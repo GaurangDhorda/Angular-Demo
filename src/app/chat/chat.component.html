@@ -12,6 +12,7 @@
     <div class="messages"  id="messages">
       
       <label class="messageLable">Messages : </label>
+      <h4> {{typing}} </h4>
         
         <div  class="message" *ngFor="let msg of messages">
             {{msg}}
@@ -19,7 +20,8 @@
     </div>
     <div class="chatinput" >
       <mat-form-field class="matInput">
-        <input type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" />
+        <input type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 
+               (keyup)="UserTyping()" />
         
       </mat-form-field>
       <button class="mat-button" color="primary" mat-button (click)="sendMessage($event)">

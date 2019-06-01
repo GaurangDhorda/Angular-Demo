@@ -27,6 +27,7 @@ export class EmployeeService {
         });
     });
 }
+
 public getTotalUser = () => {
     return Observable.create((observer) => {
             this.socket.on('totalUsers', (totalUsers) => {
@@ -34,6 +35,21 @@ public getTotalUser = () => {
   });
  });
 
+}
+userIsTyping () {
+    this.socket.emit('typing', 'User'  );
+}
+ 
+getUserisTyping  = () =>{
+  return Observable.create( (observer) =>{
+    this.socket.on('typing' , (usertyping) =>{
+      observer.next(usertyping);
+    });
+  } );
+}
+timeout() {
+  this.socket.emit('typing', false);
+  console.log('timeOUt call');
 }
 
   getEmployees(): Observable<IEmployee[]> {

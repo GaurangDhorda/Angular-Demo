@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.router.navigate([ i], { relativeTo: this.activatedRoute});
       //this is relative path navigation so that works always when path changes too.
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.alive = false;
   }
 }
