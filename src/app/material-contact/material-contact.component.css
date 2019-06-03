@@ -1,0 +1,26 @@
+.mat-toolbar{
+background:linear-gradient(20deg,red,green);
+text-align: center;
+letter-spacing: 3px;
+justify-content: center
+}
+
+.mat-form{
+    margin:10px;
+}
+.form-control-container{
+    width: 100%;
+    padding: 5%;
+}
+.form-control-container > *{
+        width: 100%;
+}
+.add-bottom-padding{
+    padding: 10px;
+}
+mat-radio-group mat-radio-button{
+    margin-left:5px;
+}
+.button-row button{
+    margin:5px;
+}

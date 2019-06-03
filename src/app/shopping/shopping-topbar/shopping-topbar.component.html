@@ -6,6 +6,11 @@
       <h1>My Store</h1>
     </a>
     <a [routerLink]="['cart']" class="button fancy-button" [ngStyle]="{'padding':padding}"> <i class=" fas fa-shopping-cart"> </i>Checkout</a>
+    <a [routerLink]="['cart']" class="button fancy-button"> 
+      <mat-icon class="mIcon" matBadge="12345678" matBadgeOverlap="true" matBadgeColor="warn">
+       shopping_cart
+      </mat-icon>
+    </a>
 </div>
 <section>
     <div class=".shopping-container">

@@ -3,7 +3,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingModule } from './app-routing.module';
-import { MatToolbarModule, MatIconModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule , MatDialogModule } from '@angular/material';
+import { MaterialModule } from './material/material.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { CookingModule } from './cooking/cooking.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ChatComponent } from './chat/chat.component';
 import { DialogComponent } from './chat/dialog/dialog.component';
+import { MaterialContactComponent } from './material-contact/material-contact.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { DialogComponent } from './chat/dialog/dialog.component';
     HomedetailsComponent,
     ChatComponent,
     DialogComponent,
+    MaterialContactComponent,
   ],
   entryComponents: [
     DialogComponent
@@ -33,14 +36,8 @@ import { DialogComponent } from './chat/dialog/dialog.component';
   imports: [
     BrowserModule,
     LayoutModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
+    BrowserAnimationsModule, //this should be after the BrowsersModule..
+    MaterialModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

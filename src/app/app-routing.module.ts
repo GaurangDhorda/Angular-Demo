@@ -9,6 +9,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ShoppingModule } from './shopping/shopping.module';
 import { CookingModule } from './cooking/cooking.module';
 import { ChatComponent } from './chat/chat.component';
+import { MaterialContactComponent } from './material-contact/material-contact.component';
 
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
+  { path: 'material-contact', component: MaterialContactComponent},
   {path: '**', component: FooterComponent}
 ];
 
@@ -28,5 +30,6 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingModule = [HomeComponent, ChatComponent ,AboutComponent, ContactComponent, HomedetailsComponent ,
-                              FooterComponent ];
+export const routingModule = [HomeComponent, ChatComponent ,AboutComponent, ContactComponent, HomedetailsComponent,
+                              MaterialContactComponent, FooterComponent
+                             ];
