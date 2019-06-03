@@ -89,11 +89,25 @@ THE SOFTWARE.
 
 @angular/material/card
 
+@angular/material/checkbox
+
+@angular/material/core
+
+@angular/material/datepicker
+
 @angular/material/dialog
 
 @angular/material/form-field
 
+@angular/material/grid-list
+
 @angular/material/icon
+
+@angular/material/radio
+
+@angular/material/select
+
+@angular/material/toolbar
 
 @angular/platform-browser
 MIT
