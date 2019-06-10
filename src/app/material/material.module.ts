@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { MatToolbarModule, MatIconModule, MatCardModule,
           MatButtonModule, MatFormFieldModule, MatInputModule,
           MatDialogModule, MatGridListModule, MatRadioModule, 
@@ -14,7 +16,7 @@ const MaterialComponentsArray = [ MatToolbarModule, MatCardModule, MatButtonModu
                                   MatNativeDateModule, MatCheckboxModule
                                 ]
 @NgModule({
-  imports: [MaterialComponentsArray],
+  imports: [ HttpClientModule, FormsModule, MaterialComponentsArray],
   exports: [MaterialComponentsArray]
 })
 export class MaterialModule { }

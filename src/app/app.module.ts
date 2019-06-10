@@ -2,20 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingModule } from './app-routing.module';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MaterialModule } from './material/material.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { CookingModule } from './cooking/cooking.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ChatComponent } from './chat/chat.component';
 import { DialogComponent } from './chat/dialog/dialog.component';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
+import { environment } from '../environments/environment';
+
 
 
 @NgModule({
@@ -37,10 +42,13 @@ import { MaterialContactComponent } from './material-contact/material-contact.co
     BrowserModule,
     LayoutModule,
     BrowserAnimationsModule, //this should be after the BrowsersModule..
-    MaterialModule,
-    HttpClientModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
+    HttpClientModule,
     ShoppingModule,
     CookingModule,
     AppRoutingModule

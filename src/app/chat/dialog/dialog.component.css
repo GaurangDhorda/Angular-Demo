@@ -1,0 +1,6 @@
+.form-control-container{
+    widows: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

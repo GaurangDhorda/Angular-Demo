@@ -8,7 +8,7 @@
       align-content: center;
       justify-content: center;
       justify-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 3px;
       opacity: .8px;
       text-align: center;
       font-size: 2rem;
@@ -73,12 +73,20 @@
       border: 1px solid pink;
       text-align: center;
   }
+  .usersSubHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    background: linear-gradient(20deg,pink, rgb(97, 74, 74) );
+    padding: 5px;
+    box-shadow:3px 3px 5px 6px #ccc;
+  }
   h4{
     margin:1px;
     margin-bottom: 5px;
     text-align: center;
     color: #fa1111;
-    background-color: aliceblue;
   }
   .messageLable{
         font-weight: bold;
@@ -89,18 +97,47 @@
 
         justify-content: center;
   }
+
   .message{
-      font-weight: 100;
-      margin: 5px;
-      text-align: left;
-      background-color: #E8EAF6;
+    margin:5px;
+    width: 57%;
+    text-align: left;
   }
+  .message p{
+    display: inline-block;
+    width: auto;
+    font-weight: 500;
+    margin: 0;
+    font-size: 1em;
+    padding: 10px 5px 5px 5px ;
+    background-color: #E8EAF6;
+    background: rgb(201, 210, 241) none repeat scroll 0 0;
+    border-radius: 20px; 
+    word-break: break-word;
+  }
+  
+  .time{
+    color:#777;
+    display: block;
+    font-size: 12px;
+    margin: 20px 15px 0;
+    float: right;
+    bottom:5px;
+  }
+  
   @media only screen and (max-width: 770px){
       .chatwraper{
         flex-direction: column-reverse;
         height: 85vh;
         width: 95vw;
         padding-bottom:3px;
+      }
+      .usersSubHeading{
+        display: flex;
+        text-align: center;
+      }
+      h4{
+        font-size: 1rem;
       }
       .matInput{
         width: 85%;
@@ -130,5 +167,21 @@
       .messages{
        height: 75%; 
       }
-
+      
   }
+  @media only screen and (max-width: 500px){
+    .usersSubHeading{
+      display: block;
+      text-align: center;
+    }
+    h4{
+      font-size: .9rem;
+    }
+
+    .message  {
+      width:auto;
+    }
+    .message p{
+      font-size: .9em;
+    }
+}

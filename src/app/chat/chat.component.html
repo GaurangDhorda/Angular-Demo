@@ -7,33 +7,44 @@
   <div class="chatcontainer">
       Chatting Feature
   </div>
-
-  <h4> Wellcome : {{userName}} , and total Online users are : {{ totalUser }}  </h4>
+  <div class="usersSubHeading">
+  <h4>  Wellcome {{userName}}  </h4>
+  <h4 *ngIf = "logoutButton"> Total online users are : {{ totalUser }}  </h4>
+  <button mat-raised-button color="primary" (click)="logout()"  > {{ logoutButton ? 'Logout' : 'Login'}} </button>
+</div>
   <div class="chatwraper">
     <div class="messages"  id="messages">
       
       <label class="messageLable">Messages : </label>
-      <h4 *ngIf= "typing === userName; else notShow " > </h4>
-      <ng-template #notShow>
-        <h4 *ngIf="typing">  {{typing}} is Typing </h4> 
-      </ng-template>
+      
         
-        <div  class="message" *ngFor="let msg of messages">
-            {{msg}}
+        <div  class="message" *ngFor="let msg of messages; index as i">
+          <p> {{msg}}  
+          <span class="time" >{{timeStamp[i]}}</span>
+        </p>
         </div>
-    </div>
-    <div class="chatinput" >
-      <mat-form-field class="matInput">
-        <input type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 
-               (keyup)="UserTyping()" />
         
-      </mat-form-field>
-      <button class="mat-button" color="primary" mat-button (click)="sendMessage($event)">
-        <mat-icon class="mat-icon">
-          send
-        </mat-icon>
-      </button>
+  
+      </div>
+      <div>
+          <h4 *ngIf= "typing === userName; else notShow " > </h4>
+          <ng-template #notShow>
+            <h4 *ngIf="typing">  {{typing}} is Typing </h4> 
+          </ng-template></div>
+      <div class="chatinput" >
+        
+          <mat-form-field class="matInput">
+            <input type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 
+                   (keyup)="UserTyping()" />
+            
+          </mat-form-field>
+          <button class="mat-button" color="primary" mat-button (click)="sendMessage($event)">
+            <mat-icon class="mat-icon">
+              send
+            </mat-icon>
+          </button>
+      </div>
   </div>
-  </div>
+  
 </body>
 </html>
