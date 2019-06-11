@@ -78,15 +78,16 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
-    background: linear-gradient(20deg,pink, rgb(97, 74, 74) );
+    background: linear-gradient(0deg,#ffffff, #d1c4e9 );
     padding: 5px;
-    box-shadow:3px 3px 5px 6px #ccc;
+    box-shadow:3px -1px 10px 1px  #f44336;
   }
   h4{
     margin:1px;
     margin-bottom: 5px;
     text-align: center;
-    color: #fa1111;
+    letter-spacing: 1px;
+    color:rgba(0,0,0, .87);
   }
   .messageLable{
         font-weight: bold;
