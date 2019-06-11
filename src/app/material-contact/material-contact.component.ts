@@ -44,7 +44,9 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
     //console.log(this.formGroup.getRawValue());
     //console.log('dataModel: ' ,this.dataModel);
     this.formService.onSubmit(this.dataModel).subscribe(
-      data => console.log('success', data),
+      data => { console.log('success', data);
+                this.onClear();
+                window.alert('data saved'); },
       err => console.log('failure ', err)
     );
   }
