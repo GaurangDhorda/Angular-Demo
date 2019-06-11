@@ -3,7 +3,7 @@
 </mat-toolbar>
 
 <form [formGroup]="formGroup" class="mat-form" #formDirective="ngForm" (ngSubmit)="onSubmit()"  >
-  <mat-grid-list [cols]="breakPoint" rowHeight="500px" (window:resize)="onResize($event)">
+  <mat-grid-list [cols]="breakPoint" rowHeight="300px" (window:resize)="onResize($event)">
     <!-- breakPoint is variable for dividing grid colomn to row in mobile view fires onResize()function   -->
       <mat-grid-tile>
       <div class="form-control-container">
