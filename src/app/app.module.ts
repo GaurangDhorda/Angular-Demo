@@ -19,7 +19,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ChatComponent } from './chat/chat.component';
 import { DialogComponent } from './chat/dialog/dialog.component';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
-import { environment } from '../environmets/environment';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
