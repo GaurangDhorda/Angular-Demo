@@ -18,13 +18,12 @@
       <label class="messageLable">Messages : </label>
       
         
-        <div  class="message" *ngFor="let msg of messages; index as i">
-          <p> {{msg}}  
+        <div  class="message"   *ngFor="let msg of messages; index as i">
+          <p > {{msg}}  
           <span class="time" >{{timeStamp[i]}}</span>
         </p>
         </div>
         
-  
       </div>
       <div>
           <h4 *ngIf= "typing === userName; else notShow " > </h4>

@@ -76,14 +76,14 @@ isLogedIn: boolean;
 
   // Scoket.io Chatting..
 
-  public sendMessage(message: string) {
-    this.socket.emit('new-message', message);
+  public sendMessage(message: string, userName: string) {
+    this.socket.emit('new-message', message, userName );
   }
 
   public getMessages = () => {
     return Observable.create((observer) => {
-        this.socket.on('new-message', (message) => {
-            observer.next(message);
+        this.socket.on('new-message', ( data, username ) => {
+            observer.next(data, username);
         });
     });
 }

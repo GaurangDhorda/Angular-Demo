@@ -20,6 +20,7 @@ import { ChatComponent } from './chat/chat.component';
 import { DialogComponent } from './chat/dialog/dialog.component';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ShoppingModule,
     CookingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   bootstrap: [AppComponent]
 })

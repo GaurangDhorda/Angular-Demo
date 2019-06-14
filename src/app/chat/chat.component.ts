@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   typing: string;
   timeout ;
   logoutButton = false;
+  currentMessage: boolean;
   constructor(private chatService: EmployeeService, private dialog: MatDialog ) { 
       this.secretCode = 'DONT TELL';
   }
@@ -109,7 +110,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
           scan((acc: string, message: string, index: number) =>
                       ` (${index + 1}) ${message}` , '1')
          )
-    .subscribe((message: string) => {
+    .subscribe((message: string, userName: string) => {
+      
       console.log(message);
       let currentTime = moment().format('hh:mm:ss a');
       let messageWithTimestamp =  `${currentTime}: ${message}`;
@@ -119,10 +121,10 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       });
   }
   sendMessage(event: string) {
-         this.chatService.sendMessage(this.message);
+         this.chatService.sendMessage(this.message, this.userName);
          this.messageDiv = this.message;
          this.message = '';
-         
+
   }
   timeoutFunction() {
     this.chatService.timeout();
@@ -132,7 +134,6 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       this.chatService.userIsTyping(this.userName);
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => { this.chatService.timeout(); }, 5000);
-      
   }
 
 }
