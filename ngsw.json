@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560604971139,
+  "timestamp": 1560756809759,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,11 @@
         "https://gaurangdhorda.github.io/Angular-Demo/runtime.2d3a9d28b4b4f51448c4.js",
         "https://gaurangdhorda.github.io/Angular-Demo/styles.9e64253092981bbbb84c.css"
       ],
-      "patterns": []
+      "patterns": [
+        "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.8\\.1\\/css\\/all\\.css",
+        "https:\\/\\/fonts\\.googleapis\\.com\\/css\\?family=Roboto:300,400,500",
+        "https:\\/\\/fonts\\.googleapis\\.com\\/icon\\?family=Material\\+Icons"
+      ]
     },
     {
       "name": "assets",
