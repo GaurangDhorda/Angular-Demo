@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560859740692,
+  "timestamp": 1560860990932,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -47,7 +47,7 @@
     {
       "name": "ngsw Caching ofLewagon Json HomeComponent Data",
       "patterns": [
-        "https:\\/\\/raw\\.githubusercontent\\.com\\/lewagon\\/flats-boilerplate\\/master\\/flats\\.json\\/.*",
+        "https:\\/\\/raw\\.githubusercontent\\.com\\/lewagon\\/flats-boilerplate\\/master\\/.*",
         "https:\\/\\/chatnodejsappdemo\\.herokuapp\\.com\\/.*"
       ],
       "strategy": "freshness",
