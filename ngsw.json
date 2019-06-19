@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560943492481,
+  "timestamp": 1560948419038,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -16,7 +16,7 @@
         "https://gaurangdhorda.github.io/Angular-Demo/main.52747a50c43f2c668cf8.js",
         "https://gaurangdhorda.github.io/Angular-Demo/polyfills.2b767098c09ef2304dbf.js",
         "https://gaurangdhorda.github.io/Angular-Demo/runtime.af716eb0af58d0c13e26.js",
-        "https://gaurangdhorda.github.io/Angular-Demo/styles.cd98807209f63a4849a4.css"
+        "https://gaurangdhorda.github.io/Angular-Demo/styles.a731e3692645a27aa43b.css"
       ],
       "patterns": [
         "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.8\\.1\\/css\\/all\\.css",
@@ -73,11 +73,11 @@
     "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://gaurangdhorda.github.io/Angular-Demo/es2015-polyfills.d9453fb2d504b0a47535.js": "018be373ae4c7714a9968bc97054d6217c7e369f",
     "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "8df7b4ab7934fb71adeb10205e652039fbc82cfb",
+    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "859ba032c28e69c67e55313c0dda123e2fd107dc",
     "https://gaurangdhorda.github.io/Angular-Demo/main.52747a50c43f2c668cf8.js": "5e4cd1109a94f344a813174db89226bb8f15372b",
     "https://gaurangdhorda.github.io/Angular-Demo/polyfills.2b767098c09ef2304dbf.js": "a0fa042a7cd96d0967a6ebe953ae6a84330835da",
     "https://gaurangdhorda.github.io/Angular-Demo/runtime.af716eb0af58d0c13e26.js": "477f8f91753894c6c772eebad04b3c6f9f828df8",
-    "https://gaurangdhorda.github.io/Angular-Demo/styles.cd98807209f63a4849a4.css": "a0d099bcb04ff9963850209cffea4097e7b88029"
+    "https://gaurangdhorda.github.io/Angular-Demo/styles.a731e3692645a27aa43b.css": "59c65dcbf7e90780d7c12b4689e28944f526253e"
   },
   "navigationUrls": [
     {
