@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1560948419038,
+  "timestamp": 1561098085260,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -47,13 +47,11 @@
     {
       "name": "ngsw Caching ofLewagon Json HomeComponent Data",
       "patterns": [
-        "https:\\/\\/raw\\.githubusercontent\\.com\\/lewagon\\/flats-boilerplate\\/master\\/flats\\.json",
-        "https:\\/\\/raw\\.githubusercontent\\.com\\/lewagon\\/flats-boilerplate\\/master\\/(?:.+\\/)?[^/]*\\.jpg",
-        "https:\\/\\/chatnodejsappdemo\\.herokuapp\\.com\\/.*"
+        "https:\\/\\/raw\\.githubusercontent\\.com\\/lewagon\\/flats-boilerplate\\/master\\/(?:.+\\/)?[^/]*\\.jpg"
       ],
       "strategy": "freshness",
       "maxSize": 25,
-      "maxAge": 86400000,
+      "maxAge": 0,
       "timeoutMs": 15000,
       "version": 1
     }
