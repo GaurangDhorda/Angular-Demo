@@ -25,6 +25,9 @@ export class CookingServiceService {
   searchByItemName( searchString: string ) {
     this.search = searchString;
   }
+  resetSearchItemName() {
+    this.search = '';
+  }
   getSearchByItemName() {
     return this.search;
   }

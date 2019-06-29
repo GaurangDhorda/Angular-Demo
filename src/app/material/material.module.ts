@@ -5,7 +5,7 @@ import { MatToolbarModule, MatIconModule, MatCardModule,
           MatButtonModule, MatFormFieldModule, MatInputModule,
           MatDialogModule, MatGridListModule, MatRadioModule, 
           MatSelectModule, MatDatepickerModule, MatNativeDateModule, 
-          MatCheckboxModule
+          MatCheckboxModule, MatSnackBarModule, MatProgressSpinnerModule
         } from '@angular/material';
 import { MatBadgeModule } from '@angular/material/badge';
 
@@ -13,7 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 const MaterialComponentsArray = [ MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
                                   MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule,
                                   MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
-                                  MatNativeDateModule, MatCheckboxModule
+                                  MatNativeDateModule, MatCheckboxModule, MatSnackBarModule,MatProgressSpinnerModule
                                 ]
 @NgModule({
   imports: [ HttpClientModule, FormsModule, MaterialComponentsArray],

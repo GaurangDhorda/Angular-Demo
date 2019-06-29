@@ -8,7 +8,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-    {path: 'shopping/shopping-topbar', component: ShoppingTopbarComponent,
+    {path: '', component: ShoppingTopbarComponent,
     children: [
         {
             path: '',

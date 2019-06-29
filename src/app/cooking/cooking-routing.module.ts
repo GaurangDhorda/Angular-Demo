@@ -5,7 +5,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 const routes: Routes = [
     {
-        path: 'cooking/cooking-topbar', component: CookingTopbarComponent,
+        path: '', component: CookingTopbarComponent,
         children: [
             {
                 path: '',

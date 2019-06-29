@@ -6,8 +6,8 @@ import {ContactComponent} from './contact/contact.component';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomedetailsComponent } from './home/homedetails/homedetails.component';
-import { ShoppingModule } from './shopping/shopping.module';
-import { CookingModule } from './cooking/cooking.module';
+//import { ShoppingModule } from './shopping/shopping.module';
+//import { CookingModule } from './cooking/cooking.module';
 import { ChatComponent } from './chat/chat.component';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
 
@@ -23,9 +23,9 @@ const routes: Routes = [
   { path: 'material-contact', component: MaterialContactComponent},
   {path: '**', component: FooterComponent}
 ];
-
+//ShoppingModule, CookingModule
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ShoppingModule, CookingModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 

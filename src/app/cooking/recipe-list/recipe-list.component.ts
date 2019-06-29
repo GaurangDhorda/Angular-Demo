@@ -40,6 +40,10 @@ public counter = 0;
       
       console.log("recipe-list - ngAfterVIewChecked()", this.counter);
     }
+    ngOnDestroy() {
+      // resetting search string..
+      this.cookingRecipe.resetSearchItemName();
+    }
     counterSearchResult(c){
         return this.counter= this.counter + 1;
     }

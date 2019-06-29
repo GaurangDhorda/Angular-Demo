@@ -38,17 +38,22 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
   }
 
   onSubmit() {
-    this.dataModel = this.formGroup.value;
-    //alert(this.formGroup.controls['fullname'].value);
-    //alert(this.formGroup.getRawValue());
-    //console.log(this.formGroup.getRawValue());
-    //console.log('dataModel: ' ,this.dataModel);
-    this.formService.onSubmit(this.dataModel).subscribe(
-      data => { console.log('success', data);
-                this.onClear();
-                window.alert('data saved'); },
-      err => console.log('failure ', err)
-    );
+    if (this.formGroup.valid) {
+      this.dataModel = this.formGroup.value;
+      //alert(this.formGroup.controls['fullname'].value);
+      //alert(this.formGroup.getRawValue());
+      //console.log(this.formGroup.getRawValue());
+      //console.log('dataModel: ' ,this.dataModel);
+      this.formService.onSubmit(this.dataModel).subscribe(
+        data => { console.log('success', data);
+                  this.onClear();
+                  window.alert('data saved'); },
+        err => console.log('failure ', err)
+      );
+    }
+    else{
+      this.onClear();
+    }
   }
   onClear() {
     
@@ -68,12 +73,14 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
    this.formGroup.controls['fullname'].clearValidators();
    this.formGroup.controls['fullname'].updateValueAndValidity();
     this.formGroup.controls['mobile'].updateValueAndValidity(); */
+    
    
    this.formDirective.resetForm();
    this.formGroup.reset();
    this.formGroup.markAsPristine();
+   this.formGroup.markAsUntouched();
+   this.formGroup.updateValueAndValidity();
    this.inistializeFormGroup();
-   
    // this.formGroup.clearValidators();
   // this.formGroup.updateValueAndValidity();
    //this.formGroup.controls['fullname'].setValidators();

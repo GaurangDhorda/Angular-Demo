@@ -8,6 +8,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { DataModel } from './material-contact/datamodel';
+import { MatSnackBar } from '@angular/material';
 
 
 
@@ -23,7 +24,7 @@ isLogedIn: boolean;
   private url = 'https://chatnodejsappdemo.herokuapp.com/';
   private socket;
 
-  constructor(private http: HttpClient, private angularFireAuth: AngularFireAuth) {
+  constructor(private http: HttpClient, private angularFireAuth: AngularFireAuth, private snackbar: MatSnackBar) {
       this.socket = io(this.url);
   //  FireBase Default authentication ..
       this.angularFireAuth.authState.subscribe(user => {
@@ -39,14 +40,26 @@ isLogedIn: boolean;
       });
   }
     // Firebase Authentication..
+    createNewUser(email: string, password: string) {
+
+      return new Promise<any>((resolve, reject) => {
+        this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
+        .then (res => resolve(res) , err => reject(err)) ;
+      });
+  
+    }
+
   async login(email: string, password: string) {
     const result = await this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
-    .then( result => true)
-    .catch(( result ) => {
-      window.alert(result.message);
-      console.log('error msg: ', result);
+    .then( successVal => { return email })
+    .catch(( err ) => {
+      let snack = this.snackbar.open(err.message , 'OK');
+      snack.onAction().subscribe( () => {
+        window.location.reload();
+      });
+     // console.log('error msg: ', result);
     });
-    //console.log('Result: ', result);
+    return result;
   }
   isloggedInMethod() {
     //console.log('isLogedIn :',this.angularFireAuth.authState.pipe( first() ).toPromise());
@@ -88,8 +101,17 @@ isLogedIn: boolean;
     });
 }
 
-public getTotalUser = () => {
-  
+public getUsers(): Observable<any> {
+  let getUsersCount = 0;
+   this.socket.emit('getTotalUsers', '');
+  return Observable.create ( (obr) => {
+        this.socket.on('getTotalUsers', (users) => { obr.next(users); }
+
+      )});
+}
+
+public getTotalUser(): Observable<any> {
+
     return Observable.create((observer) => {
             this.socket.on('totalUsers', (totalUsers) => {
             observer.next(totalUsers);
@@ -111,6 +133,8 @@ timeout() {
   this.socket.emit('typing', false);
   console.log('timeOUt call');
 }
+
+// material contact form methods
 
 onSubmit(datamodel: DataModel) {
  return this.http.post<any> (this.url_MaterialFormSave, datamodel);

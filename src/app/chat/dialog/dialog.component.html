@@ -12,4 +12,6 @@
 <mat-dialog-actions>
   <button color="primary" mat-raised-button mat-dialog-close [mat-dialog-close]="userName" (click)="logIn()">Login</button>
   <button mat-raised-button mat-dialog-close mat-dialog-close="false">Try as Guest</button>
+  <button mat-flat-button color="error" (click)="createNewUser()" > Create New Account </button>
 </mat-dialog-actions>
+

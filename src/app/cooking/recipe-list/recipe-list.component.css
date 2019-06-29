@@ -31,6 +31,9 @@ h4{
   color:brown;
   font-weight: bold;
 }
+.viewport-example{
+  height: 100vh;
+}
 p{
   margin:5px;
   font-weight: bold;
@@ -73,6 +76,9 @@ p{
   .recipe-card{
 
   }
+  .viewport-example{
+    height: 100vh;
+  }
   .recipe-details{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -101,6 +107,9 @@ p{
   .recipe-card {
       flex: 0 1 calc(25% - 1em);
    }
+   .viewport-example{
+    height: 100vh;
+  }
 }
 @media screen and (min-width: 40em) {
   .flex {
@@ -112,7 +121,13 @@ p{
   .recipe-card {
     flex: 0 1 calc(50% - 5px);
   }
+  .viewport-example{
+    height: 100vh;
+  }
 }
 
 @media screen and (min-width: 52em) {
+  .viewport-example{
+    height: 100vh;
+  }
 }

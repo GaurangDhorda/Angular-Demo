@@ -54,6 +54,10 @@ header nav ul li a:hover {
       cursor: pointer;
   }
 @media only screen and (max-width:780px){
+    i{
+        font-size: 2em;
+    }
+
     header nav ul li  {
         float: left;
         padding: 1.5rem 2.5rem;

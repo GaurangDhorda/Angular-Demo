@@ -33,7 +33,11 @@
   .matInput{
       width: 85%;
   }
-
+  .example-margin {
+    margin: 0 auto;
+    height: 10px;
+  }
+  .pspinner{  height: 60px; }
   /*  input[type="text"]{
     padding: 10px;
     font-size: 17px;

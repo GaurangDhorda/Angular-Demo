@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>New User Registration</h2>
+<form [formGroup]="formGroup"  #formDirective="ngForm">
+<mat-dialog-content>
+    
+  <div class="form-control-container">
+    <mat-form-field >
+      <input type="text" matInput placeholder="Enter Email ID"  formControlName="email" />
+      <mat-error *ngIf="formGroup.controls['email'].errors?.required">Email ID is compulsary to enter</mat-error>
+      <mat-error *ngIf="formGroup.controls['email'].errors?.email">Invalid Email ID</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Enter Password" formControlName="pass" > 
+    <mat-error>Full Name is compulsary to enter</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Re-Enter Password" formControlName="passwordMatcher"  
+        
+    /> 
+    <mat-error>Full Name is compulsary to enter</mat-error>
+  </mat-form-field>
+  
+  </div>
+
+</mat-dialog-content>
+</form>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createUser()">Create User</button>
+</mat-dialog-actions>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SwUpdate, SwPush } from '@angular/service-worker';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   message: string ='';
-  constructor() {
+  constructor( ) {
+    
   }
   ngOnInit() {
+   // navigator.serviceWorker.register('/Angular-Demo/ngsw-worker.js');
+    
   }
   onActivate(componentReference) {
   }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CookingRoutingModule , cookingComponent } from './cooking-routing.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [ cookingComponent],
@@ -10,7 +11,8 @@ import { CookingRoutingModule , cookingComponent } from './cooking-routing.modul
     CommonModule,
     HttpClientModule,
     FormsModule,
-    CookingRoutingModule
+    CookingRoutingModule,
+    ScrollingModule
 
   ]
 })

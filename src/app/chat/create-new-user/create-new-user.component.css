@@ -4,6 +4,9 @@
     flex-direction: column;
     padding: 10px;
 }
-mat-dialog-actions{
-height: 90px;    
+.positive {
+    background-color: green;
+}
+.mat-form-field {
+    padding: 5px;
 }

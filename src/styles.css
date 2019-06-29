@@ -58,18 +58,22 @@ nav ul li a.active{
     header{
         width: 100%;
     }
+     
     .container{
         width: auto;
         margin-left: 15px;
         grid-column-gap: .5em;
         align-content: center;
+        align-items: center;
+        padding: 1em;
     }
     .icon{
         display: flex;
         color: wheat;
         flex-direction:column;
         flex:initial;
-        margin-top: .5em;
+        padding: .5rem .5rem 0 0 ;
+        margin-left: -1em;
     }
    .myContainer ul li a:hover {
         background: #1E25AA;

@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewChecked, AfterContentChecked } from '@angul
 import { catchError, tap, throttleTime, distinctUntilChanged, filter, scan, skipWhile } from 'rxjs/operators';
 import * as moment from 'moment';
 import { EmployeeService } from '../employee.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
@@ -24,27 +24,51 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   timeout ;
   logoutButton = false;
   currentMessage: boolean;
-  constructor(private chatService: EmployeeService, private dialog: MatDialog ) { 
+  color = 'primary';
+  mode = 'indeterminate';
+  value = 50;
+  displaySpinner = false;
+  constructor(private chatService: EmployeeService, private dialog: MatDialog, private snackbar: MatSnackBar ) { 
       this.secretCode = 'DONT TELL';
   }
   openDialog() {
-    let Dref = this.dialog.open(DialogComponent, {width: '500px', height: '300px'});
+    let dialogBoxSettings = {
+      height: '300px',
+      width: '500px',
+      margin: '0 auto'
+    };
+    let Dref = this.dialog.open(DialogComponent, dialogBoxSettings);
     Dref.afterClosed().subscribe(result => {
       if (result && result !== 'false' ) {
         console.log('result : ', result);
-        this.userName = result;
+        this.displaySpinner = true;
+       //  this.userName = result; 
         this.logoutButton = true;
+        this.chatService.getUsers().subscribe(
+          (users: number ) => {
+            this.totalUser = users;
+            localStorage.setItem('totalUser', JSON.stringify(this.totalUser));
+       }, err =>{ alert( 'from Chat errro' + err);  }
+         ); 
     } else  this.userName = 'Guest';
     } );
   }
   logout() {
-    if(this.userName === ''){
+    if(this.userName === '') {
         this.openDialog();
+        
+        this.chatService.getUsers().subscribe(
+        (users: number ) => {
+          this.totalUser = users;
+          localStorage.setItem('totalUser', JSON.stringify(this.totalUser));
+     }, err =>{ alert(err); }
+       );
         this.chatService.getTotalUser().subscribe(
           (users: number ) => {
                this.totalUser = users;
                localStorage.setItem('totalUser', JSON.stringify(this.totalUser));
-          });
+          }, err =>{ alert(err); });
+
     }
     if (this.userName !== 'Guest') {
 
@@ -54,13 +78,17 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     this.userName = '' ;
     this.messages.splice(0);
   }
-  else{
+  else {
     this.openDialog();
     this.chatService.getTotalUser().subscribe(
       (users: number ) => {
            this.totalUser = users;
+           console.log('Total User is', this.totalUser);
            localStorage.setItem('totalUser', JSON.stringify(this.totalUser));
+           
       });
+    this.totalUser = JSON.parse(localStorage.getItem('totalUser'));
+    
   }
   }
 
@@ -76,6 +104,17 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   });
   
   this.totalUser = JSON.parse(localStorage.getItem('totalUser'));
+
+  if ( this.chatService.isLoggedIn) {
+    const item = JSON.parse(localStorage.getItem('user'));
+    this.userName = item.email;
+    this.displaySpinner = false;
+  }
+  else{
+    if (this.userName === 'Guest'){}
+    else{
+    this.userName ='';}
+  }
   }
  
   checkUserLogedInOrNot() {

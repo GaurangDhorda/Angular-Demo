@@ -10,6 +10,11 @@
           "/index.html",
           "/*.css",
           "/*.js"
+        ],
+        "urls":[
+          "https://use.fontawesome.com/releases/v5.8.1/css/all.css",
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
         ]
       }
     }, {
@@ -21,6 +26,21 @@
           "/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups":[
+    {
+      "name":"ngsw Caching ofLewagon Json HomeComponent Data",
+      "urls":[
+        "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/**",
+        "https://chatnodejsappdemo.herokuapp.com/**"
+      ],
+      "cacheConfig":{
+        "strategy":"freshness",
+        "maxSize": 550,
+        "maxAge": "3d",
+        "timeout":"15s"
       }
     }
   ]

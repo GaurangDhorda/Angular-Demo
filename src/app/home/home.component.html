@@ -1,11 +1,11 @@
-<h1>Home componet</h1>
+<h1>Home component</h1>
 <h2>Data of API calling</h2>
 <h4>{{ errorMessage }}</h4>
 <div class= "flats">
      <div class="flat" (click)="detailsData(employee,i)" *ngFor = "let employee of Employee; index as i">
           
             <div class="flat-picture" [title]="employee.name + ' Tooltip: Click here for more details.. '"
-                  [style.background-image]="'url(' + employee.imageUrl + ')'"    > 
+                  [style.background-image]="'url(' + employee.imageUrl + ')'" > 
             </div>
             <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 
             <div class="card-body" >
