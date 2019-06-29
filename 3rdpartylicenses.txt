@@ -110,6 +110,8 @@ THE SOFTWARE.
 
 @angular/material/icon
 
+@angular/material/progress-spinner
+
 @angular/material/radio
 
 @angular/material/select
