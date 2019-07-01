@@ -1,21 +1,30 @@
-<h2 mat-dialog-title>New User Registration</h2>
+<h2 mat-dialog-title><i class="fas fa-user-plus"></i> User Registration </h2>
 <form [formGroup]="formGroup"  #formDirective="ngForm">
 <mat-dialog-content>
     
   <div class="form-control-container">
     <mat-form-field >
+      <div class="formField">
       <input type="text" matInput placeholder="Enter Email ID"  formControlName="email" />
+      <mat-icon>email</mat-icon>
+    </div>
       <mat-error *ngIf="formGroup.controls['email'].errors?.required">Email ID is compulsary to enter</mat-error>
       <mat-error *ngIf="formGroup.controls['email'].errors?.email">Invalid Email ID</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input type="password" matInput placeholder="Enter Password" formControlName="pass" > 
+    <div class="formField">
+      <input type="password" matInput placeholder="Enter Password" formControlName="pass" > 
+      <mat-icon>lock</mat-icon>
+    </div>
     <mat-error>Full Name is compulsary to enter</mat-error>
   </mat-form-field>
   <mat-form-field>
+    <div class="formField">
     <input type="password" matInput placeholder="Re-Enter Password" formControlName="passwordMatcher"  
         
     /> 
+    <mat-icon>lock</mat-icon>
+  </div>
     <mat-error>Full Name is compulsary to enter</mat-error>
   </mat-form-field>
   
@@ -25,4 +34,5 @@
 </form>
 <mat-dialog-actions>
   <button mat-raised-button color="primary" (click)="createUser()">Create User</button>
+  <button mat-raised-button mat-dialog-close mat-dialog-close="false" >Cancel</button>
 </mat-dialog-actions>

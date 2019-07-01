@@ -1,17 +1,31 @@
-<h2 mat-dialog-title>Login</h2>
+<div class="title">
+  <h2 mat-dialog-title><i class="fas fa-user-check"></i>Login</h2> 
+  <mat-dialog-actions>
+  <button mat-mini-fab color="error"  mat-dialog-close mat-dialog-close="false"  (click)="createNewUser()" class="createNewUser" >
+      <i class="fas fa-user-plus"></i> 
+  </button>
+</mat-dialog-actions>
+</div>
+
 <mat-dialog-content>
   <div class="form-control-container">
     <mat-form-field >
-        <input type=text matInput placeholder="Enter User Name" [(ngModel)]="userName" />
+      <div class="formField">
+        <input type=text matInput placeholder="Enter User Name" [(ngModel)]="userName" > 
+        <mat-icon> email</mat-icon>
+      </div>
     </mat-form-field>
     <mat-form-field>
+      <div class="formField">
         <input type="password" matInput placeholder="Enter Password" [(ngModel)]="password"/>
+        <mat-icon>lock</mat-icon>
+      </div>
     </mat-form-field>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button color="primary" mat-raised-button mat-dialog-close [mat-dialog-close]="userName" (click)="logIn()">Login</button>
   <button mat-raised-button mat-dialog-close mat-dialog-close="false">Try as Guest</button>
-  <button mat-flat-button color="error" (click)="createNewUser()" > Create New Account </button>
+  
 </mat-dialog-actions>
 

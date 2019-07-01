@@ -19,7 +19,7 @@
 </div>
   <h4>  Wellcome {{userName}}  </h4>
   <h4 *ngIf = "logoutButton"> Total online users are : {{ totalUser }}  </h4>
-  <button mat-raised-button color="primary" (click)="logout()"  > {{ logoutButton ? 'Logout' : 'Login'}} </button>
+  <button mat-raised-button color="primary" (click)="logout()"  > {{ logoutButton ? 'Logout' : 'Login'}}  </button>
 </div>
   <div class="chatwraper">
     <div class="messages"  id="messages">
@@ -42,11 +42,11 @@
       <div class="chatinput" >
         
           <mat-form-field class="matInput">
-            <input type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 
-                   (keyup)="UserTyping()" />
+            <input id="inputElement" type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 
+                   (keyup)="UserTyping()" [disabled]="readOnly" />
             
           </mat-form-field>
-          <button class="mat-button" color="primary" mat-button (click)="sendMessage($event)">
+          <button class="mat-button" color="primary" mat-button (click)="sendMessage($event)" [disabled]="readOnly">
             <mat-icon class="mat-icon">
               send
             </mat-icon>

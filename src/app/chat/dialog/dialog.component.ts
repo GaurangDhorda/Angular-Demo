@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog, MatSnackBar, MatDialogRef } from '@angular/material';
 import { CreateNewUserComponent } from '../create-new-user/create-new-user.component';
 
 @Component({
@@ -9,6 +9,7 @@ import { CreateNewUserComponent } from '../create-new-user/create-new-user.compo
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
+  @Output() submitClicked = new EventEmitter<any>();
   userName: string;
   password: string;
   successuserName: string;
@@ -28,13 +29,28 @@ export class DialogComponent implements OnInit {
     }
   }
   createNewUser() {
-    this.dialog.closeAll();
-    let dialogBoxSettings = {
+     this.dialog.closeAll();
+    
+     let dialogBoxSettings = {
       height: '300px',
       width: '500px',
-      margin: '0 auto'
+      margin: '0 auto',
+      backdropClass: 'backdropBackground',
+      hasBackdrop: true // false used for prevented users to clicking to background while dialog is open..
     };
-    let Dref = this.dialog.open( CreateNewUserComponent , dialogBoxSettings);
+     let Dref = this.dialog.open( CreateNewUserComponent , dialogBoxSettings);
+     const unsubscribeDref = Dref.afterClosed().subscribe(result => {
+        if(result === 'false') {
+          //window.location.reload();
+          this.submitClicked.emit('false');
+          unsubscribeDref.unsubscribe();
+        }
+        else if(result === undefined){
+          this.submitClicked.emit('false');
+          unsubscribeDref.unsubscribe();
+        }
+    });
+    
 
   }
 }

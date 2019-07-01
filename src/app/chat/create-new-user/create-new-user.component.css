@@ -4,9 +4,24 @@
     flex-direction: column;
     padding: 10px;
 }
+h2{
+    margin: 0;
+    padding: 0;
+}
 .positive {
     background-color: green;
 }
 .mat-form-field {
     padding: 5px;
 }
+.fa-user-plus{
+    color: brown;
+    padding: .4rem;
+}
+.formField{
+    display: flex;
+}
+mat-icon{
+    color:#7d7979;
+}
+

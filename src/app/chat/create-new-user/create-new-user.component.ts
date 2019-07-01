@@ -9,12 +9,12 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./create-new-user.component.css']
 })
 export class CreateNewUserComponent implements OnInit {
-
+  
   formGroup: FormGroup;
   email: string;
   password: string;
   constructor( private firebaseAuthEmployeeService: EmployeeService, private formBuilder: FormBuilder, private snackbar: MatSnackBar  ) { }
-
+  
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
       'email': ['',  [Validators.email, Validators.required ]],
