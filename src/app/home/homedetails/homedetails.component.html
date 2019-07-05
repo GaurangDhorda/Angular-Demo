@@ -21,11 +21,11 @@
 
       <div class="flat-picture" 
                 [style.background-image]="'url(' + emp.imageUrl + ')'" >
-              <div (click)="goNext()">
-                <a class="centerGoNext" (click)="goNext()" title="Next"> <i class="fas fa-angle-double-right fa-2x" ></i></a> 
-              </div>
               <div (click)="goPrevious()">
-                <a class="centerGoPrevious" (click)="goPrevious()" title="Previous"><i class="fas fa-angle-double-left fa-2x"></i></a>
+                  <a class="centerGoPrevious" (click)="goPrevious()" title="Previous"><i class="fas fa-angle-double-left fa-2x"></i></a> 
+              </div>
+              <div (click)="goNext()">
+                  <a class="centerGoNext" (click)="goNext()" title="Next"> <i class="fas fa-angle-double-right fa-2x" ></i></a>
               </div>
       </div>
 </div>

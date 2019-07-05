@@ -67,13 +67,13 @@ export class HomeComponent implements OnInit, OnDestroy {
       });
     } else {
       this.currentID = this.currentID + 1;
-      console.log('Next ID '+ this.currentID);
+      console.log('Next ID ' + this.currentID);
       this.imageSrc = this.Employee[this.currentID].imageUrl;
     }
   }
   goPrevious() {
     const length = this.Employee.length - 1;
-    if ( this.currentID === 0){
+    if ( this.currentID === 0) {
       this.currentID = 0;
       this.snackbar.open('You are in First Item', '', {
         duration: 3000,
