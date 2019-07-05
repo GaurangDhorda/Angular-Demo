@@ -1,31 +1,42 @@
 <div class="title">
   <h2 mat-dialog-title><i class="fas fa-user-check"></i>Login</h2> 
-  <mat-dialog-actions>
-  <button mat-mini-fab color="error"  mat-dialog-close mat-dialog-close="false"  (click)="createNewUser()" class="createNewUser" >
-      <i class="fas fa-user-plus"></i> 
-  </button>
-</mat-dialog-actions>
 </div>
-
+<form [formGroup]="formGroup"  #formDirective="ngForm">
 <mat-dialog-content>
   <div class="form-control-container">
     <mat-form-field >
       <div class="formField">
-        <input type=text matInput placeholder="Enter User Name" [(ngModel)]="userName" > 
+        <input type=text matInput placeholder="Enter User Name" 
+               (keyup.enter)="usernameElementRef.nativeElement.focus()" 
+               formControlName="userName" > 
         <mat-icon> email</mat-icon>
       </div>
+      <mat-error *ngIf= "formGroup.controls['userName'].errors?.required"  > 
+        Email ID is compulsary to enter
+      </mat-error>
+      <mat-error *ngIf="formGroup.controls['userName'].errors?.email" > Enter Valid Email ID</mat-error>
     </mat-form-field>
     <mat-form-field>
       <div class="formField">
-        <input type="password" matInput placeholder="Enter Password" [(ngModel)]="password"/>
+        <input #username type="password"  
+        (keyup.enter)="inputLoginClick()" matInput placeholder="Enter password"  formControlName="password">
         <mat-icon>lock</mat-icon>
       </div>
+      <mat-error *ngIf="formGroup.controls['password'].errors?.required">Password is compulsary to enter</mat-error>
+      <mat-error *ngIf="formGroup.controls['password'].errors?.minlength">Password must be minimum 6 characters long </mat-error>
     </mat-form-field>
   </div>
 </mat-dialog-content>
+</form>
 <mat-dialog-actions>
-  <button color="primary" mat-raised-button mat-dialog-close [mat-dialog-close]="userName" (click)="logIn()">Login</button>
+  <button color="primary" id="buttonLogin" mat-raised-button mat-dialog-close [mat-dialog-close]="formGroup.controls['userName'].value" 
+          [disabled]="!formGroup.valid" (click)="logIn()">Login
+  </button>
   <button mat-raised-button mat-dialog-close mat-dialog-close="false">Try as Guest</button>
   
 </mat-dialog-actions>
-
+<div class="newUser">
+  <button mat-mini-fab color="error" class="newUser" mat-dialog-close mat-dialog-close="false"  (click)="createNewUser()" class="createNewUser" >
+      <i class="fas fa-user-plus"></i> 
+  </button>
+</div>

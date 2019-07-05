@@ -2,7 +2,7 @@
     widows: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 0 0 0 10px;
 }
 .fa-user-check{
     padding:.6rem;
@@ -15,9 +15,16 @@
 h2{
     margin:0;
 }
+.newUser{
+    float: right;
+    padding: .5rem 0 .5rem .5rem;
+    margin-top: 1em;
+    margin-right: -.6em;
+}
 .formField{
     display: flex;
 }
 mat-icon{
     color:#7d7979;
+    margin-left: .5em;
 }

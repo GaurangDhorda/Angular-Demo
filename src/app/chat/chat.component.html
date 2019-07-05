@@ -17,11 +17,12 @@
       [value]="value">
   </mat-progress-spinner>
 </div>
-  <h4>  Wellcome {{userName}}  </h4>
-  <h4 *ngIf = "logoutButton"> Total online users are : {{ totalUser }}  </h4>
-  <button mat-raised-button color="primary" (click)="logout()"  > {{ logoutButton ? 'Logout' : 'Login'}}  </button>
+  <h4 *ngIf="!displaySpinner">  Wellcome {{userName}}  </h4>
+  
+  <h4 *ngIf = "logoutButton && !displaySpinner"> Total online users are : {{ totalUser }}  </h4>
+  <button *ngIf="!displaySpinner" mat-raised-button color="primary" (click)="logout()"  > {{ logoutButton ? 'Logout' : 'Login'}}  </button>
 </div>
-  <div class="chatwraper">
+  <div class="chatwraper" >
     <div class="messages"  id="messages">
       
       <label class="messageLable">Messages : </label>
@@ -39,7 +40,7 @@
           <ng-template #notShow>
             <h4 *ngIf="typing">  {{typing}} is Typing </h4> 
           </ng-template></div>
-      <div class="chatinput" >
+      <div class="chatinput" *ngIf="!displaySpinner">
         
           <mat-form-field class="matInput">
             <input id="inputElement" type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 

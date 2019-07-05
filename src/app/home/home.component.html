@@ -2,20 +2,28 @@
 <h2>Data of API calling</h2>
 <h4>{{ errorMessage }}</h4>
 <div class= "flats">
-     <div class="flat" (click)="detailsData(employee,i)" *ngFor = "let employee of Employee; index as i">
+     <div class="flat" *ngFor = "let employee of Employee; index as i; first as first;  last as last">
           
-            <div class="flat-picture" [title]="employee.name + ' Tooltip: Click here for more details.. '"
+            <div id="myImage" (click)="details(employee,i, first, last)" class="flat-picture" [title]="employee.name + ' Tooltip: Click here for more details.. '"
                   [style.background-image]="'url(' + employee.imageUrl + ')'" > 
             </div>
             <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 
             <div class="card-body" >
-                  <ul>
+                  <ul (click)="details(employee,i, first, last)">
                          <li> <p> {{ employee.name }} - {{ employee.price  | currency : employee.priceCurrency }} </p></li>
-                          <li><i class="fas fa-info-circle"></i></li>
+                         <li><i class="fas fa-info-circle"  title="Show More.."  (click)="detailsData(employee,i)"></i></li>
                   </ul>
              </div>
      </div>
       
+</div>
+<div id="myModal" class="modal">
+      <span class="close" title="Close" (click)="close()" >X</span>
+      <img class="modal-content" alt="Image" [src]="imageSrc" id="image01">
+      <div id="caption">
+            <i class="fas fa-arrow-circle-left fa-3x previous" title="Go Previous" (click)="goPrevious()"  ></i>
+            <i class="fas fa-arrow-circle-right fa-3x next" title="Go Next" (click)="goNext()"  ></i>
+      </div>
 </div>
 
 <!--<button class="btnstyle" (click)="firstClick()">Click me</button> -->

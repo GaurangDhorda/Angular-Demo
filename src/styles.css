@@ -41,7 +41,10 @@ nav ul li a.active{
    width: auto;
    height: auto;
 }
-
+.red-snackbar{
+    background: brown;
+    text-align: center;
+  }
 .backdropBackground {
      /* background-color:rgba(146, 101, 101, 0.4); */
      background: rgba(225, 225, 225, 0.7);

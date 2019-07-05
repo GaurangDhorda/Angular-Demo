@@ -5,11 +5,15 @@ import { EmployeeService } from '../employee.service';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
 
+declare var gtag;
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
+
+
 export class ChatComponent implements OnInit, AfterViewChecked {
 
   container: HTMLElement;
@@ -29,6 +33,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   value = 50;
   displaySpinner = false;
   readOnly = true;
+
   constructor(private chatService: EmployeeService, private dialog: MatDialog, private snackbar: MatSnackBar ) { 
       this.secretCode = 'DONT TELL';
   }
@@ -36,7 +41,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   openDialog() {
     this.userName = '';
     let dialogBoxSettings = {
-      height: '300px',
+      height: '350px',
       width: '500px',
       margin: '0 auto',
      // disableClose: false,
@@ -45,8 +50,12 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     };
     let Dref = this.dialog.open(DialogComponent, dialogBoxSettings);
     Dref.componentInstance.submitClicked.subscribe(result =>{
+      
+      // submitClicked is parameter comes from child to parent [Login Dialog to Chat component ] using @Output in LoginDialog...
+      // Create New User dialog sends value to Login Dialog and LoginDialog sends that values to chatComponent...
+      // submitClicked is event emmitted by Login Dialog... 
       // alert('submitted '+ result);
-      //this.readOnly = ! this.readOnly;
+      // this.readOnly = ! this.readOnly;
       this.openDialog();
     });
     Dref.afterClosed().subscribe(result => {
@@ -55,6 +64,11 @@ export class ChatComponent implements OnInit, AfterViewChecked {
         console.log('result : ', result);
         this.readOnly = ! this.readOnly;
         this.displaySpinner = true;
+        // Google Analytics for login method...
+        gtag('event', 'ChatLogin', {
+          'event_category': 'Chat_Login',
+          'event_label': 'Chat Login Using firebase',
+        });
        //  this.userName = result; 
         this.logoutButton = true;
         this.chatService.getUsers().subscribe(

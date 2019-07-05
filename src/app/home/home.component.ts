@@ -5,6 +5,7 @@ import { Router , ActivatedRoute } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -17,9 +18,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   public errorMessage: string;
   public sub: Subscription;
   public alive: boolean;
-  constructor(private empServiceData: EmployeeService, private router: Router, private activatedRoute: ActivatedRoute) {
+  public imageSrc: string;
+  public currentID: number;
+  public first: boolean;
+  public last: boolean;
+
+  constructor(private empServiceData: EmployeeService, private router: Router,
+              private activatedRoute: ActivatedRoute, private snackbar: MatSnackBar) {
     this.alive = true;
-   }
+  }
 
   ngOnInit() {
     this.empServiceData.getEmployees().pipe(takeWhile(() => this.alive))
@@ -29,14 +36,54 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
       // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
   }
-
+  close() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+  }
   firstClick() {
     console.log('Clicked');
+  }
+
+  details( data, i, first, last ) {
+    this.currentID = parseInt(i, 10); // 10 is radix number to tell i value is going to be converted into decimal number..
+    this.first = first;
+    this.last = last;
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+    this.imageSrc = data.imageUrl;
   }
   detailsData( paramEmployee , i  ) {
 //    this.router.navigate(['home/homedetails', paramEmployee.id]);
       this.router.navigate([ i], { relativeTo: this.activatedRoute});
-      //this is relative path navigation so that works always when path changes too.
+      // this is relative path navigation so that works always when path changes too.
+  }
+  goNext() {
+    const length = this.Employee.length - 1;
+    if (length <= this.currentID ) {
+      this.currentID = 5;
+      this.snackbar.open('You are in Last Item', '', {
+        duration: 3000,
+        panelClass: ['red-snackbar']
+      });
+    } else {
+      this.currentID = this.currentID + 1;
+      console.log('Next ID '+ this.currentID);
+      this.imageSrc = this.Employee[this.currentID].imageUrl;
+    }
+  }
+  goPrevious() {
+    const length = this.Employee.length - 1;
+    if ( this.currentID === 0){
+      this.currentID = 0;
+      this.snackbar.open('You are in First Item', '', {
+        duration: 3000,
+        panelClass: ['red-snackbar']
+      });
+
+    } else {
+    this.currentID = this.currentID - 1;
+    this.imageSrc = this.Employee[this.currentID].imageUrl;
+    }
   }
   ngOnDestroy() {
     this.alive = false;
