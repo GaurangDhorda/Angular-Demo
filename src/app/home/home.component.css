@@ -5,7 +5,7 @@ h1, h2{
 .flats {
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  align-content: center;
   justify-content: space-between;
   margin: 10px;
   height: 100vh;
@@ -15,7 +15,7 @@ h1, h2{
   /*flex-basis: calc(50% - 20px);*/
   flex:0 0 calc(50% - 10px);
   margin-bottom: 10x;
-  
+  border: 1px solid black;
   border-radius: 1px;
   box-shadow: 20px 0px 40px rgba(0, 0, 0, 0.3),
               -20px 0px 40px rgba(0,0,0,0.3);
@@ -142,7 +142,7 @@ h1, h2{
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 50s;
 }
 
 .close:hover,
@@ -168,13 +168,14 @@ h1, h2{
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
 }  
 #caption i{
   font-size: 40px;
   cursor: pointer;
 }
+
 /* Add Animation */
+
 .modal-content, #caption {  
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;

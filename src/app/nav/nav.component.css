@@ -53,7 +53,41 @@ header nav ul li a:hover {
       padding: 0 12px;
       cursor: pointer;
   }
+/* Add Animation */
+ .active:active {  
+    background-color: rgb(73, 69, 67);
+    transition: background-color 1000ms linear;
+    opacity: 0.5;
+    animation-timing-function: steps(60);
+  }
+.responsive {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  .icon:hover{
+
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+  }
+  
+
 @media only screen and (max-width:780px){
+
+    .icon{
+        padding: .5rem;
+        text-align: center;
+        border-radius: 50px;
+    }
     i{
         font-size: 2em;
     }
@@ -61,5 +95,9 @@ header nav ul li a:hover {
     header nav ul li  {
         float: left;
         padding: 1.5rem 2.5rem;
+    }
+    header .logo{
+        margin-left: .5em;
+        letter-spacing: 1px;
     }
 }

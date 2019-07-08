@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;  
     margin: 2px;
-    height: 100vh;
+    height: auto;
 
 }
 .recipe-card{
@@ -28,7 +28,7 @@
 }
 h4{
   margin:0;
-  color:brown;
+  color:#c9582f;
   font-weight: bold;
 }
 .viewport-example{
@@ -36,28 +36,31 @@ h4{
 }
 p{
   margin:5px;
-  font-weight: bold;
-  opacity: .8;
+  font-weight: 600;
+  color: #262b35;
+  
 }
 :host ::ng-deep .highlightText {
   background: yellow;
   }
 .recipe_buttons {
-  border: solid 2px #e74c3c;
+  border: solid 2px #c9582f;
+  color: #262b35;
   background: transparent;
   padding: 0.4rem 0.6rem;
   margin: 0 0.2rem;
   border-radius: 1px;
   font-size: 0.8rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: .8rem;
   text-align: center;
   float:right;
   cursor: pointer;
 }
 .recipe_buttons:hover{
-  background-color: #e74c3c;
+  background-color: #c9582f;
+  color: black;
 }
 
 /*  .flex div{

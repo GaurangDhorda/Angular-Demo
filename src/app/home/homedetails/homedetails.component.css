@@ -73,12 +73,14 @@ h3{
     top: 40%;
     font-size: 40px;
     opacity: .7;
+    cursor: pointer;
   }
   .centerGoPrevious{
     position: relative;
     top: 40%;
     font-size: 40px;
     opacity: .7;
+    cursor: pointer;
   }
   .flat-picture:hover  a  {
     opacity: 1;
@@ -144,6 +146,7 @@ h3{
     }
     .centerGoNext, .centerGoPrevious {
       font-size: 20px;
+      
     }
   }
   @media only screen and (max-width: 330px){

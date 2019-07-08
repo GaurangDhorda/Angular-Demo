@@ -23,7 +23,7 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
   constructor( private formBuilder: FormBuilder, private formService: EmployeeService) { }
 
   ngOnInit() {
-    this.breakPoint = (window.innerWidth <= 700) ? 1 : 2;
+    this.breakPoint = (window.innerWidth <= 780) ? 1 : 2;
     this.formGroup = this.formBuilder.group({
       '$key': [null],
       'fullname':['', Validators.required],
@@ -96,7 +96,7 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
   }
 
   inistializeFormGroup() {
-    //this.formGroup.controls[' fullname '].setValidators(Validators.required);
+    // this.formGroup.controls[' fullname '].setValidators(Validators.required);
     this.formGroup.setValue({
       $key: null,
       fullname: '',
@@ -110,7 +110,7 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
     });
   }
   onResize(event) {
-    this.breakPoint = (event.target.innerWidth <= 700) ? 1 : 2;
+    this.breakPoint = (event.target.innerWidth <= 780) ? 1 : 2;
   }
 
 }

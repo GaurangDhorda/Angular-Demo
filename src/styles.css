@@ -73,7 +73,7 @@ nav ul li a.active{
         grid-column-gap: .5em;
         align-content: center;
         align-items: center;
-        padding: 1em;
+        padding: .8em;
     }
     .icon{
         display: flex;

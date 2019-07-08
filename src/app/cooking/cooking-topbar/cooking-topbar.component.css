@@ -1,9 +1,14 @@
+body{
+  height: auto;
+}
+
 router-outlet + *  {
     padding: 0 16px;
   }
 section{
     width: auto;
     margin: 0 0;
+    height: auto;
   }
 
 .cookingcontainer{
@@ -18,6 +23,9 @@ section{
     justify-items: center;
     margin-bottom: 10px;
     opacity: .8px;
+    position: sticky;
+    top:0px;
+
 }
 .float-left{
   float: left;
