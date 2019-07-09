@@ -151,7 +151,7 @@
           flex:0 0 10%;
           height: 17%;
           text-align: left;
-          position: relative;
+          position: sticky;
           bottom: 0px;
       }
       .chatinput input{

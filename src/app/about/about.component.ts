@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit, OnChanges {
-
+  public title = 'About';
   public date = new Date();
   constructor(private routes: ActivatedRoute) { // activateRoute used to get parameters and values defined in routerLink..
     console.log('Constructor of aboutComponent');

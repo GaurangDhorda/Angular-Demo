@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CookingRoutingModule , cookingComponent } from './cooking-routing.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [ cookingComponent],
@@ -12,7 +13,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     HttpClientModule,
     FormsModule,
     CookingRoutingModule,
-    ScrollingModule
+    ScrollingModule,
+    MatProgressBarModule
 
   ]
 })

@@ -11,4 +11,12 @@
 div h1{
   text-align: center;
 }
+.mainView{
+  display:flex;
+}
 
+@media only screen and (max-width:780px){
+  .mainView{
+    display: block;
+  }
+}

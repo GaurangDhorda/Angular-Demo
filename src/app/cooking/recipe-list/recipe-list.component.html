@@ -1,6 +1,6 @@
+<mat-progress-bar mode="indeterminate" value=80 *ngIf="isWait" > </mat-progress-bar>
 <div class="flex">
 
-  
   <ng-container class="flexc" *ngFor="let recipe of cooking ; index as i">
       <ng-container *ngIf="recipe.title.trim().toLowerCase().includes(cookingRecipe.getSearchByItemName().trim().toLowerCase())"
       >

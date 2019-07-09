@@ -1,4 +1,6 @@
+<mat-progress-bar mode="indeterminate" value=80 *ngIf="isWaiting" > </mat-progress-bar>
 <app-nav (childEvent)="message=$event" ></app-nav>
+
 
 <!doctype html>
 <html lang="en">
@@ -8,10 +10,9 @@
 </head>
 
 <body>
-        
-    <section>
-        <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
-    </section>
+            <section>                
+                <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
+            </section>
 </body>
 
 </html>

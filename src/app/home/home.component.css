@@ -1,6 +1,28 @@
+body {
+  height: auto;
+}
+
 h1, h2{
   text-align: center;
-  color: royalblue;
+  color: black;
+  box-shadow: 1px 1px 5px red;
+  padding: 1rem;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  letter-spacing: 1px;
+  background: linear-gradient(25deg, #efbbbb, #F44336);
+}
+h4{
+  font-size: 20px;
+  padding: 1rem;
+  opacity: .8;
+  word-break: break-word;
+  box-shadow: 2px 3px 5px 0;
+}
+.fa-database{
+  font-size: 1em;
+  margin: 5px;
 }
 .flats {
   display: flex;
@@ -8,13 +30,13 @@ h1, h2{
   align-content: center;
   justify-content: space-between;
   margin: 10px;
-  height: 100vh;
+  
 }
 
 .flat {
   /*flex-basis: calc(50% - 20px);*/
   flex:0 0 calc(50% - 10px);
-  margin-bottom: 10x;
+  margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 1px;
   box-shadow: 20px 0px 40px rgba(0, 0, 0, 0.3),
@@ -44,7 +66,7 @@ h1, h2{
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  opacity: .9;
+  margin: 5px;
   align-content: center;
   align-items: center;
   padding-left: 5px;
@@ -57,7 +79,6 @@ h1, h2{
 .card-body ul li p, i{
   font-size: 15px;
   font-weight: bold;
-  opacity: 0.9;
   margin: 0px;
   cursor: pointer;
 }

@@ -1,6 +1,6 @@
-<h1>Home component</h1>
-<h2>Data of API calling</h2>
-<h4>{{ errorMessage }}</h4>
+<h2>  <i class="fas fa-database "></i> Data of API calling</h2>
+<mat-progress-bar mode="indeterminate" value=80 *ngIf="isWait"></mat-progress-bar>
+<h4 *ngIf="errorMessage">{{ errorMessage }}</h4>
 <div class= "flats">
      <div class="flat" *ngFor = "let employee of Employee; index as i; first as first;  last as last">
           
@@ -9,8 +9,8 @@
             </div>
             <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 
             <div class="card-body" >
-                  <ul (click)="details(employee,i, first, last)">
-                         <li> <p> {{ employee.name }} - {{ employee.price  | currency : employee.priceCurrency }} </p></li>
+                  <ul >
+                         <li> <p (click)="details(employee,i, first, last)"> {{ employee.name }} - {{ employee.price  | currency : employee.priceCurrency }} </p></li>
                          <li><i class="fas fa-info-circle"  title="Show More.."  (click)="detailsData(employee,i)"></i></li>
                   </ul>
              </div>

@@ -10,6 +10,7 @@ import {AbstractControl} from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit, AfterViewInit {
+  public title = 'Contact';
   messageForm: FormGroup;
   submitted = false;
   success = false;

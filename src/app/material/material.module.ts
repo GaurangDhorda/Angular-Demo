@@ -8,12 +8,14 @@ import { MatToolbarModule, MatIconModule, MatCardModule,
           MatCheckboxModule, MatSnackBarModule, MatProgressSpinnerModule
         } from '@angular/material';
 import { MatBadgeModule } from '@angular/material/badge';
+import {MatProgressBarModule} from '@angular/material';
 
 
 const MaterialComponentsArray = [ MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
                                   MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule,
                                   MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
-                                  MatNativeDateModule, MatCheckboxModule, MatSnackBarModule,MatProgressSpinnerModule
+                                  MatNativeDateModule, MatCheckboxModule, MatSnackBarModule,MatProgressSpinnerModule,
+                                  MatProgressBarModule
                                 ]
 @NgModule({
   imports: [ HttpClientModule, FormsModule, MaterialComponentsArray],

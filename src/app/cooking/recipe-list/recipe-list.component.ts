@@ -10,17 +10,23 @@ import { ICooking } from '../icooking';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+  public title = 'Cooking/List';
 public cooking: ICooking[];
 public errorMessage: string;
 public counter = 0;
+public isWait:boolean;
 
   constructor(private cookingRecipe: CookingServiceService) { }
 
   ngOnInit() {
+    this.isWait = true;
     this.cookingRecipe.getRecipe()
     .subscribe(
-          data => this.cooking = data['recipes'], // ' recipe ' is json object
-          err => this.errorMessage = err
+          data => {
+            this.cooking = data['recipes'];
+          } , 
+          err => this.errorMessage = err,
+          () => this.isWait = false
     );
     }
 

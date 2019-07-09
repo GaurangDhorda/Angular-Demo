@@ -3,6 +3,16 @@
 </mat-toolbar>
 
 <form [formGroup]="formGroup" class="mat-form" #formDirective="ngForm" (ngSubmit)="onSubmit()"  >
+   <div class="indicator" id="loader"> 
+    <mat-progress-spinner *ngIf = "displaySpinner"
+      class="example-margin"
+      [diameter]="50"
+      [color]="color"
+      [mode]="mode"
+      [value]="value"
+      style="margin: 0 auto;">
+    </mat-progress-spinner>
+  </div>
   <mat-grid-list [cols]="breakPoint" rowHeight="300px" (window:resize)="onResize($event)">
     <!-- breakPoint is variable for dividing grid colomn to row in mobile view fires onResize()function   -->
       <mat-grid-tile>

@@ -15,7 +15,7 @@ declare var gtag;
 
 
 export class ChatComponent implements OnInit, AfterViewChecked {
-
+  public title = 'Chat';
   container: HTMLElement;
   userName: string;
   totalUser: number;

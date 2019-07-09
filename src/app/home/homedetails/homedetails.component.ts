@@ -22,13 +22,12 @@ public chk:boolean;
     this.chk = false;
     console.log('onInit');
    // let id = parseInt( this.route.snapshot.paramMap.get( 'id' ) );
-    //this.empId = id;
+    // this.empId = id;
 
     this.empService.getEmployees()
     .subscribe(
         data => {
           this.employee =  data;
-          
         },
         err => this.errorMessage = err
       );
@@ -38,33 +37,26 @@ public chk:boolean;
       this.empId = id;
       console.log('id :' , this.empId);
     });
-    
-   
  }
- ngAfterContentInit(){
-   
- }
- ngAfterContentChecked () {
+
+ ngAfterContentChecked() {
   // this.imageUrl = this.employee.find(x => x.id === this.empId);
  /* this.emp = this.employee.filter( (employeedata, index) =>{
     return employeedata.id === this.empId;
     //return employeedata[index] === this.empId; 
   } ); */ 
-  //console.log( this.employee[this.empId].find ( data => data.id === 'this.employee[this.empId].id' ));
+  // console.log( this.employee[this.empId].find ( data => data.id === 'this.employee[this.empId].id' ));
   this.emp = this.employee [this.empId];
-   var lengthofdata = this.employee.length
+  var lengthofdata = this.employee.length;
   this.chk = lengthofdata -1 >= this.empId;
-
   console.log(this.chk);
- 
 }
   goNext()  {
-  
     if (this.empId === 5){
       alert('already in Last list item');
-      this.empId=5;
+      this.empId = 5;
     } else{
-    let nextId = this.empId + 1 ; 
+    let nextId = this.empId + 1 ;
     this.router.navigate(['/home' , nextId]);
     }
   }
@@ -74,11 +66,10 @@ public chk:boolean;
       alert('already in First list item');
       this.empId = 0;
     } else{
-    let previousId = this.empId - 1 ; 
+    let previousId = this.empId - 1 ;
     this.router.navigate(['/home' , previousId]);
     }
   }
-
   goBack() {
     this.router.navigate(['../' , {id: this.empId}], { relativeTo: this.route });
   }

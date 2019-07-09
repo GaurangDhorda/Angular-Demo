@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { DataModel } from './datamodel';
+import { MatSnackBar } from '@angular/material';
+
 
 @Component({
   selector: 'app-material-contact',
@@ -11,6 +13,11 @@ import { DataModel } from './datamodel';
 export class MaterialContactComponent implements OnInit {
 formGroup: FormGroup;
 breakPoint: number;
+color = 'primary';
+mode = 'indeterminate';
+value = 50;
+displaySpinner: boolean;
+
 
 departments = [
   {id: 3, value: 'Dep 1'},
@@ -20,9 +27,11 @@ departments = [
 dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
 @ViewChild('formDirective') formDirective: NgForm;
 
-  constructor( private formBuilder: FormBuilder, private formService: EmployeeService) { }
+  constructor( private formBuilder: FormBuilder, private formService: EmployeeService, private snackbar: MatSnackBar) { }
 
   ngOnInit() {
+    const divLoader = document.getElementById('loader');
+    divLoader.classList.add('hidden');
     this.breakPoint = (window.innerWidth <= 780) ? 1 : 2;
     this.formGroup = this.formBuilder.group({
       '$key': [null],
@@ -38,20 +47,28 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
   }
 
   onSubmit() {
+    const divLoader = document.getElementById('loader');
+    divLoader.classList.remove('hidden');
+    this.displaySpinner = true;
     if (this.formGroup.valid) {
       this.dataModel = this.formGroup.value;
-      //alert(this.formGroup.controls['fullname'].value);
-      //alert(this.formGroup.getRawValue());
-      //console.log(this.formGroup.getRawValue());
-      //console.log('dataModel: ' ,this.dataModel);
+      // alert(this.formGroup.controls['fullname'].value);
+      // alert(this.formGroup.getRawValue());
+      // console.log(this.formGroup.getRawValue());
+      // console.log('dataModel: ' ,this.dataModel);
       this.formService.onSubmit(this.dataModel).subscribe(
         data => { console.log('success', data);
                   this.onClear();
-                  window.alert('data saved'); },
+                  this.snackbar.open(
+                      'Data Saved Succeessfully',
+                       '', { duration: 3000 }
+                   );
+                  divLoader.classList.add('hidden');
+                  this.displaySpinner = false;
+                },
         err => console.log('failure ', err)
       );
-    }
-    else{
+    } else {
       this.onClear();
     }
   }

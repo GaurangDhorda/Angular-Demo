@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  public title = 'Home';
   public Employee = [];
   public errorMessage: string;
   public sub: Subscription;
@@ -22,17 +23,25 @@ export class HomeComponent implements OnInit, OnDestroy {
   public currentID: number;
   public first: boolean;
   public last: boolean;
-
+  public isWait: boolean;
   constructor(private empServiceData: EmployeeService, private router: Router,
               private activatedRoute: ActivatedRoute, private snackbar: MatSnackBar) {
     this.alive = true;
   }
 
   ngOnInit() {
+    this.isWait = true;
     this.empServiceData.getEmployees().pipe(takeWhile(() => this.alive))
     .subscribe(
-        data => this.Employee = data,
-        err => this.errorMessage = err
+        data => {
+          this.Employee = data;
+          this.isWait = true;
+        },
+        err => {
+          this.errorMessage = err;
+          this.isWait = false;
+        }  ,
+        () =>  this.isWait = false
       );
       // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
   }
