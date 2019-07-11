@@ -4,7 +4,7 @@ body {
 
 h1, h2{
   text-align: center;
-  color: black;
+  color: #1b1b32;
   box-shadow: 1px 1px 5px red;
   padding: 1rem;
   margin: 0;
@@ -12,6 +12,19 @@ h1, h2{
   top: 0;
   letter-spacing: 1px;
   background: linear-gradient(25deg, #efbbbb, #F44336);
+}
+.fa-map-marker-alt{
+  position: relative;
+  float: right;
+  padding: .6rem;
+  font-size: 1em;
+  border-radius: 100%;
+  background: #1b1b32;
+  color: #f3564c;
+}
+.fa-map-marker-alt:hover{
+  color: #c0b4b3;
+  background: #47117d;
 }
 h4{
   font-size: 20px;
@@ -23,6 +36,9 @@ h4{
 .fa-database{
   font-size: 1em;
   margin: 5px;
+}
+.fa-database:hover{
+  color: #47117d;
 }
 .flats {
   display: flex;
@@ -64,6 +80,7 @@ h4{
 }
 .card-body ul{
   display: flex;
+  
   justify-content: space-between;
   font-weight: bold;
   margin: 5px;
@@ -141,6 +158,93 @@ h4{
   .next:hover, .previous:hover{
     color: #3ac162;
   }
+ 
+  /* map Viewer */ 
+
+  .map {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  agm-map{
+   /* margin: auto; width: 80vw; */
+    height: 95%;
+    display: block;
+    position: relative;
+    left: 10px;
+    right: 10px;
+    
+     
+  }
+  .marker-info{
+    font-weight: 600;
+    word-break: break-word;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 15px;
+    padding-bottom: 10px;
+    margin: 0 1px 10px 1px;
+    max-width: 200px;
+    background: #f1f1f1;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+  }
+  .marker-container{
+    width: 50%;
+  }
+  .marker-text{
+    padding: 1px;
+    opacity: .9;
+    width: 95%;
+    color: #072929;
+    margin: 0;
+    letter-spacing: .5px;
+  }
+  .map-info-image{
+    max-width: 200px;
+    border-radius: 10px;
+  }
+  .marker-infot-price{
+    color: #F44336;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .marker-label{
+    color: #0d0d0d;
+    opacity: 1;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-right: 5px;
+  }
+
+  /* The Close Button */
+.map-close {
+  position: absolute;
+  /* top: 15px; right: 35px; font-size: 40px; */
+  top: -6px;
+  right: 5px;
+  color: #f1f1f1;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.map-close:hover,
+.map-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Image viewer */
 
   .modal {
     display: none; /* Hidden by default */
@@ -220,5 +324,36 @@ h4{
     }
     .modal-content {
       width: 100%;
+    }
+    h2{
+      font-size: 1.3rem;
+      text-align: left;
+    }
+    .fa-map-marker-alt{
+      text-align: center;
+      padding: .5rem;
+    }
+    .marker-infot-price{
+      font-size: 1.2em;
+      margin-bottom: 5px
+    }
+    .map-info-image{
+      width: 100%;
+    }
+    .marker-info{
+      font-size: 1em;
+      padding: 5px;
+      letter-spacing: 0px;
+    }
+    .marker-text{
+      width: 100%;
+    }
+    .map-close{
+      position: relative;
+      float: right;
+      font-size: 30px;
+     /* top:-15px; */
+     top:-35px;
+      right: 5px;
     }
   }

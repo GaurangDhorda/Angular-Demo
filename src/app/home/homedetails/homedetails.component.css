@@ -21,11 +21,15 @@ label{
   color: blueviolet;
   cursor: pointer;
 }
+.fa-angle-double-left:hover, .fa-angle-double-right:hover{
+  color: #1f0a9f;
+}
 .fa-arrow-circle-left{
   color: #4CAF50;
 }
 .fa-arrow-circle-left:hover{
   opacity: .8;
+  cursor: pointer;
 }
 h3{
   color: rgb(15, 15, 15);

@@ -1,4 +1,4 @@
-<h2>  <i class="fas fa-database "></i> Data of API calling</h2>
+<h2>  <i class="fas fa-database" title="Data of API calling"></i> Hotels of Paris City <i class="fas fa-map-marker-alt" (click)="showMapView()" title="Paris City on Map"></i></h2>
 <mat-progress-bar mode="indeterminate" value=80 *ngIf="isWait"></mat-progress-bar>
 <h4 *ngIf="errorMessage">{{ errorMessage }}</h4>
 <div class= "flats">
@@ -15,7 +15,24 @@
                   </ul>
              </div>
      </div>
-      
+</div>
+<div id="maps" class="map">
+      <span class="map-close" title="Close" (click)="closeMapView()" >X</span>
+      <agm-map (mapClick)="close_window()" [latitude] = 48.8566 [longitude] = 2.3522 [zoom]="11"> "'url(' + employee.imageUrl + ')'"
+                  <agm-marker  *ngFor="let marker of Employee" [label]="{text: 'i', color: '#FFFFFF', fontSize: '20px'}"  
+                              [latitude]=marker.lat [longitude]=marker.lng (markerClick)="select_marker(infoWindow)">
+                              <agm-info-window class="marker-container" [disableAutoPan]="false" #infoWindow>
+                                          <div class="marker-info"> 
+                                                <label class="marker-label">Name</label> <br> 
+                                                <p class="marker-text"> {{marker.name}} </p>
+                                                <div class="marker-infot-price">
+                                                      <label class="marker-label">Price</label> {{ marker.price  | currency : marker.priceCurrency }}  
+                                                </div>
+                                                <img class="map-info-image" [src]="marker.imageUrl">
+                                          </div>
+                              </agm-info-window>
+                  </agm-marker>
+      </agm-map>
 </div>
 <div id="myModal" class="modal">
       <span class="close" title="Close" (click)="close()" >X</span>

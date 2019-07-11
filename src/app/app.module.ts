@@ -22,7 +22,7 @@ import { environment } from '../environments/environment';
 import { MatSnackBar } from '@angular/material';
 import { CreateNewUserComponent } from './chat/create-new-user/create-new-user.component';
 // import { AdsenseModule } from 'ng2-adsense';
-
+import { AgmCoreModule } from '@agm/core';
  //ShoppingModule,
 //CookingModule,
 @NgModule({
@@ -55,6 +55,13 @@ import { CreateNewUserComponent } from './chat/create-new-user/create-new-user.c
     HttpClientModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/Angular-Demo/ngsw-worker.js', { enabled: environment.production }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBg34I4bCxMwjU9YYJz7kibwanbFIR_9sw'
+      /* apiKey is required, unless you are a 
+      premium customer, in which case you can 
+      use clientId 
+      */
+    })
   //  AdsenseModule
     
   ],

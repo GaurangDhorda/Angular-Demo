@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   public first: boolean;
   public last: boolean;
   public isWait: boolean;
+  infoWindowOpened = null;
+  previous_info_window = null;
   constructor(private empServiceData: EmployeeService, private router: Router,
               private activatedRoute: ActivatedRoute, private snackbar: MatSnackBar) {
     this.alive = true;
@@ -49,6 +51,20 @@ export class HomeComponent implements OnInit, OnDestroy {
     const modal = document.getElementById('myModal');
     modal.style.display = 'none';
   }
+  close_window(){
+    if (this.previous_info_window != null ) {
+      this.previous_info_window.close();
+      }    
+    }
+  select_marker(infoWindow) {
+    if (this.previous_info_window == null) {
+     this.previous_info_window = infoWindow;
+    } else {
+     this.infoWindowOpened = infoWindow;
+     this.previous_info_window.close();
+    }
+    this.previous_info_window = infoWindow;
+   }
   firstClick() {
     console.log('Clicked');
   }
@@ -93,6 +109,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.currentID = this.currentID - 1;
     this.imageSrc = this.Employee[this.currentID].imageUrl;
     }
+  }
+  showMapView() {
+    const map = document.getElementById('maps');
+    map.style.display = 'block';
+  }
+  closeMapView() {
+    const map = document.getElementById('maps');
+    map.style.display = 'none';
   }
   ngOnDestroy() {
     this.alive = false;
