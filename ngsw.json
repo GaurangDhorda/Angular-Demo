@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1562931397773,
+  "timestamp": 1562934655623,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
         "https://gaurangdhorda.github.io/Angular-Demo/es2015-polyfills.d9453fb2d504b0a47535.js",
         "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico",
         "https://gaurangdhorda.github.io/Angular-Demo/index.html",
-        "https://gaurangdhorda.github.io/Angular-Demo/main.8b95345724f654dcff28.js",
+        "https://gaurangdhorda.github.io/Angular-Demo/main.0959735355a7c5f00476.js",
         "https://gaurangdhorda.github.io/Angular-Demo/polyfills.2b767098c09ef2304dbf.js",
         "https://gaurangdhorda.github.io/Angular-Demo/runtime.3ebe4b9d0655530597d4.js",
         "https://gaurangdhorda.github.io/Angular-Demo/styles.639ab989465e27057f33.css"
@@ -73,8 +73,8 @@
     "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://gaurangdhorda.github.io/Angular-Demo/es2015-polyfills.d9453fb2d504b0a47535.js": "018be373ae4c7714a9968bc97054d6217c7e369f",
     "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "5600c25426824873ae9482fbc03624cd70b491e2",
-    "https://gaurangdhorda.github.io/Angular-Demo/main.8b95345724f654dcff28.js": "794d0d758e935b8e602f11407431921f6b3ca89e",
+    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "a9555aaa9e167d3465cc2bac67535201ba66164e",
+    "https://gaurangdhorda.github.io/Angular-Demo/main.0959735355a7c5f00476.js": "7278ebf779cf8d1d8fa7ae1a4f9506f37ed61e20",
     "https://gaurangdhorda.github.io/Angular-Demo/polyfills.2b767098c09ef2304dbf.js": "a0fa042a7cd96d0967a6ebe953ae6a84330835da",
     "https://gaurangdhorda.github.io/Angular-Demo/runtime.3ebe4b9d0655530597d4.js": "cfa89ea0fac4fca0f6066feb2257ee30ea2039e0",
     "https://gaurangdhorda.github.io/Angular-Demo/styles.639ab989465e27057f33.css": "5ce0e9e45747839e688f128ad768fe100281ac88"
