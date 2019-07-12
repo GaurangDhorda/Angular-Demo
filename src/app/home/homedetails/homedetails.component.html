@@ -1,4 +1,4 @@
-<div class= "fla" *ngIf="chk ; else notFound"  >
+<div class= "fla" *ngIf="chk; else notFound"  >
       
       <div class="nextprevious">
               <div > 
@@ -12,15 +12,15 @@
       
       <div class="flat-body">
         <div class="titleGroup">
-            <h3> <p> <label> Name: </label> <br> <label class="lableDetails"> {{ emp.name }} </label> <br>
-                  <label> Price:</label> <br> <label class="lableDetails"> {{emp.price | currency: emp.priceCurrency}} </label>
+            <h3> <p> <label> Name: </label> <br> <label class="lableDetails"> {{ employee.name }} </label> <br>
+                  <label> Price:</label> <br> <label class="lableDetails"> {{employee.price | currency: employee.priceCurrency}} </label>
                  </p> 
             </h3> 
         </div>  
       </div>
 
       <div class="flat-picture" 
-                [style.background-image]="'url(' + emp.imageUrl + ')'" >
+                [style.background-image]="'url(' + employee.imageUrl + ')'" >
               <div (click)="goPrevious()">
                   <a class="centerGoPrevious" (click)="goPrevious()" title="Previous"><i class="fas fa-angle-double-left fa-2x"></i></a> 
               </div>
@@ -30,7 +30,7 @@
       </div>
 </div>
   
-<ng-template #notFound  class="noRecord">
+<ng-template  #notFound  class="noRecord">
     <div  class="noRecordGoBack"> 
         <i class="fas fa-arrow-circle-left fa-3x" title="Go Back" (click)="goBack()" ></i>
     </div>
