@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material';
 export class HomedetailsComponent implements OnInit {
 public empId;
 public employee = [];
+public employeeView = [];
 public imageUrl: string;
 public errorMessage: string;
 public chk: boolean;
@@ -42,13 +43,16 @@ lengthofdata;
             this.empId = id;
           });
             // then get only data of passed id.
-          this.employee = this.employee [this.empId];
+          this.employeeView = this.employee [this.empId];
             // set data found or not view.. see if condition of html file value of chk..
           this.chk = this.lengthofdata-1 >= this.empId;
           console.log('chk ' + this.chk );
         }
       );
 
+  }
+  ngAfterContentChecked() {
+    this.employeeView = this.employee[this.empId];
   }
   goNext()  {
     if (this.empId === 5) {

@@ -12,15 +12,15 @@
       
       <div class="flat-body">
         <div class="titleGroup">
-            <h3> <p> <label> Name: </label> <br> <label class="lableDetails"> {{ employee.name }} </label> <br>
-                  <label> Price:</label> <br> <label class="lableDetails"> {{employee.price | currency: employee.priceCurrency}} </label>
+            <h3> <p> <label> Name: </label> <br> <label class="lableDetails"> {{ employeeView.name }} </label> <br>
+                  <label> Price:</label> <br> <label class="lableDetails"> {{employeeView.price | currency: employeeView.priceCurrency}} </label>
                  </p> 
             </h3> 
         </div>  
       </div>
 
       <div class="flat-picture" 
-                [style.background-image]="'url(' + employee.imageUrl + ')'" >
+                [style.background-image]="'url(' + employeeView.imageUrl + ')'" >
               <div (click)="goPrevious()">
                   <a class="centerGoPrevious" (click)="goPrevious()" title="Previous"><i class="fas fa-angle-double-left fa-2x"></i></a> 
               </div>
