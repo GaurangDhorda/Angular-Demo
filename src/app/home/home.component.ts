@@ -6,7 +6,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
-
+import { MapserviceService } from '../mapservice.service';
 
 @Component({
   selector: 'app-home',
@@ -26,11 +26,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   public isWait: boolean;
   infoWindowOpened = null;
   previous_info_window = null;
+  public currentLat;
+  public currentLng;
   constructor(private empServiceData: EmployeeService, private router: Router,
               private activatedRoute: ActivatedRoute, private snackbar: MatSnackBar) {
     this.alive = true;
   }
-
+  
   ngOnInit() {
     this.isWait = true;
     this.empServiceData.getEmployees().pipe(takeWhile(() => this.alive))
@@ -47,16 +49,20 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
       // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
   }
+  
   close() {
+    // closes imageViewer 
     const modal = document.getElementById('myModal');
     modal.style.display = 'none';
   }
-  close_window(){
+  close_window() {
+    // closes marker info on map by clicking outside of marker if opened..
     if (this.previous_info_window != null ) {
       this.previous_info_window.close();
-      }    
-    }
+      }
+  }
   select_marker(infoWindow) {
+    // closes already opended marker when clicking new marker..
     if (this.previous_info_window == null) {
      this.previous_info_window = infoWindow;
     } else {
@@ -70,6 +76,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   details( data, i, first, last ) {
+    // opens Image viewer dialog window.. 
     this.currentID = parseInt(i, 10); // 10 is radix number to tell i value is going to be converted into decimal number..
     this.first = first;
     this.last = last;
@@ -78,6 +85,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.imageSrc = data.imageUrl;
   }
   detailsData( paramEmployee , i  ) {
+    // opens more details of image selected component fire HomeDetailsComponent by router..
 //    this.router.navigate(['home/homedetails', paramEmployee.id]);
       this.router.navigate([ i], { relativeTo: this.activatedRoute});
       // this is relative path navigation so that works always when path changes too.
@@ -110,6 +118,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.imageSrc = this.Employee[this.currentID].imageUrl;
     }
   }
+  
   showMapView() {
     const map = document.getElementById('maps');
     map.style.display = 'block';

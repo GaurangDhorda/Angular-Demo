@@ -47,10 +47,10 @@ dataModel = new DataModel(null, '', '', '' , '', '1', '0', '', false) ;
   }
 
   onSubmit() {
-    const divLoader = document.getElementById('loader');
-    divLoader.classList.remove('hidden');
-    this.displaySpinner = true;
     if (this.formGroup.valid) {
+      const divLoader = document.getElementById('loader');
+      divLoader.classList.remove('hidden');
+      this.displaySpinner = true;
       this.dataModel = this.formGroup.value;
       // alert(this.formGroup.controls['fullname'].value);
       // alert(this.formGroup.getRawValue());
