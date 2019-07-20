@@ -12,7 +12,7 @@ import { MapserviceService } from '../mapservice.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit, OnDestroy {
   public title = 'Home';
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public first: boolean;
   public last: boolean;
   public isWait: boolean;
-  infoWindowOpened = null;
+  infoWindowOpened =null ;
   previous_info_window = null;
   public currentLat;
   public currentLng;
@@ -58,13 +58,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   close_window() {
     // closes marker info on map by clicking outside of marker if opened..
-    if (this.previous_info_window != null ) {
+    if (this.previous_info_window !== null
+       ) {
       this.previous_info_window.close();
       }
   }
   select_marker(infoWindow) {
     // closes already opended marker when clicking new marker..
-    if (this.previous_info_window == null) {
+    if (this.previous_info_window === null) {
      this.previous_info_window = infoWindow;
     } else {
      this.infoWindowOpened = infoWindow;
@@ -83,6 +84,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.last = last;
     const modal = document.getElementById('myModal');
     modal.style.display = 'block';
+    console.log('imageUrl ' + data.imageUrl);
     this.imageSrc = data.imageUrl;
   }
   detailsData( paramEmployee , i  ) {

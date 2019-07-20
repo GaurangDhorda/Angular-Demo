@@ -30,7 +30,7 @@
                                                 <div class="marker-infot-price">
                                                       <label class="marker-label">Price</label> {{ marker.price  | currency : marker.priceCurrency }}  
                                                 </div>
-                                                <img class="map-info-image" [src]="marker.imageUrl">
+                                               <img class="map-info-image" [src]="marker?.imageUrl">
                                           </div>
                               </agm-info-window>
                   </agm-marker>
@@ -38,7 +38,7 @@
 </div>
 <div id="myModal" class="modal">
       <span class="close" title="Close" (click)="close()" >X</span>
-      <img class="modal-content" alt="Image" [src]="imageSrc" id="image01">
+       <img class="modal-content" *ngIf="imageSrc" alt="Image" [src]="imageSrc" id="image01">
       <div id="caption">
             <i class="fas fa-arrow-circle-left fa-3x previous" title="Go Previous" (click)="goPrevious()"  ></i>
             <i class="fas fa-arrow-circle-right fa-3x next" title="Go Next" (click)="goNext()"  ></i>
@@ -46,6 +46,3 @@
 </div>
 
 <!--<button class="btnstyle" (click)="firstClick()">Click me</button> -->
-
-
-

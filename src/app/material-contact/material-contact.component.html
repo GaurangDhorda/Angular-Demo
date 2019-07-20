@@ -20,35 +20,43 @@
         <input type="hidden" formControlName="key">
         <mat-form-field>
           <input id="fullname" formControlName="fullname" matInput placeholder="Full Name*">
+          <ng-container *ngIf="!editData"  matSuffix>
           <button mat-button matSuffix mat-icon-button
-                 *ngIf="!formGroup.controls['fullname'].value == '' && !editData ">
+                 *ngIf="!formGroup.controls['fullname'].value == '' ">
             <mat-icon>close</mat-icon>
           </button>
+        </ng-container>
             <mat-error>Full Name is compulsary to enter</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input formControlName="email" matInput placeholder="Email">
+            <ng-container *ngIf="!editData"  matSuffix>
             <button mat-button matSuffix mat-icon-button area-label="Clear" 
-                    *ngIf="!formGroup.controls['email'].value == ''  && !editData">
+                    *ngIf="!formGroup.controls['email'].value == '' ">
                 <mat-icon>close</mat-icon>
               </button>
+            </ng-container>
             <mat-error>Invalid Email address</mat-error>
           </mat-form-field>
           <mat-form-field>
               <input formControlName="mobile" matInput placeholder="Mobile*">
-              <button mat-button matSuffix mat-icon-button area-label="Clear" 
-                      *ngIf="!formGroup.controls['mobile'].value == ''  && !editData">
+            <ng-container *ngIf="!editData"  matSuffix>
+              <button mat-button mat-icon-button area-label="Clear" 
+                      *ngIf="!formGroup.controls['mobile'].value == ''  ">
                   <mat-icon>close</mat-icon>
                 </button>
+              </ng-container>
               <mat-error *ngIf="formGroup.controls['mobile'].errors?.required">Mobile Number is compulsary to enter</mat-error>
               <mat-error *ngIf="formGroup.controls['mobile'].errors?.minlength">10 numbers needed to enter</mat-error>
             </mat-form-field>
             <mat-form-field>
                 <input formControlName="city" matInput placeholder="City">
+                <ng-container *ngIf="!editData"  matSuffix>
                 <button mat-button matSuffix mat-icon-button area-label="Clear" 
-                        *ngIf="!formGroup.controls['city'].value == ''  && !editData">
+                        *ngIf="!formGroup.controls['city'].value == '' ">
                     <mat-icon>close</mat-icon>
                   </button>
+              </ng-container>
               </mat-form-field>
       </div>
     </mat-grid-tile>
@@ -83,7 +91,7 @@
           <div class="button-row">
             <button  mat-raised-button color="primary"  type="submit" [disabled]="!formGroup.valid "> Submit</button>
             <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
-            <button mat-raised-button color="primary" (click)="readdata()" *ngIf = "this.formService.editDataTitle === ''"> getData </button>
+            <button mat-raised-button color="primary" (click)="readdata()" *ngIf = "editDataTitle ==''"> getData </button>
           </div>
         </div>
     </mat-grid-tile>

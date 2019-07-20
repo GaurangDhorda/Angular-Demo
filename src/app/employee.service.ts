@@ -18,7 +18,7 @@ export class EmployeeService {
 user: User;
 isLogedIn: boolean;
 dataModel: DataModel;
-editDataTitle = '';
+public editDataTitle = '';
   private url_MaterialFormSave = 'https://chatnodejsappdemo.herokuapp.com/enroll';
   // 'http://localhost:3000/enroll'
   private url_MaterialFormRead = 'https://chatnodejsappdemo.herokuapp.com/materialContactRead';

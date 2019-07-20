@@ -32,6 +32,7 @@ editBoxData = [];
 dataRead = [];
 public editData: boolean;
 title: string;
+editDataTitle = '';
 @ViewChild('formDirective') formDirective: NgForm;
 
   constructor( private formBuilder: FormBuilder, private formService: EmployeeService, private el: ElementRef,
@@ -39,7 +40,8 @@ title: string;
                private dialog: MatDialog) { }
 
   ngOnInit() {
-    if (this.formService.editDataTitle === '') {
+    this.editDataTitle = this.formService.editDataTitle;
+    if (this.editDataTitle === '') {
       this.title = 'Material Contact Form';
     } else {
       this.title = 'Edit Data';
