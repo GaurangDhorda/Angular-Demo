@@ -1,10 +1,12 @@
-<h2>  <i class="fas fa-database" title="Data of API calling"></i> Hotels of Paris City <i class="fas fa-map-marker-alt" (click)="showMapView()" title="Paris City on Map"></i></h2>
+<h2>  <i class="fas fa-database" matTooltip="Data of API calling"></i> Hotels of Paris City <i class="fas fa-map-marker-alt" (click)="showMapView()" matTooltip="Paris City on Map"></i></h2>
 <mat-progress-bar mode="indeterminate" value=80 *ngIf="isWait"></mat-progress-bar>
 <h4 *ngIf="errorMessage">{{ errorMessage }}</h4>
 <div class= "flats">
      <div class="flat" *ngFor = "let employee of Employee; index as i; first as first;  last as last">
           
-            <div id="myImage" (click)="details(employee,i, first, last)" class="flat-picture" [title]="employee.name + ' Tooltip: Click here for more details.. '"
+            <div id="myImage" (click)="details(employee,i, first, last)" class="flat-picture" 
+                              [matTooltip]="employee.name + ' Tooltip: Click here for more details.. '"
+                              matTooltipClass="example-tooltip-red"
                   [style.background-image]="'url(' + employee.imageUrl + ')'" > 
             </div>
             <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 

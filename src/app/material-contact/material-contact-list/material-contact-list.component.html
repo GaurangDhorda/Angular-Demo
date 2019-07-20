@@ -1,0 +1,69 @@
+<mat-toolbar color="primary" class="mat-toolbar">
+    Employee List
+</mat-toolbar>
+<mat-progress-bar mode="indeterminate" value=80 *ngIf="isWait"></mat-progress-bar>
+
+<div class=" example-container mat-elevation-z8" >
+  <mat-table #table [dataSource]= "listData"  matSort >
+    <ng-container matColumnDef="fullname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Full Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <div class="div-span">
+            <span class="mobile-label"> <p>Full Name:</p></span> </div>
+           <div class="div-word-break">  {{ element.fullname | titlecase }} </div>
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> City</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div class="div-span">
+            <span class="mobile-label"> <p>City:</p></span></div>
+            <div class="div-word-break"> {{ element.city | titlecase}} </div>
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div class="div-span">
+            <span class="mobile-label"> <p>Email:</p> </span></div>
+          <div class="div-word-break">     {{ element.email}}</div>
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div class="div-span" >
+            <span class="mobile-label"><p>Gender:</p></span></div>
+          <div class="div-word-break">   {{ element.gender == 1 ?'male' : (element.gender == 2 ? 'Female' : 'other') }}</div>
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row" >
+        <div class="tableActions">
+          <button mat-icon-button (click)= "onEdit(row)"><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button color="warn" (click)= "deleteContact(row)"><mat-icon>delete_outline</mat-icon></button>
+      </div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="5">
+          Loading Data... Please Wait.
+      </mat-footer-cell>
+    </ng-container>
+    <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="5">
+            There is no data found on record.
+        </mat-footer-cell>
+      </ng-container>
+    <mat-header-row *matHeaderRowDef="displayColumn"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayColumn;" 
+              (click)="onRowClicked(row)" 
+              [ngClass]="{highlighted: selectedIndex === row.key  }" 
+              (mouseover)="highlight(row)">
+    </mat-row>
+    <mat-footer-row *matFooterRowDef="['loading']"  [ngClass]= "{'hide':listData!=null}" >  </mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide': !(listData!=null && listData.data.length==0)}"> </mat-footer-row>
+  </mat-table>  
+  <mat-paginator [pageSizeOptions]= "[5,10,25,50,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

@@ -10,6 +10,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 //import { CookingModule } from './cooking/cooking.module';
 import { ChatComponent } from './chat/chat.component';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
+import { MaterialContactListComponent } from './material-contact/material-contact-list/material-contact-list.component';
 
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'material-contact', component: MaterialContactComponent},
+  {path: 'material-contact-list', component: MaterialContactListComponent},
   {path: '**', component: FooterComponent}
 ];
 //ShoppingModule, CookingModule
@@ -30,6 +32,6 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingModule = [HomeComponent, ChatComponent ,AboutComponent, ContactComponent, HomedetailsComponent,
-                              MaterialContactComponent, FooterComponent
+export const routingModule = [HomeComponent, ChatComponent, AboutComponent, ContactComponent, HomedetailsComponent,
+                              MaterialContactComponent, MaterialContactListComponent, FooterComponent
                              ];

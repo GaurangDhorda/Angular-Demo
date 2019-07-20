@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { trigger, transition, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
 
+  @Input() user;
   constructor(private router: Router) { }
 
   ngOnInit() {

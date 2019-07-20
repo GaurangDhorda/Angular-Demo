@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { IEmployee } from '../iemployee';
 import { Router , ActivatedRoute } from '@angular/router';
@@ -11,7 +11,8 @@ import { MapserviceService } from '../mapservice.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit, OnDestroy {
   public title = 'Home';

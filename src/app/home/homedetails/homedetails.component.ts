@@ -51,8 +51,10 @@ lengthofdata;
       );
 
   }
-  ngAfterContentChecked() {
-    this.employeeView = this.employee[this.empId];
+  ngAfterContentChecked () {
+    if(this.employee.length) {
+      this.employeeView = this.employee[this.empId];
+    }
   }
   goNext()  {
     if (this.empId === 5) {
@@ -63,6 +65,7 @@ lengthofdata;
       this.empId = 5;
     } else{
     const nextId = this.empId + 1 ;
+    
     this.router.navigate(['/home' , nextId]);
     }
   }

@@ -25,6 +25,12 @@ table, th, td {
   table tr:nth-child(odd){
     background-color: rgb(185, 238, 133);;
   }
+  .animate{
+   display: flex;
+  }
+  .card-flex{
+    display: flex;
+  }
   .mat-card{
     max-width: 300px;
     margin: auto;
@@ -38,4 +44,9 @@ table, th, td {
   }
   .mat-card-actions .flex-spacer{
     width:100%;
+  }
+  @media only screen and (max-width: 780px){
+    .card-flex{
+      display: block;
+    }
   }

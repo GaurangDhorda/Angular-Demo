@@ -45,18 +45,31 @@ nav ul li a.active{
     background: brown;
     text-align: center;
   }
+.my-class{
+    /* this class is used in materialContactList to open dialog with width 60% */
+    height: 500px;
+    width: 60%;
+}
 .backdropBackground {
      /* background-color:rgba(146, 101, 101, 0.4); */
      background: rgba(225, 225, 225, 0.7);
   }
-
+  .example-tooltip-red {
+    background: #b71c1c;
+  }
 @media only screen and (max-width:780px){
     .column, .columns {
         padding-left: 0rem;
-        padding-right: 0rem;
-    
+        padding-right: 0rem; 
       }
-
+      mat-radio-button{
+          padding: .3rem;
+      }
+    .my-class{
+        /* this class is used in materialContactList to open dialog with width 90% */
+        height: 500px;
+        width: 90%;
+    }
     .myContainer{
         display: none;
     }

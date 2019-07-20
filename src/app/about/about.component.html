@@ -22,7 +22,19 @@
   </tr>
   </table>  
 </div>
-
+<div class="card-flex">
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>use trackBy in *ngFor</mat-card-title>
+      <mat-card-subtitle>helps create only newly created element in dom</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <app-footer class="animate" *ngFor="let user of users; trackBy: trackByFn"  [user]="user">  </app-footer>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="loadNew()" >Refresh</button>
+    </mat-card-actions>
+</mat-card>
 <mat-card>
   <mat-card-header>
     <div mat-card-avatar></div>
@@ -39,5 +51,8 @@
     <button mat-icon-button><mat-icon>publish</mat-icon></button>
   </mat-card-actions>
 </mat-card>
+</div>
+
+
 </body>
 </html>    

@@ -49,8 +49,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       hasBackdrop: true // false used for prevented users to clicking to background while dialog is open..
     };
     let Dref = this.dialog.open(DialogComponent, dialogBoxSettings);
-    Dref.componentInstance.submitClicked.subscribe(result =>{
-      
+    Dref.componentInstance.submitClicked.subscribe(result => {
+
       // submitClicked is parameter comes from child to parent [Login Dialog to Chat component ] using @Output in LoginDialog...
       // Create New User dialog sends value to Login Dialog and LoginDialog sends that values to chatComponent...
       // submitClicked is event emmitted by Login Dialog... 
