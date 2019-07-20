@@ -135,6 +135,8 @@ THE SOFTWARE.
 
 @angular/material/icon
 
+@angular/material/paginator
+
 @angular/material/progress-bar
 
 @angular/material/progress-spinner
@@ -145,7 +147,13 @@ THE SOFTWARE.
 
 @angular/material/snack-bar
 
+@angular/material/sort
+
+@angular/material/table
+
 @angular/material/toolbar
+
+@angular/material/tooltip
 
 @angular/platform-browser
 MIT

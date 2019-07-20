@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1563021320458,
+  "timestamp": 1563623985167,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -8,15 +8,15 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://gaurangdhorda.github.io/Angular-Demo/5.363805deadb176fd044d.js",
-        "https://gaurangdhorda.github.io/Angular-Demo/6.1adbd65b94a2a1f67754.js",
+        "https://gaurangdhorda.github.io/Angular-Demo/5.c792ff4308b01661b222.js",
+        "https://gaurangdhorda.github.io/Angular-Demo/6.2dbc0b330cbeb2024640.js",
         "https://gaurangdhorda.github.io/Angular-Demo/es2015-polyfills.d9453fb2d504b0a47535.js",
         "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico",
         "https://gaurangdhorda.github.io/Angular-Demo/index.html",
-        "https://gaurangdhorda.github.io/Angular-Demo/main.fd49beab2bd4e0e5159d.js",
+        "https://gaurangdhorda.github.io/Angular-Demo/main.6be4c15ea1a5524c32af.js",
         "https://gaurangdhorda.github.io/Angular-Demo/polyfills.2b767098c09ef2304dbf.js",
-        "https://gaurangdhorda.github.io/Angular-Demo/runtime.3ebe4b9d0655530597d4.js",
-        "https://gaurangdhorda.github.io/Angular-Demo/styles.639ab989465e27057f33.css"
+        "https://gaurangdhorda.github.io/Angular-Demo/runtime.37065794bfe1b0576386.js",
+        "https://gaurangdhorda.github.io/Angular-Demo/styles.05f397b7876f945ae5fb.css"
       ],
       "patterns": [
         "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.8\\.1\\/css\\/all\\.css",
@@ -59,8 +59,8 @@
     }
   ],
   "hashTable": {
-    "https://gaurangdhorda.github.io/Angular-Demo/5.363805deadb176fd044d.js": "59bfe3c80ff47b70fef635270c68ac9d9e0e5351",
-    "https://gaurangdhorda.github.io/Angular-Demo/6.1adbd65b94a2a1f67754.js": "404c15dbac806f042d755afa938f28a25fde564e",
+    "https://gaurangdhorda.github.io/Angular-Demo/5.c792ff4308b01661b222.js": "29faf0f32d892df4163e528707fdc5a42cad9caf",
+    "https://gaurangdhorda.github.io/Angular-Demo/6.2dbc0b330cbeb2024640.js": "ca4e925409626a99bedf09f89f76d50f3eb6a34d",
     "https://gaurangdhorda.github.io/Angular-Demo/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
     "https://gaurangdhorda.github.io/Angular-Demo/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
     "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
@@ -73,11 +73,11 @@
     "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://gaurangdhorda.github.io/Angular-Demo/es2015-polyfills.d9453fb2d504b0a47535.js": "018be373ae4c7714a9968bc97054d6217c7e369f",
     "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "e85bd27ea0f8329d03d93dec0e6b21deadc6437b",
-    "https://gaurangdhorda.github.io/Angular-Demo/main.fd49beab2bd4e0e5159d.js": "eb31f823f8775990f950c136495d0de58d34fd33",
+    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "e6a94bfb0f195fef71f8f3277d57db43d43f0b6c",
+    "https://gaurangdhorda.github.io/Angular-Demo/main.6be4c15ea1a5524c32af.js": "14922e979615bd334b87e0098da08239a2e114ac",
     "https://gaurangdhorda.github.io/Angular-Demo/polyfills.2b767098c09ef2304dbf.js": "a0fa042a7cd96d0967a6ebe953ae6a84330835da",
-    "https://gaurangdhorda.github.io/Angular-Demo/runtime.3ebe4b9d0655530597d4.js": "cfa89ea0fac4fca0f6066feb2257ee30ea2039e0",
-    "https://gaurangdhorda.github.io/Angular-Demo/styles.639ab989465e27057f33.css": "5ce0e9e45747839e688f128ad768fe100281ac88"
+    "https://gaurangdhorda.github.io/Angular-Demo/runtime.37065794bfe1b0576386.js": "e635640efb9f4e398862f49ac4c52f8dd53045ea",
+    "https://gaurangdhorda.github.io/Angular-Demo/styles.05f397b7876f945ae5fb.css": "ee841693f5451a7780ddc49180d46902cdb0b548"
   },
   "navigationUrls": [
     {
