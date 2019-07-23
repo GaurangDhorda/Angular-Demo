@@ -2,14 +2,15 @@
     background:linear-gradient(20deg,#470606,#436c43);
     text-align: center;
     letter-spacing: 3px;
-    justify-content: center
+    justify-content: center;
+    height: auto;
     }
 
 .example-container {
     display: flex;
     flex-direction: column;
-    max-height: 500px;
-  min-width: 300px;
+    max-height: 85vh;
+    min-width: 300px;
 
 }
 .mat-table {
@@ -35,11 +36,25 @@
     word-break: break-word;
     padding-right: .5rem;
   }
+  
+  tr.mat-footer-row {
+    border: 1px solid #e7e7e7;
+    font-weight: bold;
+    height: 10px !important;
+}
   @media(max-width: 780px) {
+    .example-container {
+      max-height: 100vh;
+    }
     .div-word-break{
         word-break: break-word;
         width: 60%;
-        text-align: right;
+        letter-spacing: 1px;
+        text-align: left;
+        color: #1b1b32;
+        font-size: 1rem;
+        font-weight: 600;
+        opacity: .9
     }
     .div-span{
         width: 40%;
@@ -47,6 +62,8 @@
     }
     .div-span p{
         margin: 0;
+        letter-spacing: 1px;
+        opacity: .9;
     }
     .mobile-label{
         padding-right: 10px;
@@ -60,21 +77,41 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        min-height: 30px;
     }
     .mat-header-row {
         display: flex;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 3px #445f3b;
+        margin: 3px;
+        letter-spacing: 1px;
+    }
+    mat-paginator{
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 3px #445f3b;
+      margin: 3px;
+      position: sticky;
+      bottom: 0;
     }
     
     .mat-row { 
         flex-direction: column;
         align-items: start;
         padding: 8px 24px;
+        min-height: auto;
+        border-bottom: 1px solid gray;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 3px #445f3b;
+        margin: 3px;
       }
     .tableActions{
-        text-align: right;
-        margin-left: 2px;
-        /* padding: 5px; */
         width: 100%;
+        text-align: right;
+        /* padding: 5px; 
+        border-radius: 10px;
+        margin: 1em 1em .5em 1em;
         box-shadow: 1px 1px 5px 0px #673AB7;
+        */
     }
+
   }

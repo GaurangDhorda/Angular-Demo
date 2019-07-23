@@ -85,17 +85,22 @@
             <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+          
           <div class="add-bottom-padding">
             <mat-checkbox formControlName="isPermenent">Permenent Employee</mat-checkbox>
+            
+              
+            
           </div>
-          <div class="button-row">
-            <button  mat-raised-button color="primary"  type="submit" [disabled]="!formGroup.valid "> Submit</button>
-            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
-            <button mat-raised-button color="primary" (click)="readdata()" *ngIf = "editDataTitle ==''"> getData </button>
-          </div>
-        </div>
+      </div>
     </mat-grid-tile>
 </mat-grid-list>
+<div class="button-row">
+  <button  mat-raised-button color="primary"  type="submit" [disabled]="!formGroup.valid "> Submit</button>
+  <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+  <button mat-raised-button color="primary" (click)="readdata()" *ngIf = "editDataTitle ==''"> getData </button>
+</div>
+
 </form>
 
 <div id="myModal" class="modal">

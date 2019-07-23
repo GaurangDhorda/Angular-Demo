@@ -29,6 +29,8 @@
   </label>
     <input type="submit" value="Send message" class="cta">
 </form>
+<input type="file" class= "fileUpload" #fileInput (change)="onFileSelected($event)">
+<button mat-flat-button class= "fileUpload"  color="accent" (click)="uploadFile()">Upload</button>
 <div *ngIf="submitted" class="results">
     <strong>Name:</strong> 
     <span>{{ messageForm.controls.name.value }}</span>

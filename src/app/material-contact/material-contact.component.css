@@ -4,7 +4,16 @@ text-align: center;
 letter-spacing: 3px;
 justify-content: center
 }
-
+.fileUpload{
+  margin: .3rem;
+  cursor: pointer;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  
+}
 /* List modal */
 .modal {
     display: none; /* Hidden by default */

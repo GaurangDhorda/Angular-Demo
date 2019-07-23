@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import {AbstractControl} from '@angular/forms';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-contact',
@@ -17,7 +18,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   currentDate = new Date();
   end = new Date();
   private _userName: string;
-  
+  fileUpload: File;
   get userName(): string{ // two way binding using getters and setters in input type="name"
     return this._userName;
   }
@@ -27,7 +28,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   @ViewChild('nameRef')  nameElementRef: ElementRef; // #nameRef is template reference variable in html file of input type=name
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private formService: EmployeeService) {
     this.currentDate.setHours(0,0,0,0);
     this.end.setHours(23,59,59,999);
    // alert( this.currentDate.toLocaleString() + ':' + this.end.toLocaleString() + ' CurrentTime: ' + this.currentDate.getDate() );
@@ -49,7 +50,17 @@ export class ContactComponent implements OnInit, AfterViewInit {
     // all template reference variable initialisation takes place here ... see @ViewChild(' nameRef ')..
     this.nameElementRef.nativeElement.focus(); // this line focus input type=name with #nameRef
   }
-
+  onFileSelected(event){
+    this.fileUpload = <File> event.target.files[0];
+    // console.log(event.target.files[0]);
+  }
+  uploadFile(){
+    const fd = new FormData();
+    fd.append('image', this.fileUpload , this.fileUpload.name);
+    this.formService.fileUpload(fd).subscribe( file =>{
+      console.log('success ' + file.msg);
+   });
+  }
   onSubmit() {
     this.submitted = true;
     if (this.messageForm.invalid) {

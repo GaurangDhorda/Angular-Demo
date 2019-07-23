@@ -159,7 +159,11 @@ setEditData(data: any) {
  this.dataModel = data;
   console.log(this.dataModel);
 }
-
+fileUpload(path: FormData) {
+  console.log('jsonData' + path);
+  // console.log( JSON.stringify(path.get('image')));
+  return this.http.post <any> ('http://chatnodejsappdemo.herokuapp.com/fileUpload' , path);
+}
 onContactEdit(dataModel: DataModel) {
   console.log(' data model api '+ dataModel.key);
   return this.http.post<DataModel> (this.url_MaterialFormEdit, dataModel);

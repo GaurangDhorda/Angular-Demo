@@ -33,6 +33,7 @@ dataRead = [];
 public editData: boolean;
 title: string;
 editDataTitle = '';
+
 @ViewChild('formDirective') formDirective: NgForm;
 
   constructor( private formBuilder: FormBuilder, private formService: EmployeeService, private el: ElementRef,
@@ -87,6 +88,7 @@ editDataTitle = '';
     });
   }
   }
+  
   readdata() {
     /*const modal = document.getElementById('myModal');
     modal.style.display = 'block';
