@@ -53,8 +53,7 @@
         text-align: left;
         color: #1b1b32;
         font-size: 1rem;
-        font-weight: 600;
-        opacity: .9
+        font-weight: 500;
     }
     .div-span{
         width: 40%;
@@ -78,6 +77,10 @@
         display: flex;
         justify-content: space-between;
         min-height: 30px;
+        border-bottom: 1px solid #c6bcbc;
+    }
+    .mat-cell:last-child{
+      border-bottom: 0;
     }
     .mat-header-row {
         display: flex;

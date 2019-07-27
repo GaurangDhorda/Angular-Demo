@@ -18,6 +18,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   public title = 'Chat';
   container: HTMLElement;
   userName: string;
+  messageUserName: string;
   totalUser: number;
   message = '';
   messageDiv = '';
@@ -181,21 +182,26 @@ export class ChatComponent implements OnInit, AfterViewChecked {
           });
     
     this.chatService.getMessages()
-    .pipe( throttleTime(1000), distinctUntilChanged(), 
-          filter((message: string ) => message.trim().length > 0),
+    .pipe( throttleTime(1000), distinctUntilChanged(),
+          filter((message) => message['messageData'].trim().length > 0 )
+           // message.trim().length > 0)
             // , skipWhile((message) => message !== this.secretCode)
-          scan((acc: string, message: string, index: number) =>
-                      ` (${index + 1}) ${message}` , '1')
+         /* scan((acc: string, message: string, index: number) =>
+                      ` (${index + 1}) ${message}` , '1')  */
          )
-    .subscribe((message: string, userName: string) => {
-      
-      console.log(message);
+    .subscribe((message) => {
+      console.log( JSON.stringify(message));
       let currentTime = moment().format('hh:mm:ss a');
       let messageWithTimestamp =  `${currentTime}: ${message}`;
       this.timeStamp.push( currentTime );
       this.messages.push(message);
+      this.messageUserName = message['userName'];
       console.log('messages: ', this.messages);
+      console.log('user name is ' + message['userName']);
       });
+  }
+  trackByFn(index: number, id: any) {
+    return id.id;
   }
   sendMessage(event: string) {
          this.chatService.sendMessage(this.message, this.userName);

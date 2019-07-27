@@ -99,14 +99,41 @@
         margin-bottom:5px;
         width: 100%;
         text-align: center;
-
+        float: left;
         justify-content: center;
   }
-
+.usernameLabel{
+  color: #777;
+    /* display: block; */
+    font-size: 12px;
+    margin: 5px 5px 0;
+    /* float: right; */
+    bottom: 5px;
+}
   .message{
     margin:5px;
     width: 57%;
     text-align: left;
+    float: left;
+  }
+  .suspended{
+    margin: 5px;
+    text-align: right;
+    float: right;
+    width: 54%;
+  }
+  
+  .suspended p{
+    display: inline-block;
+    text-align: left;
+    font-weight: 500;
+    margin: 0;
+    font-size: 1em;
+    padding: 10px 5px 5px 5px ;
+    background-color: #E8EAF6;
+    background: rgb(201, 210, 241) none repeat scroll 0 0;
+    border-radius: 20px; 
+    word-break: break-word;
   }
   .message p{
     display: inline-block;
@@ -160,7 +187,7 @@
       .mat-button{
         margin-left: 5px;
         padding: 5px 0 0 0;
-          width: auto;
+        width: auto;
       }
       .mat-icon{
         height:30px !important;
@@ -171,6 +198,13 @@
 
       .messages{
        height: 75%; 
+      }
+      .suspended{
+        width: auto;
+        float: unset;
+      }
+      .message{
+        float: unset;
       }
       
   }

@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 import { Navigation } from 'selenium-webdriver';
 import { Subscription } from 'rxjs';
 import { MapserviceService } from './mapservice.service';
+import { EmployeeService } from './employee.service';
 
 declare var gtag;
 @Component({
@@ -19,7 +20,8 @@ export class AppComponent {
   message: string ='';
   public name: string;
   constructor(private mapService: MapserviceService, private router: Router,
-              private route: ActivatedRoute, private snackbar: MatSnackBar) {
+              private route: ActivatedRoute, private service: EmployeeService,
+              private snackbar: MatSnackBar, private swPush: SwPush) {
     // Google Analytics ... 
     const navEndEvents = this.router.events.pipe(
       filter (events =>  events instanceof NavigationEnd),
@@ -31,7 +33,7 @@ export class AppComponent {
       } );
     } );
   }
-
+  
   ngOnInit() {
    // navigator.serviceWorker.register('/Angular-Demo/ngsw-worker.js');
       this.router.events.subscribe(   (event: Event) => {

@@ -27,13 +27,19 @@
       
       <label class="messageLable">Messages : </label>
       
-        
-        <div  class="message"   *ngFor="let msg of messages; index as i">
-          <p > {{msg}}  
+        <div  
+             *ngFor="let msg of messages; last as last ;index as i; trackBy: trackByFn"
+             [ngClass]=" userName === msg.userName ?  'message' : 'suspended' ">
+             <div>
+             <label class="usernameLabel"> {{msg.userName}}  </label>
+            </div>
+          <p > 
+              {{msg.messageData}}  
           <span class="time" >{{timeStamp[i]}}</span>
-        </p>
+          </p>
         </div>
-        
+      
+      
       </div>
       <div>
           <h4 *ngIf= "typing === userName; else notShow " > </h4>

@@ -21,6 +21,7 @@ import { CreateNewUserComponent } from './chat/create-new-user/create-new-user.c
 import { AgmCoreModule } from '@agm/core';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
 import { ConfirmdialogComponent } from './confirmdialog/confirmdialog.component';
+import { EmployeeService } from './employee.service';
 
  //ShoppingModule,
 //CookingModule,
@@ -66,7 +67,7 @@ import { ConfirmdialogComponent } from './confirmdialog/confirmdialog.component'
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private update: SwUpdate, private push: SwPush , private snackbar: MatSnackBar) {
+  constructor(private update: SwUpdate, private push: SwPush , private snackbar: MatSnackBar, private service: EmployeeService) {
     this.update.available.subscribe( newUpdate => {
       console.log('Update Available');
       // allow user to refresh from snackbar for new update available in PWA..
@@ -75,10 +76,21 @@ export class AppModule {
         window.location.reload();
       });
     });
-    this.push.messages.subscribe(msg => {
+    
+    /*this.push.messages.subscribe(msg => {
       this.snackbar.open(JSON.stringify(msg), '', {
         duration: 5000
       });
-    });
+    });*/
+    
+    const key = 'BGeXc0b2Tfiro0K5KnSdjKMOzLhTBWW9kZ14iA2i6UTUOk0KroXM8945nj_D9jq9qj74c6Ul7sXLCc1QdKDiuL8';
+    this.push.requestSubscription({
+        serverPublicKey: key 
+      }).then(pushSubcription => {
+           console.log(pushSubcription.toJSON());
+           this.service.postSubscriptions(pushSubcription).subscribe();
+      }).catch (err => {
+        console.log('could not subscribe to notification' + err);
+      });
   }
 }

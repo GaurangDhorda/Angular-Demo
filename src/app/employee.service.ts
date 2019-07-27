@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './iemployee';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, Subscription } from 'rxjs';
 import { catchError, tap, throttleTime, distinctUntilChanged, first, switchMap   } from 'rxjs/operators';
 import * as io from 'socket.io-client';
 import { auth } from 'firebase/app';
@@ -101,8 +101,11 @@ public editDataTitle = '';
 
   public getMessages = () => {
     return Observable.create((observer) => {
-        this.socket.on('new-message', ( data, username ) => {
-            observer.next(data, username);
+          this.socket.on('new-message', ( data) => {
+          console.log(JSON.stringify(data));
+          console.log('user is ' + data.userName + ' and message is '+ data.messageData);
+          observer.next(data);
+
         });
     });
 }
@@ -171,6 +174,10 @@ onContactEdit(dataModel: DataModel) {
 onContactDelete(key ) {
   console.log('key ' + key);
   return this.http.post <any> (this.url_MaterialFormDelete, key);
+}
+
+postSubscriptions(sub: PushSubscription) {
+    return this.http.post('https://chatnodejsappdemo.herokuapp.com/subscribe', sub).pipe(catchError(this.errorhandler));
 }
 // get userdata using HttpClient in json format..
 
