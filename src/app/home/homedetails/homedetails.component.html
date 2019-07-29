@@ -19,12 +19,12 @@
         </div>  
       </div>
 
-      <div class="flat-picture" 
+      <div class="flat-picture" *ngIf="employeeView.imageUrl"
                 [style.background-image]="'url(' + employeeView.imageUrl + ')'" >
-              <div (click)="goPrevious()">
+              <div (click)="goPrevious()" >
                   <a class="centerGoPrevious"  title="Previous"><i class="fas fa-angle-double-left fa-2x"></i></a> 
               </div>
-              <div (click)="goNext()">
+              <div (click)="goNext()" >
                   <a class="centerGoNext"  title="Next"> <i class="fas fa-angle-double-right fa-2x" ></i></a>
               </div>
       </div>
