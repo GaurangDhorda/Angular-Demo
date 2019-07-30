@@ -11,9 +11,12 @@ export class CookingServiceService {
   public search = '';
   apiKey = '6d755d24940fe3faca22412c957b01a6';
   url = 'https://www.food2fork.com/api/search?key=' + this.apiKey +  '&q=shredded%20chicken&count=30';
-
+  getRecipe$ = this.http.get<ICooking[]>('assets/cooking-api.json').pipe(
+    tap(console.table),
+    catchError(this.errorhandler)
+  );
   constructor(private http: HttpClient) {}
-
+  
   getRecipe(): Observable <ICooking[]> {
       return this.http.get <ICooking[]>( 'assets/cooking-api.json' )  // 'assets/cooking-api.json '
       .pipe(

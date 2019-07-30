@@ -1,7 +1,18 @@
 <mat-progress-bar mode="indeterminate" value=80 *ngIf="isWait" > </mat-progress-bar>
+<!--
+<div *ngIf = "cooking$ | async as re ; else loading" >
+  <div *ngFor="let c of re.recipes"> 
+      {{c.title}}
+  </div>
+</div>
+<ng-template #loading>Loading...</ng-template>
+-->
 <div class="flex">
-
-  <ng-container class="flexc" *ngFor="let recipe of cooking ; index as i">
+  <!--  here Cooking$ is Observable property comes from cooking-service. By applying async pipe it will subcribe to data 
+        automatically so no need to subcribe from component and no worries for unSunscribing data...
+        here, we get cooking$.recipes array so we need to traverse each using *ngFor  -->
+<ng-container *ngIf="cooking$ | async as cookingg"> 
+  <ng-container class="flexc" *ngFor="let recipe of cookingg.recipes ; index as i">
       <ng-container *ngIf="recipe.title.trim().toLowerCase().includes(cookingRecipe.getSearchByItemName().trim().toLowerCase())"
       >
     <!--  <ng-container *ngIf= "cookingRecipe.getSearchByItemName() ; else reset;" > {{ counterSearchResult() }} </ng-container>
@@ -26,5 +37,5 @@
 
   
 </ng-container>
-
+</ng-container>
 </div>

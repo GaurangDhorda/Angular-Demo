@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CookingServiceService } from '../cooking-service.service';
 import { cookingComponent } from '../cooking-routing.module';
 import { ICooking } from '../icooking';
+import {  tap, map } from 'rxjs/operators';
+import { of, Observable } from 'rxjs';
 
 
 @Component({
@@ -15,14 +17,19 @@ public cooking: ICooking[];
 public errorMessage: string;
 public counter = 0;
 public isWait:boolean;
-
+public cooking$: Observable<ICooking[]>;
   constructor(private cookingRecipe: CookingServiceService) { }
 
   ngOnInit() {
+  //  console.log(this.cookingRecipe.getRecipe$.pipe(tap(data => console.log(data))));
+    this.cooking$ = this.cookingRecipe.getRecipe$.pipe(tap (data => {
+      console.log('data ' + data);
+    }));
     this.isWait = true;
     this.cookingRecipe.getRecipe()
     .subscribe(
           data => {
+            
             this.cooking = data['recipes'];
           } , 
           err => this.errorMessage = err,

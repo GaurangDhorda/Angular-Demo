@@ -157,10 +157,14 @@
     bottom:5px;
   }
   
-  @media only screen and (max-width: 770px){
+  @media only screen and (max-width: 780px){
+    .chatcontainer{
+      padding: 0;
+      height: auto;
+    }
       .chatwraper{
         flex-direction: column-reverse;
-        height: 85vh;
+        height: 95vh;
         width: 95vw;
         padding-bottom:3px;
       }
@@ -176,7 +180,7 @@
       }
       .chatinput{
           flex:0 0 10%;
-          height: 17%;
+          height: 10%;
           text-align: left;
           position: sticky;
           bottom: 0px;
@@ -197,7 +201,7 @@
     }
 
       .messages{
-       height: 75%; 
+       height: 85%; 
       }
       .suspended{
         width: auto;
