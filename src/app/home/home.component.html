@@ -11,7 +11,7 @@
             </div>
             <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 
             <div class="card-body" >
-                  <ul >
+                  <ul>
                          <li> <p (click)="details(employee,i, first, last)"> {{ employee.name }} - {{ employee.price  | currency : employee.priceCurrency }} </p></li>
                          <li><i class="fas fa-info-circle"  title="Show More.."  (click)="detailsData(employee,i)"></i></li>
                   </ul>

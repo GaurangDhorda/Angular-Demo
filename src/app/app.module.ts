@@ -22,9 +22,10 @@ import { AgmCoreModule } from '@agm/core';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
 import { ConfirmdialogComponent } from './confirmdialog/confirmdialog.component';
 import { EmployeeService } from './employee.service';
+// import { NbThemeModule, NbLayoutModule, NbChatModule, NbSpinnerModule } from '@nebular/theme';
 
- //ShoppingModule,
-//CookingModule,
+ // ShoppingModule,
+// CookingModule,
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { EmployeeService } from './employee.service';
   imports: [
     BrowserModule,
     LayoutModule,
-    BrowserAnimationsModule, //this should be after the BrowsersModule..
+    BrowserAnimationsModule, // this should be after the BrowsersModule..
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
@@ -57,9 +58,9 @@ import { EmployeeService } from './employee.service';
     AgmCoreModule.forRoot({
       // used for adding maps functionality..
       apiKey: 'AIzaSyBg34I4bCxMwjU9YYJz7kibwanbFIR_9sw'
-      /* apiKey is required, unless you are a 
-      premium customer, in which case you can 
-      use clientId 
+      /* apiKey is required, unless you are a
+      premium customer, in which case you can
+      use clientId
       */
     })
   //  AdsenseModule
@@ -76,18 +77,16 @@ export class AppModule {
         window.location.reload();
       });
     });
-    
     /*this.push.messages.subscribe(msg => {
       this.snackbar.open(JSON.stringify(msg), '', {
         duration: 5000
       });
     });*/
-    
     const key = 'BGeXc0b2Tfiro0K5KnSdjKMOzLhTBWW9kZ14iA2i6UTUOk0KroXM8945nj_D9jq9qj74c6Ul7sXLCc1QdKDiuL8';
     this.push.requestSubscription({
-        serverPublicKey: key 
+        serverPublicKey: key
       }).then(pushSubcription => {
-           console.log(pushSubcription.toJSON());
+          // console.log(pushSubcription.toJSON());
            this.service.postSubscriptions(pushSubcription).subscribe();
       }).catch (err => {
         console.log('could not subscribe to notification' + err);

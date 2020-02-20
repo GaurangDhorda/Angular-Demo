@@ -1,29 +1,30 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog } from '@angular/material';
 import { DialogComponent } from 'src/app/chat/dialog/dialog.component';
 import { MaterialContactComponent } from '../material-contact.component';
 import { ConfirmdialogComponent, ConfirmDialogModel } from 'src/app/confirmdialog/confirmdialog.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-material-contact-list',
   templateUrl: './material-contact-list.component.html',
   styleUrls: ['./material-contact-list.component.css']
 })
-export class MaterialContactListComponent implements OnInit {
+export class MaterialContactListComponent implements OnInit, OnDestroy {
 contactList = [];
 listData: MatTableDataSource<any>;
 displayColumn: string[] = ['fullname', 'city', 'email', 'gender', 'actions'];
 isWait: boolean;
 selectedIndex: any;
-
+materialDataSubUnSub: Subscription = new Subscription();
 constructor( private formService: EmployeeService, private dialog: MatDialog) { }
 @ViewChild (MatSort) sort: MatSort;
 @ViewChild (MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.isWait = true;
-    this.formService.onRead().subscribe( data => {
+    this.materialDataSubUnSub.add(this.formService.onRead().subscribe( data => {
       this.contactList =  data;
       console.log('list ' + this.contactList);
 
@@ -38,7 +39,7 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
             };
             console.log(this.listData.data.length);
             this.isWait = false;
-    });
+    }));
   }
   onEdit(row) {
     this.formService.setEditData(row);
@@ -73,7 +74,7 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
 
     dref.afterClosed().subscribe(dialogResult => {
       if (dialogResult) {
-        this.formService.onContactDelete(key).subscribe ( data => {
+      this.materialDataSubUnSub.add(this.formService.onContactDelete(key).subscribe ( data => {
           if (data){
             console.log(data);
            // this.refresh();
@@ -81,13 +82,13 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
             this.listData.data.splice(index, 1);
             this.listData._updateChangeSubscription();
           }
-        });
+        }));
       }
     });
   }
 
   refresh() {
-    this.formService.onRead().subscribe( data => {
+    this.materialDataSubUnSub.add(  this.formService.onRead().subscribe( data => {
       this.contactList =  data;
       console.log('list ' + this.contactList);
 
@@ -95,7 +96,6 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
             this.listData = new MatTableDataSource(this.contactList);
             this.listData.sort = this.sort;
             this.listData.paginator = this.paginator;
-            this.listData.data.indexOf
             this.listData.filterPredicate = (data, filter) => {
                 return this.displayColumn.some(ele => {
                     return ele !== 'actions';
@@ -103,7 +103,7 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
             };
             console.log(this.listData.data.length);
             this.isWait = false;
-    });
+    }));
   }
   onRowClicked(row) {
     console.log('row clicked ' + JSON.stringify(row));
@@ -112,5 +112,10 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
   }
   highlight(row) {
       this.selectedIndex = row.key;
+  }
+
+  ngOnDestroy() {
+    this.materialDataSubUnSub.unsubscribe();
+
   }
 }

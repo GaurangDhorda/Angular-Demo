@@ -19,13 +19,15 @@ export class ContactComponent implements OnInit, AfterViewInit {
   end = new Date();
   private _userName: string;
   fileUpload: File;
-  get userName(): string{ // two way binding using getters and setters in input type="name"
+  get userName(): string { // two way binding using getters and setters in input type="name"
     return this._userName;
   }
-  set userName(value: string){
+  set userName(value: string) {
     this._userName = value;
   }
-
+  messages = [];
+  loading = false;
+  sessionId = Math.random().toString(36).slice(-5);
   @ViewChild('nameRef')  nameElementRef: ElementRef; // #nameRef is template reference variable in html file of input type=name
 
   constructor(private formBuilder: FormBuilder, private formService: EmployeeService) {
@@ -35,29 +37,57 @@ export class ContactComponent implements OnInit, AfterViewInit {
    }
 
   ngOnInit() {
+    this.addBotMessage('Human presence detected 🤖. How can I help you? ');
     this.messageForm = this.formBuilder.group({
         'name': ['', Validators.required],
         'message': ['', Validators.required], // Validators.pattern(/^\s*/)],
         'myDate' : ['', Validators.required ]
     });
-        // (<HTMLInputElement>document.getElementById("dateControl")).value = this.currentDate.toLocaleDateString() + '/' + this.currentDate.getMonth();
+    // (<HTMLInputElement>document.getElementById("dateControl")).value = this.currentDate.toLocaleDateString() +
+    // '/' + this.currentDate.getMonth();
     console.log( this.currentDate.getDate() + '/' + this.currentDate.getMonth() + '/' + this.currentDate.getFullYear() );
    // document.querySelector('#dateControl').nodeValue=new Date().toISOString().substr(0,10); //sets default date to control.
   }
+  handleUserMessage(event){
+    console.log(event);
+    this.addUserMessage(event.message);
 
-  ngAfterViewInit(){
+    this.formService.dialogFLow(this.sessionId, event.message).subscribe(res => {
+        console.log(res);
+        const {fulfillmentText } = res;
+        this.addBotMessage(fulfillmentText );
+        this.loading = false;
+    });
+  }
+  addUserMessage(text: string){
+    this.messages.push({
+      text,
+      sender: 'You',
+      replay: 'true',
+      date: new Date()
+    });
+  }
+  addBotMessage(text) {
+    this.messages.push({
+      text,
+      sender: 'Bot',
+      avatar: '/assets/chatbot.png',
+      date: new Date()
+    });
+  }
+  ngAfterViewInit() {
     // all dom events and properties are accesible only in this lifecycle hooks..
     // all template reference variable initialisation takes place here ... see @ViewChild(' nameRef ')..
     this.nameElementRef.nativeElement.focus(); // this line focus input type=name with #nameRef
   }
-  onFileSelected(event){
-    this.fileUpload = <File> event.target.files[0];
+  onFileSelected(event) {
+    this.fileUpload = event.target.files[0] as File;
     // console.log(event.target.files[0]);
   }
-  uploadFile(){
+  uploadFile() {
     const fd = new FormData();
     fd.append('image', this.fileUpload , this.fileUpload.name);
-    this.formService.fileUpload(fd).subscribe( file =>{
+    this.formService.fileUpload(fd).subscribe( file => {
       console.log('success ' + file.msg);
    });
   }

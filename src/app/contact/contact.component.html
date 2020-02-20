@@ -1,3 +1,28 @@
+<!--
+
+<div>
+  <nb-layout>
+    <nb-layout-column>    
+        <nb-chat title="Conversation with a Bot">
+            <nb-chat-message *ngFor="let msg of messages"
+                type="text"
+                [message]= "msg.text"
+                [reply]="msg.reply"
+                [sender]="msg.sender"
+                [date]="msg.date"
+                [avatar]="msg.avatar"> 
+            </nb-chat-message>
+          <nb-chat-message *ngIf="loading" [nbSpinner]="loading" nbSpinnerStatus="info"
+                            type="text" avatar="/assets/chatbot.png" message="..." >
+          </nb-chat-message>
+          <nb-chat-form (send)="handleUserMessage($event)" showButton="true" [dropFiles]="true" buttonIcon="nb-send">
+          </nb-chat-form>
+        </nb-chat>
+      </nb-layout-column>
+    </nb-layout>
+</div>
+
+-->
 <h1>Contact Us</h1>
 <form [formGroup] = "messageForm" (ngSubmit)="onSubmit()">
   <h5 *ngIf="success">Your form is valid!</h5>
@@ -38,3 +63,5 @@
     <strong>Message:</strong> 
     <span>{{ messageForm.controls.message.value }}</span>
   </div>
+
+

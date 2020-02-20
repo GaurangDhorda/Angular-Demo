@@ -9,12 +9,11 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./create-new-user.component.css']
 })
 export class CreateNewUserComponent implements OnInit {
-  
   formGroup: FormGroup;
   email: string;
   password: string;
   constructor( private firebaseAuthEmployeeService: EmployeeService, private formBuilder: FormBuilder, private snackbar: MatSnackBar  ) { }
-  
+
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
       'email': ['',  [Validators.email, Validators.required ]],
@@ -24,7 +23,6 @@ export class CreateNewUserComponent implements OnInit {
   }
 
   createUser() {
-    
     this.firebaseAuthEmployeeService.createNewUser(this.formGroup.controls['email'].value, this.formGroup.controls['pass'].value)
     .then(res => {
       console.log(res);
@@ -32,16 +30,15 @@ export class CreateNewUserComponent implements OnInit {
     }, err => {
         console.log(err);
            // alert(err.message + ' try different Email ID');
-            const snack = this.snackbar.open (err.message + ' Try different Email ID', 'OK');
-            snack.onAction().subscribe( () => {
-            });
+        const snack = this.snackbar.open (err.message + ' Try different Email ID', 'OK');
+        snack.onAction().subscribe( () => {
+        });
        }
     );
 
-    
   }
-  verifyPassword(value: string){
-    if (this.password === value){
+  verifyPassword(value: string) {
+    if (this.password === value) {
       alert ('password Match');
     }
   }

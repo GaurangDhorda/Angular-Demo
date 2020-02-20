@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy } from '@angular/core';
 import { CookingServiceService } from '../cooking-service.service';
 import { cookingComponent } from '../cooking-routing.module';
 import { ICooking } from '../icooking';
@@ -11,16 +11,18 @@ import { of, Observable } from 'rxjs';
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css']
 })
-export class RecipeListComponent implements OnInit {
-  public title = 'Cooking/List';
+export class RecipeListComponent implements OnInit, AfterContentChecked, AfterContentInit,
+                                 AfterViewChecked, AfterViewInit, OnDestroy {
+public title = 'Cooking/List';
 public cooking: ICooking[];
 public errorMessage: string;
 public counter = 0;
-public isWait:boolean;
+public isWait: boolean;
 public cooking$: Observable<ICooking[]>;
   constructor(private cookingRecipe: CookingServiceService) { }
 
   ngOnInit() {
+    
   //  console.log(this.cookingRecipe.getRecipe$.pipe(tap(data => console.log(data))));
     this.cooking$ = this.cookingRecipe.getRecipe$.pipe(tap (data => {
       console.log('data ' + data);
@@ -29,46 +31,43 @@ public cooking$: Observable<ICooking[]>;
     this.cookingRecipe.getRecipe()
     .subscribe(
           data => {
-            
             this.cooking = data['recipes'];
-          } , 
+          },
           err => this.errorMessage = err,
           () => this.isWait = false
     );
     }
 
     ngAfterContentInit(){
-      console.log("recipe-list - ngAfterContentInit()");
+      console.log('recipe-list - ngAfterContentInit()');
     }
-    
     ngAfterContentChecked(){
-      console.log("recipe-list - ngAfterContentChecked()");
+      console.log('recipe-list - ngAfterContentChecked()');
     }
-    
+
     ngAfterViewInit(){
-      console.log("recipe-list - ngAfterViewInit()");
+      console.log('recipe-list - ngAfterViewInit()');
     }
-    
     ngAfterViewChecked() {
-      
-      console.log("recipe-list - ngAfterVIewChecked()", this.counter);
+      console.log('recipe-list - ngAfterVIewChecked()', this.counter);
     }
     ngOnDestroy() {
       // resetting search string..
       this.cookingRecipe.resetSearchItemName();
     }
-    counterSearchResult(c){
-        return this.counter= this.counter + 1;
+    counterSearchResult(c) {
+        return this.counter = this.counter + 1;
     }
-    resetCounter(){
+    resetCounter() {
      this.counter = 0;
     }
-      search_title(){
-        // can call this from recipe-topbar.ts onActivate() method and we can pass value default.. 
+      search_title() {
+        // can call this from recipe-topbar.ts onActivate() method and we can pass value default..
         console.log('called from cook-topbar');
       }
-      getRecipe( recipe_ID ){
+      getRecipe(recipe_ID){
         console.log('Recipe_Id ', recipe_ID);
+        
       }
 
       public highlight( title: string) {
@@ -85,4 +84,3 @@ public cooking$: Observable<ICooking[]>;
         }
       }
 }
-

@@ -50,9 +50,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
       // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
   }
-  
   close() {
-    // closes imageViewer 
+    // closes imageViewer
     const modal = document.getElementById('myModal');
     modal.style.display = 'none';
   }
@@ -90,6 +89,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   detailsData( paramEmployee , i  ) {
     // opens more details of image selected component fire HomeDetailsComponent by router..
 //    this.router.navigate(['home/homedetails', paramEmployee.id]);
+    console.log('details data',i)
       this.router.navigate([ i], { relativeTo: this.activatedRoute});
       // this is relative path navigation so that works always when path changes too.
   }

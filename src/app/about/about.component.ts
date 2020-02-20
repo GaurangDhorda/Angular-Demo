@@ -1,4 +1,5 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck, AfterContentChecked,
+         AfterContentInit, AfterViewChecked, AfterViewInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { trigger, transition, animate, style } from '@angular/animations';
 
@@ -18,7 +19,9 @@ import { trigger, transition, animate, style } from '@angular/animations';
     ])
   ]
 })
-export class AboutComponent implements OnInit, OnChanges {
+export class AboutComponent implements OnInit, OnChanges, DoCheck,
+                            AfterContentChecked, AfterContentInit,
+                            AfterViewChecked, AfterViewInit, OnDestroy {
   public title = 'About';
   public date = new Date();
   users = [
@@ -26,6 +29,7 @@ export class AboutComponent implements OnInit, OnChanges {
     {id: 2, name: 'happy one'},
     {id: 3, name: 'new one check'}
   ];
+  
   constructor(private routes: ActivatedRoute) { // activateRoute used to get parameters and values defined in routerLink..
     console.log('Constructor of aboutComponent');
    }
@@ -45,11 +49,10 @@ export class AboutComponent implements OnInit, OnChanges {
     ];
    }
   ngOnInit() {
-    
     console.log('ngOnInit of aboutComponent');
     this.routes.paramMap
     .subscribe(params => {
-     let username = +params.get('username'); // + sign used to convert result into number
+     const username = +params.get('username'); // + sign used to convert result into number
      console.log(username);
     });
   }
@@ -70,5 +73,23 @@ export class AboutComponent implements OnInit, OnChanges {
   }
   ngOnDestroy() {
     console.log('ngOnDestroy of aboutComponent');
+  }
+}
+
+export class Productdataclass {
+  productId: number;
+  productName: string;
+
+  get _productId() {
+    return this.productId;
+  }
+  set _productId(id:number){
+    this.productId = id;
+  }
+  get _productName(){
+    return this.productName;
+  }
+  set _productName(name: string){
+    this.productName = name;
   }
 }

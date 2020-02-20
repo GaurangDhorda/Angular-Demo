@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './iemployee';
-import { Observable, throwError, Subscription } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, tap, throttleTime, distinctUntilChanged, first, switchMap   } from 'rxjs/operators';
 import * as io from 'socket.io-client';
 import { auth } from 'firebase/app';
@@ -9,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { DataModel } from './material-contact/datamodel';
 import { MatSnackBar } from '@angular/material';
-import { FormGroup } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
@@ -148,7 +148,20 @@ timeout() {
 onSubmit(datamodel: DataModel) {
  return this.http.post<any> (this.url_MaterialFormSave, datamodel);
 }
+dialogFLow(sessionID, text) {
+  return this.http.post<any> ('http://chatnodejsappdemo.herokuapp.com/dialogflowGateway', {
+    sessionId: sessionID,
+    queryInput: {
+      text: {
+        text,
+        languageCode: 'en-US'
+      }
+    }
+  });
+}
+dialogFlowSend() {
 
+}
 onRead() {
   return this.http.get<any> (this.url_MaterialFormRead).pipe(
     tap(data => console.log('node data ' + data)),
@@ -192,6 +205,7 @@ postSubscriptions(sub: PushSubscription) {
         tap( data => console.log('Server data', data)),
         catchError(this.errorhandler)
     );
+    
   }
 
   errorhandler(error: HttpErrorResponse) {

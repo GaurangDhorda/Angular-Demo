@@ -1,19 +1,39 @@
-<mat-progress-bar mode="indeterminate" value=80 *ngIf="isWaiting" > </mat-progress-bar>
-<app-nav (childEvent)="message=$event" ></app-nav>
+ <!-- <nb-layout>
 
+  <nb-layout-header fixed>
+  Insert header here 
+  </nb-layout-header>
 
-<!doctype html>
-<html lang="en">
-<head>
+  <nb-layout-column>
+-->
 
-<title><h1>HelloWorld</h1></title>
-</head>
-
-<body>
+    <mat-progress-bar mode="indeterminate" value=80 *ngIf="isWaiting" > </mat-progress-bar>
+    <app-nav (childEvent)="message=$event" ></app-nav>
     
-            <section>                
-                <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
-            </section>
-</body>
+    
+    <!doctype html>
+    <html lang="en">
+    <head>
+    
+    <title><h1>HelloWorld</h1></title>
+    </head>
+    
+    <body>
+        
+                <section>                
+                    <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
+                </section>
+                
+    </body>
+    
+    </html>
+    
+<!--
+  </nb-layout-column>
 
-</html>
+  <nb-layout-footer fixed>
+   Insert footer here
+  </nb-layout-footer>
+
+</nb-layout>
+-->

@@ -19,7 +19,9 @@
       <ng-template #reset> {{ resetCounter() }} </ng-template> -->
     
       <div class="recipe-card">
-      <div class="recipe-image" [title]="recipe.title" [style.background-image]="'url(' + recipe.image_url + ')'"></div>
+      
+      <div class="recipe-image" [title]="recipe.title"  [style.background-image]="'url(' + recipe.image_url + ')'"> </div> 
+      
       <div class="recipe-details" >
         <h4><label>Item Name </label></h4>
           <p [innerHTML]="highlight(recipe.title)">  {{recipe.title}}</p> 

@@ -15,8 +15,8 @@ section{
   width:auto;
     background:linear-gradient(20deg ,#5c1da3 , #f06d06);
     color:white;
-    padding: 16px;
-    height: 40px;
+    padding: 10px;
+    height: 60px;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -96,13 +96,13 @@ a {
 }
 @media only screen and (max-width: 380px){
   .cookingcontainer{
-    height: 45px;
+    height: 55px;
   }
   a {
     padding: .2em;
   }
   .float-right{
-    float: left;
+  /*  float: left; */
     width:70%;
   }
   input[type="text"]{

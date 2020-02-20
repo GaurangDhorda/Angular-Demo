@@ -16,7 +16,7 @@ export class CookingServiceService {
     catchError(this.errorhandler)
   );
   constructor(private http: HttpClient) {}
-  
+
   getRecipe(): Observable <ICooking[]> {
       return this.http.get <ICooking[]>( 'assets/cooking-api.json' )  // 'assets/cooking-api.json '
       .pipe(

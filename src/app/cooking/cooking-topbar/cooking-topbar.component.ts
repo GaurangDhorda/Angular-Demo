@@ -34,13 +34,12 @@ export class CookingTopbarComponent implements OnInit {
     }); */
   }
   onActivate(componentReference) {
-    // calling from router-outlet 
+    // calling from router-outlet
     console.log('cooking reference ' , componentReference);
     componentReference.search_title();
   }
     searchRecipeByName(searchData) {
       console.log('SearchByName',searchData);
       this.cookingService.searchByItemName(searchData);
-      
     }
 }

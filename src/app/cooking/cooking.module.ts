@@ -18,7 +18,7 @@ import { MatProgressBarModule } from '@angular/material';
 
   ]
 })
-export class CookingModule { 
+export class CookingModule {
   constructor() {
     console.log('Lazily Loaded : CookingModule');
   }

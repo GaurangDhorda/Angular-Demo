@@ -4,6 +4,7 @@
   justify-content: space-between;  
     margin: 2px;
     height: auto;
+    width: fit-content;
 
 }
 .recipe-card{
@@ -16,6 +17,7 @@
   margin-bottom:5px;
   border-radius: 15px 15px 0 0;
 }
+
 .recipe-details{
   padding:10px;
 
