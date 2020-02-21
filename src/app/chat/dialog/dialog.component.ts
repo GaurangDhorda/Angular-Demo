@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 
 export class DialogComponent implements OnInit {
-  @ViewChild('username') usernameElementRef: ElementRef;
+  @ViewChild('username', { static: true }) usernameElementRef: ElementRef;
   @Output() submitClicked = new EventEmitter<any>();
   userName: string;
   password: string;

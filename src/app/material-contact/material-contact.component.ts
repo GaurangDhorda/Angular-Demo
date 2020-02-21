@@ -34,7 +34,7 @@ public editData: boolean;
 title: string;
 editDataTitle = '';
 
-@ViewChild('formDirective') formDirective: NgForm;
+@ViewChild('formDirective', { static: true }) formDirective: NgForm;
 
   constructor( private formBuilder: FormBuilder, private formService: EmployeeService, private el: ElementRef,
                private snackbar: MatSnackBar, private router: Router, 

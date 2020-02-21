@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   messages = [];
   loading = false;
   sessionId = Math.random().toString(36).slice(-5);
-  @ViewChild('nameRef')  nameElementRef: ElementRef; // #nameRef is template reference variable in html file of input type=name
+  @ViewChild('nameRef', { static: true })  nameElementRef: ElementRef; // #nameRef is template reference variable in html file of input type=name
 
   constructor(private formBuilder: FormBuilder, private formService: EmployeeService) {
     this.currentDate.setHours(0,0,0,0);
