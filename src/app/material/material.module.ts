@@ -25,15 +25,20 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
 //import {MatCheckboxModule} from '@angular/material/checkbox';
 
-const MaterialComponentsArray = [ MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
-                                  MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule,
-                                  MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
-                                  MatNativeDateModule, MatCheckboxModule, MatSnackBarModule, MatProgressSpinnerModule,
-                                  MatProgressBarModule, MatTooltipModule, MatTableModule, MatPaginatorModule,
-                                  MatSortModule, CommonModule
+const MaterialComponentsArray = [ 
                                 ];
 @NgModule({
-  imports: [ HttpClientModule, FormsModule, MaterialComponentsArray],
-  exports: [ FormsModule]
+  imports: [ HttpClientModule, FormsModule, MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
+    MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule,
+    MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
+    MatNativeDateModule, MatCheckboxModule, MatSnackBarModule, MatProgressSpinnerModule,
+    MatProgressBarModule, MatTooltipModule, MatTableModule, MatPaginatorModule,
+    MatSortModule, CommonModule],
+  exports: [ FormsModule, MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
+    MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule,
+    MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
+    MatNativeDateModule, MatCheckboxModule, MatSnackBarModule, MatProgressSpinnerModule,
+    MatProgressBarModule, MatTooltipModule, MatTableModule, MatPaginatorModule,
+    MatSortModule, CommonModule]
 })
 export class MaterialModule { }

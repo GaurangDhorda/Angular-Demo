@@ -52,7 +52,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    MatCheckboxModule,
+    MaterialModule,
     ServiceWorkerModule.register('/Angular-Demo/ngsw-worker.js', { enabled: environment.production }),
     AgmCoreModule.forRoot({
       // used for adding maps functionality..
