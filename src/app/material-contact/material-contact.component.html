@@ -2,7 +2,7 @@
   {{title}}  
 </mat-toolbar>
 
-<form [formGroup]="formGroup" class="mat-form" #formDirective="ngForm" (ngSubmit)="onSubmit()"  >
+<form [formGroup]="formGroup" class="mat-form" (ngSubmit)="onSubmit()"  >
    <div class="indicator" id="loader"> 
     <mat-progress-spinner *ngIf = "displaySpinner"
       class="example-margin"
@@ -87,10 +87,7 @@
           </mat-form-field>
           
           <div class="add-bottom-padding">
-            <mat-checkbox formControlName="isPermenent">Permenent Employee</mat-checkbox>
-            
-              
-            
+            <mat-checkbox formControlName="isPermenent">Permenent Employee </mat-checkbox>
           </div>
       </div>
     </mat-grid-tile>
@@ -114,7 +111,7 @@
             <div class="dataread-flex"> <p>{{read.fullname}} </p></div> 
             <div class="dataread-flex"><p>{{read.city}}</p></div>
         </div>
-        </div>
+    </div>
 </div>
 
 

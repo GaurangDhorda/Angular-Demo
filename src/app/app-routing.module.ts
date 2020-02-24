@@ -11,6 +11,7 @@ import { HomedetailsComponent } from './home/homedetails/homedetails.component';
 import { ChatComponent } from './chat/chat.component';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
 import { MaterialContactListComponent } from './material-contact/material-contact-list/material-contact-list.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},

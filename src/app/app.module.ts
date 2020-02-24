@@ -22,7 +22,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MaterialContactComponent } from './material-contact/material-contact.component';
 import { ConfirmdialogComponent } from './confirmdialog/confirmdialog.component';
 import { EmployeeService } from './employee.service';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
  //ShoppingModule,
 //CookingModule,
 @NgModule({
@@ -50,9 +50,9 @@ import { EmployeeService } from './employee.service';
     AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
     HttpClientModule,
     AppRoutingModule,
+    MatCheckboxModule,
     ServiceWorkerModule.register('/Angular-Demo/ngsw-worker.js', { enabled: environment.production }),
     AgmCoreModule.forRoot({
       // used for adding maps functionality..

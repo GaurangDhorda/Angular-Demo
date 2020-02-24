@@ -22,17 +22,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { CommonModule } from '@angular/common';
+//import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const MaterialComponentsArray = [ MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
                                   MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule,
                                   MatGridListModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
                                   MatNativeDateModule, MatCheckboxModule, MatSnackBarModule, MatProgressSpinnerModule,
                                   MatProgressBarModule, MatTooltipModule, MatTableModule, MatPaginatorModule,
-                                  MatSortModule
+                                  MatSortModule, CommonModule
                                 ];
 @NgModule({
   imports: [ HttpClientModule, FormsModule, MaterialComponentsArray],
-  exports: [MaterialComponentsArray]
+  exports: [ FormsModule]
 })
 export class MaterialModule { }

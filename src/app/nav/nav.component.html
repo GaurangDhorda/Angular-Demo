@@ -2,20 +2,20 @@
 
 <header>
     <div class="container">
-     <a class="icon" id="icon" [ngClass]="{'active': item}" > <i class="fas fa-bars" (click)="myFunction()"></i></a>  
+     <a class="icon" id="icon" ngClass="{'active': item}" > <i class="fas fa-bars" (click)="myFunction()"></i></a>  
       <a routerLink="/" class="logo" >
          {{appTitle}} 
       </a>
   
       <nav class="myContainer" id="myTopnav">
           <ul>
-            <li><a [routerLink]="['/home']"  routerLinkActive="active" (click)="myFunction()">Home</a></li>
-            <li><a [routerLink]="['/shopping']"  routerLinkActive="active" (click)="myFunction()">Shop</a></li>
-            <li><a [routerLink]="['/cooking']"  routerLinkActive="active" (click)="myFunction()">Cooking</a></li>
-            <li><a [routerLink]="['/chat']"  routerLinkActive="active" (click)="myFunction()">Chat</a></li>
-            <li><a [routerLink]="['/about']" routerLinkActive="active" (click)="myFunction()" >About</a></li>
-            <li><a [routerLink]="['/contact']" routerLinkActive="active" (click)="myFunction()" >Contact</a></li>
-            <li><a [routerLink]="['/material-contact']" routerLinkActive="active" (click)="myFunction()" >Material Contact</a></li>
+            <li><a routerLink="/home"  routerLinkActive="active" (click)="myFunction()">Home</a></li>
+            <li><a routerLink="/shopping"  routerLinkActive="active" (click)="myFunction()">Shop</a></li>
+            <li><a routerLink="/cooking"  routerLinkActive="active" (click)="myFunction()">Cooking</a></li>
+            <li><a routerLink="/chat"  routerLinkActive="active" (click)="myFunction()">Chat</a></li>
+            <li><a routerLink="/about" routerLinkActive="active" (click)="myFunction()" >About</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active" (click)="myFunction()" >Contact</a></li>
+            <li><a routerLink="/material-contact" routerLinkActive="active" (click)="myFunction()" >Material Contact</a></li>
           </ul>
         </nav>
     </div>
