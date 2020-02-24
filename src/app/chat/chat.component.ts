@@ -2,7 +2,8 @@ import { Component, OnInit, AfterViewChecked, AfterContentChecked } from '@angul
 import { catchError, tap, throttleTime, distinctUntilChanged, filter, scan, skipWhile } from 'rxjs/operators';
 import * as moment from 'moment';
 import { EmployeeService } from '../employee.service';
-import { MatDialog, MatSnackBar } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from './dialog/dialog.component';
 
 declare var gtag;

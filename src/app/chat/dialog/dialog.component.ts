@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
-import { MatDialog, MatSnackBar, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateNewUserComponent } from '../create-new-user/create-new-user.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 

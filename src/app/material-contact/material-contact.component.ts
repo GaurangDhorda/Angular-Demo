@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild, HostListener, ElementRef, Inject } from '
 import { FormGroup, FormBuilder, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { DataModel } from './datamodel';
-import { MatSnackBar, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { JsonPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MaterialContactListComponent } from './material-contact-list/material-contact-list.component';

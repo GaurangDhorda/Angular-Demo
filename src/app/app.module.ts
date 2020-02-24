@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { DialogComponent } from './chat/dialog/dialog.component';
 import { environment } from '../environments/environment';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateNewUserComponent } from './chat/create-new-user/create-new-user.component';
 // import { AdsenseModule } from 'ng2-adsense';
 import { AgmCoreModule } from '@agm/core';

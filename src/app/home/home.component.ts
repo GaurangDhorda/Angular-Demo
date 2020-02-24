@@ -5,7 +5,7 @@ import { Router , ActivatedRoute } from '@angular/router';
 // import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MapserviceService } from '../mapservice.service';
 
 @Component({

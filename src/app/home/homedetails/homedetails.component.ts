@@ -2,7 +2,7 @@ import { Component, OnInit, AfterContentInit } from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import { EmployeeService } from 'src/app/employee.service';
 import { IEmployee } from 'src/app/iemployee';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-homedetails',
