@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
-import { MatTableDataSource, MatSort, MatPaginator, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from 'src/app/chat/dialog/dialog.component';
 import { MaterialContactComponent } from '../material-contact.component';
 import { ConfirmdialogComponent, ConfirmDialogModel } from 'src/app/confirmdialog/confirmdialog.component';
