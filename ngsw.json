@@ -1,13 +1,23 @@
 {
   "configVersion": 1,
-  "timestamp": 1565169338274,
-  "index": "https://gaurangdhorda.github.io/Angular-Demo/Angular-Demo/index.html",
+  "timestamp": 1582614708566,
+  "index": "/Angular-Demo/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
-      "urls": [],
+      "urls": [
+        "/Angular-Demo/5.184c7937d0cd149bb839.js",
+        "/Angular-Demo/6.26be8ac50790e925ddfc.js",
+        "/Angular-Demo/favicon.ico",
+        "/Angular-Demo/index.html",
+        "/Angular-Demo/main.f548771766d499f38d95.js",
+        "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js",
+        "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js",
+        "/Angular-Demo/runtime.af8cf662ee4275869633.js",
+        "/Angular-Demo/styles.103713dc221cdb5ed17d.css"
+      ],
       "patterns": [
         "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.8\\.1\\/css\\/all\\.css",
         "https:\\/\\/fonts\\.googleapis\\.com\\/css\\?family=Roboto:300,400,500",
@@ -19,16 +29,16 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/cooking-api.json",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/grdTech.jpg",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-128x128.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-144x144.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-152x152.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-192x192.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-384x384.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-512x512.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-72x72.png",
-        "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-96x96.png"
+        "/Angular-Demo/assets/cooking-api.json",
+        "/Angular-Demo/assets/grdTech.jpg",
+        "/Angular-Demo/assets/icons/icon-128x128.png",
+        "/Angular-Demo/assets/icons/icon-144x144.png",
+        "/Angular-Demo/assets/icons/icon-152x152.png",
+        "/Angular-Demo/assets/icons/icon-192x192.png",
+        "/Angular-Demo/assets/icons/icon-384x384.png",
+        "/Angular-Demo/assets/icons/icon-512x512.png",
+        "/Angular-Demo/assets/icons/icon-72x72.png",
+        "/Angular-Demo/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
@@ -49,16 +59,25 @@
     }
   ],
   "hashTable": {
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41"
+    "/Angular-Demo/5.184c7937d0cd149bb839.js": "8b0c8dff6b3eb23ee98ab93896753e7cd8315dfb",
+    "/Angular-Demo/6.26be8ac50790e925ddfc.js": "93f4e25f002806cfc6d87b30738a2ce956ed86f5",
+    "/Angular-Demo/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
+    "/Angular-Demo/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
+    "/Angular-Demo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/Angular-Demo/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/Angular-Demo/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/Angular-Demo/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/Angular-Demo/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Angular-Demo/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/Angular-Demo/index.html": "5ceeaf548b8f4d08f752e624431c5e2d6cd691be",
+    "/Angular-Demo/main.f548771766d499f38d95.js": "1db56bda1754400144df6643b107fefb36c82e83",
+    "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
+    "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
+    "/Angular-Demo/runtime.af8cf662ee4275869633.js": "0950e7788c67e2fdb7ba870d6d250562fefabf19",
+    "/Angular-Demo/styles.103713dc221cdb5ed17d.css": "371f7f7b7207adc6b58b4646d81b36cdb30dc6a6"
   },
   "navigationUrls": [
     {
