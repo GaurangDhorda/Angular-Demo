@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from 'src/app/chat/dialog/dialog.component';
 import { MaterialContactComponent } from '../material-contact.component';
 import { ConfirmdialogComponent, ConfirmDialogModel } from 'src/app/confirmdialog/confirmdialog.component';
+import { MaterialSaveService } from 'src/app/material-save.service';
 
 @Component({
   selector: 'app-material-contact-list',
@@ -20,7 +21,7 @@ displayColumn: string[] = ['fullname', 'city', 'email', 'gender', 'actions'];
 isWait: boolean;
 selectedIndex: any;
 
-constructor( private formService: EmployeeService, private dialog: MatDialog) { }
+constructor( private formService: MaterialSaveService, private empService : EmployeeService ,private dialog: MatDialog) { }
 @ViewChild (MatSort) sort: MatSort;
 @ViewChild (MatPaginator) paginator: MatPaginator;
 
@@ -54,10 +55,10 @@ constructor( private formService: EmployeeService, private dialog: MatDialog) { 
      backdropClass: 'backdropBackground',
       hasBackdrop: true // false used for prevented users to clicking to background while dialog is open..
     };
-    this.formService.editDataTitle = 'Edit data';
+    this.empService.editDataTitle = 'Edit data';
     let Dref = this.dialog.open(MaterialContactComponent, dialogBoxSettings);
     Dref.afterClosed().subscribe( result =>{
-      this.formService.editDataTitle = '';
+      this.empService.editDataTitle = '';
       if(result){
          this.refresh();
          console.log('after close dialog ' + result);

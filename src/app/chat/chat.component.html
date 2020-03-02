@@ -7,6 +7,7 @@
   <div class="chatcontainer">
       Chatting Feature
   </div>
+  
   <div class="usersSubHeading">
     <div class="pspinner" *ngIf = "displaySpinner">
       <mat-progress-spinner *ngIf = "displaySpinner"
@@ -47,7 +48,6 @@
             <h4 *ngIf="typing">  {{typing}} is Typing </h4> 
           </ng-template></div>
       <div class="chatinput" *ngIf="!displaySpinner">
-        
           <mat-form-field class="matInput">
             <input id="inputElement" type="text" matInput placeholder="Type New Message.." [(ngModel)]="message" (keyup.enter)="sendMessage($event)" 
                    (keyup)="UserTyping()" [disabled]="readOnly" />

@@ -4,17 +4,16 @@ import { EmployeeService } from '../employee.service';
 import { DataModel } from './datamodel';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { JsonPipe } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MaterialContactListComponent } from './material-contact-list/material-contact-list.component';
-import { ConfirmDialogModel } from '../confirmdialog/confirmdialog.component';
 
+import {  Router } from '@angular/router';
+import { MaterialSaveService } from '../material-save.service';
 
 @Component({
   selector: 'app-material-contact',
   templateUrl: './material-contact.component.html',
   styleUrls: ['./material-contact.component.css']
 })
+
 export class MaterialContactComponent implements OnInit {
 formGroup: FormGroup;
 breakPoint: number;
@@ -37,12 +36,12 @@ editDataTitle = '';
 
 @ViewChild('formDirective') formDirective: NgForm;
 
-  constructor( private formBuilder: FormBuilder, private formService: EmployeeService, private el: ElementRef,
-               private snackbar: MatSnackBar, private router: Router, 
+  constructor( private formBuilder: FormBuilder, private formService: MaterialSaveService, private el: ElementRef,
+               private snackbar: MatSnackBar, private router: Router, private empService : EmployeeService,
                private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.editDataTitle = this.formService.editDataTitle;
+    this.editDataTitle = this.empService.editDataTitle;
     if (this.editDataTitle === '') {
       this.title = 'Material Contact Form';
     } else {
@@ -75,7 +74,6 @@ editDataTitle = '';
     }
 
     else {
-    
     this.formGroup = this.formBuilder.group({
       'key': [0],
       'fullname':['', Validators.required],
@@ -182,8 +180,7 @@ editDataTitle = '';
   }
   
   onClear() {
-    
-    
+
     //  //  this.formGroup.clearValidators();
    // this.formGroup.updateValueAndValidity();
     
@@ -200,7 +197,7 @@ editDataTitle = '';
    this.formGroup.controls['fullname'].updateValueAndValidity();
     this.formGroup.controls['mobile'].updateValueAndValidity(); */
         
-   this.formDirective.resetForm();
+  // this.formDirective.resetForm();
    this.formGroup.reset();
    this.formGroup.markAsPristine();
    this.formGroup.markAsUntouched();
