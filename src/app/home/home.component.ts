@@ -1,12 +1,10 @@
 import { Component, OnInit, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { EmployeeService } from '../employee.service';
-import { IEmployee } from '../iemployee';
 import { Router , ActivatedRoute } from '@angular/router';
 // import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Subscription } from 'rxjs';
 import { takeWhile, shareReplay } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MapserviceService } from '../mapservice.service';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home',
@@ -29,15 +27,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   previous_info_window = null;
   public currentLat;
   public currentLng;
-  constructor(private empServiceData: EmployeeService, private router: Router,
+  empHomeService$ = this.empServiceData.empData$.pipe( takeWhile( () => this.alive),shareReplay(1));
+  
+  constructor(private empServiceData: HomeService, private router: Router,
               private activatedRoute: ActivatedRoute, private snackbar: MatSnackBar) {
     this.alive = true;
   }
 
   ngOnInit() {
     this.isWait = true;
-    this.empServiceData.getEmployees().pipe(takeWhile(() => this.alive))
-    .subscribe(
+    this.empHomeService$.subscribe(
         data => {
           this.Employee = data;
           this.isWait = true;
