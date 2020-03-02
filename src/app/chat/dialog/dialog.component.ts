@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateNewUserComponent } from '../create-new-user/create-new-user.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ChatService } from 'src/app/chat.service';
 
 
 
@@ -20,7 +21,8 @@ export class DialogComponent implements OnInit {
   password: string;
   successuserName: string;
   formGroup: FormGroup;
-  constructor(private firebaseAuthService: EmployeeService, private dialog: MatDialog, private formBuilder: FormBuilder) {
+  constructor(private firebaseAuthService: ChatService, private dialog: MatDialog, 
+              private formBuilder: FormBuilder, private empService : EmployeeService) {
        this.userName = '';
        this.successuserName = '';
     }
@@ -39,7 +41,7 @@ export class DialogComponent implements OnInit {
   }
   logIn(){
   //console.log('logIn');
-  if ( this.firebaseAuthService.isLoggedIn ) {
+  if ( this.empService.isLoggedIn ) {
     console.log(' User is Loged In');
   } else{
     this.firebaseAuthService.login(this.formGroup.controls['userName'].value, this.formGroup.controls['password'].value )

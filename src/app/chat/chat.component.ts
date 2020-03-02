@@ -5,6 +5,7 @@ import { EmployeeService } from '../employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from './dialog/dialog.component';
+import { ChatService } from '../chat.service';
 
 declare var gtag;
 
@@ -36,7 +37,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   displaySpinner = false;
   readOnly = true;
 
-  constructor(private chatService: EmployeeService, private dialog: MatDialog, private snackbar: MatSnackBar ) { 
+  constructor(private chatService: EmployeeService, private dialog: MatDialog,
+              private snackbar: MatSnackBar, private chatingService: ChatService ) { 
       this.secretCode = 'DONT TELL';
   }
 
@@ -109,7 +111,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
    else if (this.userName !== 'Guest') {
 
     localStorage.removeItem('totalUser');
-    this.chatService.logout();
+    this.chatingService.logout();
     this.logoutButton = false;
     this.userName = '' ;
     this.messages.splice(0);

@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild, HostListener, ElementRef, Inject } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { EmployeeService } from '../employee.service';
+import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { DataModel } from './datamodel';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import {  Router } from '@angular/router';
@@ -37,11 +36,10 @@ editDataTitle = '';
 @ViewChild('formDirective') formDirective: NgForm;
 
   constructor( private formBuilder: FormBuilder, private formService: MaterialSaveService, private el: ElementRef,
-               private snackbar: MatSnackBar, private router: Router, private empService : EmployeeService,
-               private dialog: MatDialog) { }
+               private snackbar: MatSnackBar, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.editDataTitle = this.empService.editDataTitle;
+    this.editDataTitle = this.formService.editDataTitle;
     if (this.editDataTitle === '') {
       this.title = 'Material Contact Form';
     } else {

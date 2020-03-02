@@ -1,9 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { dashCaseToCamelCase } from '@angular/compiler/src/util';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import {AbstractControl} from '@angular/forms';
-import { EmployeeService } from '../employee.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +8,7 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit, AfterViewInit {
+  [x: string]: any;
   public title = 'Contact';
   messageForm: FormGroup;
   submitted = false;
@@ -28,7 +26,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   @ViewChild('nameRef')  nameElementRef: ElementRef; // #nameRef is template reference variable in html file of input type=name
 
-  constructor(private formBuilder: FormBuilder, private formService: EmployeeService) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.currentDate.setHours(0,0,0,0);
     this.end.setHours(23,59,59,999);
    // alert( this.currentDate.toLocaleString() + ':' + this.end.toLocaleString() + ' CurrentTime: ' + this.currentDate.getDate() );
@@ -57,10 +55,16 @@ export class ContactComponent implements OnInit, AfterViewInit {
   uploadFile(){
     const fd = new FormData();
     fd.append('image', this.fileUpload , this.fileUpload.name);
-    this.formService.fileUpload(fd).subscribe( file =>{
+    this.onFileUpload(fd).subscribe( file =>{
       console.log('success ' + file.msg);
    });
   }
+  onFileUpload(path: FormData) {
+    console.log('jsonData' + path);
+    // console.log( JSON.stringify(path.get('image')));
+    return this.http.post <any> ('http://chatnodejsappdemo.herokuapp.com/fileUpload' , path);
+  }
+  
   onSubmit() {
     this.submitted = true;
     if (this.messageForm.invalid) {

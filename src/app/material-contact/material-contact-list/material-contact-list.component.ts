@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmployeeService } from 'src/app/employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DialogComponent } from 'src/app/chat/dialog/dialog.component';
 import { MaterialContactComponent } from '../material-contact.component';
 import { ConfirmdialogComponent, ConfirmDialogModel } from 'src/app/confirmdialog/confirmdialog.component';
 import { MaterialSaveService } from 'src/app/material-save.service';
@@ -21,7 +19,7 @@ displayColumn: string[] = ['fullname', 'city', 'email', 'gender', 'actions'];
 isWait: boolean;
 selectedIndex: any;
 
-constructor( private formService: MaterialSaveService, private empService : EmployeeService ,private dialog: MatDialog) { }
+constructor( private formService: MaterialSaveService, private dialog: MatDialog) { }
 @ViewChild (MatSort) sort: MatSort;
 @ViewChild (MatPaginator) paginator: MatPaginator;
 
@@ -55,10 +53,10 @@ constructor( private formService: MaterialSaveService, private empService : Empl
      backdropClass: 'backdropBackground',
       hasBackdrop: true // false used for prevented users to clicking to background while dialog is open..
     };
-    this.empService.editDataTitle = 'Edit data';
+    this.formService.editDataTitle = 'Edit data';
     let Dref = this.dialog.open(MaterialContactComponent, dialogBoxSettings);
     Dref.afterClosed().subscribe( result =>{
-      this.empService.editDataTitle = '';
+      this.formService.editDataTitle = '';
       if(result){
          this.refresh();
          console.log('after close dialog ' + result);
@@ -99,7 +97,7 @@ constructor( private formService: MaterialSaveService, private empService : Empl
             this.listData = new MatTableDataSource(this.contactList);
             this.listData.sort = this.sort;
             this.listData.paginator = this.paginator;
-            this.listData.data.indexOf
+           // this.listData.data.indexOf
             this.listData.filterPredicate = (data, filter) => {
                 return this.displayColumn.some(ele => {
                     return ele !== 'actions';

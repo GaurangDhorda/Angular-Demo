@@ -15,7 +15,7 @@ export class EmployeeService {
 user: User;
 isLogedIn: boolean;
 
-public editDataTitle = '';
+
   //private url = 'http://localhost:3000';
   private url = 'https://chatnodejsappdemo.herokuapp.com/';
   private socket;
@@ -37,21 +37,7 @@ public editDataTitle = '';
       });
   }
     // Firebase Authentication..
-    createNewUser(email: string, password: string) {
-      return this.firebaseService.createNewUser(email, password);
-    }
-
-  async login(email: string, password: string) {
-    const result = await this.firebaseService.login(email, password)
-    .then( successVal => { return email })
-    .catch(( err ) => {
-      let snack = this.snackbar.open(err.message , 'OK');
-      snack.onAction().subscribe( () => {
-        window.location.reload();
-      });
-    });
-    return result;
-  }
+  
   isloggedInMethod() {
     //console.log('isLogedIn :',this.angularFireAuth.authState.pipe( first() ).toPromise());
     //return this.angularFireAuth.authState.pipe( first() ).toPromise();
@@ -95,7 +81,6 @@ public editDataTitle = '';
 }
 
 public getUsers(): Observable<any> {
-  let getUsersCount = 0;
   this.socket.emit('getTotalUsers', '');
   return Observable.create ( (obr) => {
         this.socket.on('getTotalUsers', (users) => { obr.next(users); }
@@ -123,12 +108,6 @@ getUserisTyping  = () =>{
 timeout() {
   this.socket.emit('typing', false);
   console.log('timeOUt call');
-}
-
-fileUpload(path: FormData) {
-  console.log('jsonData' + path);
-  // console.log( JSON.stringify(path.get('image')));
-  return this.http.post <any> ('http://chatnodejsappdemo.herokuapp.com/fileUpload' , path);
 }
 
 postSubscriptions(sub: PushSubscription) {
