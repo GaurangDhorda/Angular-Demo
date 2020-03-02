@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { IEmployee } from './iemployee';
 import { Observable, throwError, Subscription } from 'rxjs';
-import { catchError, tap, throttleTime, distinctUntilChanged, first, switchMap   } from 'rxjs/operators';
+import { catchError, tap, throttleTime, distinctUntilChanged, first, switchMap, shareReplay, take   } from 'rxjs/operators';
 import * as io from 'socket.io-client';
-import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { DataModel } from './material-contact/datamodel';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormGroup } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
@@ -190,6 +189,7 @@ postSubscriptions(sub: PushSubscription) {
           These operators are imported from rxjs/operators.
       */
         tap( data => console.log('Server data', data)),
+        
         catchError(this.errorhandler)
     );
   }

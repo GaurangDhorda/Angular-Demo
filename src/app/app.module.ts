@@ -23,6 +23,7 @@ import { MaterialContactComponent } from './material-contact/material-contact.co
 import { ConfirmdialogComponent } from './confirmdialog/confirmdialog.component';
 import { EmployeeService } from './employee.service';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RouterModule } from '@angular/router';
  //ShoppingModule,
 //CookingModule,
 @NgModule({
@@ -42,7 +43,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   ],
 
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     LayoutModule,
     BrowserAnimationsModule, //this should be after the BrowsersModule..
     AngularFireDatabaseModule,
@@ -61,7 +62,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
       premium customer, in which case you can 
       use clientId 
       */
-    })
+    }),
+    RouterModule
   //  AdsenseModule
   ],
   bootstrap: [AppComponent]

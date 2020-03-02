@@ -4,7 +4,7 @@ import { IEmployee } from '../iemployee';
 import { Router , ActivatedRoute } from '@angular/router';
 // import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Subscription } from 'rxjs';
-import { takeWhile } from 'rxjs/operators';
+import { takeWhile, shareReplay } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MapserviceService } from '../mapservice.service';
 
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public first: boolean;
   public last: boolean;
   public isWait: boolean;
-  infoWindowOpened =null ;
+  infoWindowOpened = null ;
   previous_info_window = null;
   public currentLat;
   public currentLng;
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
               private activatedRoute: ActivatedRoute, private snackbar: MatSnackBar) {
     this.alive = true;
   }
-  
+
   ngOnInit() {
     this.isWait = true;
     this.empServiceData.getEmployees().pipe(takeWhile(() => this.alive))
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
       // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
   }
-  
+
   close() {
     // closes imageViewer 
     const modal = document.getElementById('myModal');

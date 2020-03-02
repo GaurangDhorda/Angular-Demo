@@ -3,6 +3,7 @@ import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import { EmployeeService } from 'src/app/employee.service';
 import { IEmployee } from 'src/app/iemployee';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-homedetails',
