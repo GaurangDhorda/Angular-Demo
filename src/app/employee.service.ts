@@ -5,7 +5,6 @@ import { Observable, throwError, Subscription } from 'rxjs';
 import { catchError, tap, throttleTime, distinctUntilChanged, first, switchMap, shareReplay, take   } from 'rxjs/operators';
 import * as io from 'socket.io-client';
 import { User } from 'firebase';
-import { DataModel } from './material-contact/datamodel';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MaterialFirebaseService } from './material-firebase.service';
 
