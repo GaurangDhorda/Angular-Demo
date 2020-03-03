@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MaterialFirebaseService } from './material-firebase.service';
+import { MaterialFirebaseService } from '@material-firebase/material-firebase.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({

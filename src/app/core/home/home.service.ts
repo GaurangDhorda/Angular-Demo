@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { IEmployee } from './iemployee';
+import { throwError } from 'rxjs';
+import { IEmployee } from '@empInterface';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { tap, catchError, shareReplay } from 'rxjs/operators';
 

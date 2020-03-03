@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from 'src/app/employee.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ChatService } from 'src/app/chat.service';
+import { ChatService } from '@chat/chat.service';
 
 @Component({
   selector: 'app-create-new-user',

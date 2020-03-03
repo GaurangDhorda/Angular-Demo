@@ -15,7 +15,7 @@ if (environment.production) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-                                                                                                          platformBrowserDynamic().bootstrapModule(AppModule).then(() => {
+  platformBrowserDynamic().bootstrapModule(AppModule).then(() => {
     if ('serviceWorker' in navigator && environment.production) {
       navigator.serviceWorker.register('/Angular-Demo/ngsw-worker.js');
     }

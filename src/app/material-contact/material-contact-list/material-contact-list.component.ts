@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MaterialContactComponent } from '../material-contact.component';
 import { ConfirmdialogComponent, ConfirmDialogModel } from 'src/app/confirmdialog/confirmdialog.component';
-import { MaterialSaveService } from 'src/app/material-save.service';
+import { MaterialSaveService } from '@material/material-save.service';
 
 @Component({
   selector: 'app-material-contact-list',

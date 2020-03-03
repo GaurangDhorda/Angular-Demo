@@ -1,9 +1,8 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
-import { EmployeeService } from 'src/app/employee.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { shareReplay } from 'rxjs/operators';
-import { HomeService } from 'src/app/home.service';
+import { HomeService } from '@home/home.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,6 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './homedetails.component.html',
   styleUrls: ['./homedetails.component.css']
 })
+
 export class HomedetailsComponent implements OnInit {
 public empId;
 public employee = [];

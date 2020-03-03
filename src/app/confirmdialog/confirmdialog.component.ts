@@ -1,13 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-confirmdialog',
   templateUrl: './confirmdialog.component.html',
   styleUrls: ['./confirmdialog.component.css']
 })
-
-
 
 export class ConfirmdialogComponent implements OnInit {
   title: string;

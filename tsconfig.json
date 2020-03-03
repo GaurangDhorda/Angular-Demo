@@ -17,6 +17,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@employee/*" : ["./src/app/core/employee/*"],
+      "@chat/*" : ["./src/app/core/chat/*"],
+      "@home/*" : [ "./src/app/core/home/*"],
+      "@material/*" : ["./src/app/core/material/*"],
+      "@material-contact/*" : ["./src/app/material-contact/*"],
+      "@material-firebase/*" : ["./src/app/core/firebase/*"],
+      "@map/*" : ["./src/app/core/map/*"],
+      "@empInterface" : ["./src/app/core/iemployee"],
+      "@materialmodule/*" : ["./src/app/material/*"]
+    }
   }
 }

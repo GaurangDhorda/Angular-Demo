@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataModel } from './material-contact/datamodel';
+import { DataModel } from '@material-contact/datamodel';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';

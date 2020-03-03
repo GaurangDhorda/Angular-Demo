@@ -1,11 +1,11 @@
 import { Component, OnInit, AfterViewChecked, AfterContentChecked } from '@angular/core';
 import { catchError, tap, throttleTime, distinctUntilChanged, filter, scan, skipWhile } from 'rxjs/operators';
 import * as moment from 'moment';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '@employee/employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from './dialog/dialog.component';
-import { ChatService } from '../chat.service';
+import { ChatService } from '@chat/chat.service';
 
 declare var gtag;
 

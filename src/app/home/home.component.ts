@@ -4,7 +4,7 @@ import { Router , ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { takeWhile, shareReplay } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { HomeService } from '../home.service';
+import { HomeService } from '@home/home.service';
 
 @Component({
   selector: 'app-home',

@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import {  Router } from '@angular/router';
-import { MaterialSaveService } from '../material-save.service';
+import { MaterialSaveService } from '@material/material-save.service';
 
 @Component({
   selector: 'app-material-contact',

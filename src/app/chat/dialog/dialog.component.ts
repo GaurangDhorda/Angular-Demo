@@ -1,10 +1,9 @@
 import { Component, OnInit, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
-import { EmployeeService } from 'src/app/employee.service';
+import { EmployeeService } from '@employee/employee.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { CreateNewUserComponent } from '../create-new-user/create-new-user.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ChatService } from 'src/app/chat.service';
+import { ChatService } from '@chat/chat.service';
 
 
 
