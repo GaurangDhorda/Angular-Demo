@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
+// import { AgmCoreCustomModule } from './core/agm-core/agm-core.module';
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -25,10 +26,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserAnimationsModule, //this should be after the BrowsersModule..
     AppRoutingModule,
     RouterModule,
-    CoreModule,
-    AgmCoreModule.forRoot({
-      apiKey : 'AIzaSyBg34I4bCxMwjU9YYJz7kibwanbFIR_9sw'
-    })
+    CoreModule
   ],
   bootstrap : [AppComponent]
 })

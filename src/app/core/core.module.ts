@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@materialmodule/material.module';
 import {FirebaseModule} from './firebase/firebase.module';
 import { ServicesWorkersModule } from './services-workers/services-workers.module';
+import { AgmCoreCustomModule } from './agm-core/agm-core.module';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,8 @@ import { ServicesWorkersModule } from './services-workers/services-workers.modul
     ReactiveFormsModule,
     MaterialModule,
     FirebaseModule,
-    ServicesWorkersModule
+    ServicesWorkersModule,
+    AgmCoreCustomModule
   ],
   exports: [
     HttpClientModule,
@@ -25,7 +27,8 @@ import { ServicesWorkersModule } from './services-workers/services-workers.modul
     ReactiveFormsModule,
     MaterialModule,
     FirebaseModule,
-    ServicesWorkersModule
+    ServicesWorkersModule,
+    AgmCoreCustomModule
   ]
 })
 export class CoreModule {

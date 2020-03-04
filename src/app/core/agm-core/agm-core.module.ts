@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -16,13 +15,8 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
       use clientId 
       */
     }),
-  ]
+  ],
+  exports : [AgmCoreModule]
 })
 export class AgmCoreCustomModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: AgmCoreCustomModule,
-      providers : [AgmCoreCustomModule]
-    }
-  }
  }
