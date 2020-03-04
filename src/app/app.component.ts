@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SwUpdate, SwPush } from '@angular/service-worker';
+import { SwPush } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, NavigationEnd, Event, NavigationStart, NavigationCancel, NavigationError, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';

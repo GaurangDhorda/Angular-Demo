@@ -32,5 +32,4 @@ import { AgmCoreCustomModule } from './agm-core/agm-core.module';
   ]
 })
 export class CoreModule {
-
 }

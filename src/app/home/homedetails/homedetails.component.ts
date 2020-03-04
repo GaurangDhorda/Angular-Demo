@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { shareReplay } from 'rxjs/operators';
@@ -46,7 +46,6 @@ empHomeData$ = this.empService.empData$.pipe(shareReplay(1));
           this.chk = this.lengthofdata - 1 >= this.empId;
         }
       );
-
   }
   ngAfterContentChecked () {
     if (this.employee.length) {

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [],

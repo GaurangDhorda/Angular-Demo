@@ -4,11 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingModuleComponent, declarationsComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
-// import { AgmCoreCustomModule } from './core/agm-core/agm-core.module';
-import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [

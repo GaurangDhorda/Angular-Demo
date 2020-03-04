@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Router , ActivatedRoute } from '@angular/router';
-// import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Subscription } from 'rxjs';
 import { takeWhile, shareReplay } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -47,7 +46,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         }  ,
         () =>  this.isWait = false
       );
-      // console.log('Home Employee data ',this.Employee.find(e => {e.id}));
   }
 
   close() {
@@ -120,7 +118,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.imageSrc = this.Employee[this.currentID].imageUrl;
     }
   }
-  
+
   showMapView() {
     const map = document.getElementById('maps');
     map.style.display = 'block';
