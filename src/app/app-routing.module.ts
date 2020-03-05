@@ -12,6 +12,8 @@ import { MaterialContactListComponent } from './material-contact/material-contac
 import { ConfirmdialogComponent } from './confirmdialog/confirmdialog.component';
 import { DialogComponent } from './chat/dialog/dialog.component';
 import { CreateNewUserComponent } from './chat/create-new-user/create-new-user.component';
+import { HomeLineItemComponent } from './home-line-item/home-line-item.component';
+import { MapViewComponent } from './map-view/map-view.component';
 
 const routes: Routes = [
 {path: '' , redirectTo: '', pathMatch: 'full'},
@@ -28,12 +30,14 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes  /*, {enableTracing: true }*/)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  declarations: []
 })
 
 export class AppRoutingModule { }
 export const routingModuleComponent = [NavComponent, HomeComponent, ChatComponent, AboutComponent, ContactComponent,
-                              HomedetailsComponent, MaterialContactComponent, MaterialContactListComponent, FooterComponent,
-                             ];
+                                  HomedetailsComponent, MaterialContactComponent, MaterialContactListComponent, FooterComponent,
+                                  HomeLineItemComponent, MapViewComponent
+                                  ];
 export const declarationsComponent = [DialogComponent, CreateNewUserComponent, MaterialContactComponent,
                                       ConfirmdialogComponent];

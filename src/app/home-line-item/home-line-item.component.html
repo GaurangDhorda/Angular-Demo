@@ -1,0 +1,11 @@
+<div id="myImage" (click)="details(hotelData)" class="flat-picture" 
+                  title ="hotelData.name + ' Tooltip: Click here for more details.. '"
+                  tooltipClass="example-tooltip-red"
+                  [style.background-image]="'url(' + hotelData.imageUrl + ')'" >
+</div>
+<div class="card-body" >
+    <ul>
+           <li> <p (click)="details(hotelData)"> {{ hotelData.name }} - {{ hotelData.price | currency: hotelData.priceCurrency }} </p></li>
+           <li><i class="fas fa-info-circle"  title="Show More.."  (click)="showMoreData(hotelData)"></i></li>
+    </ul>
+</div>

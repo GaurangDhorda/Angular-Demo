@@ -1,0 +1,16 @@
+<span class="map-close" title="Close" (click)="closeMapView()" >X</span>
+<agm-map (mapClick)="close_window()" [latitude] = 48.8566 [longitude] = 2.3522 [zoom]="11"> "'url(' + marker.imageUrl + ')'"
+            <agm-marker  *ngFor="let marker of Employee" [label]="{text: 'i', color: '#FFFFFF', fontSize: '20px'}"  
+                        [latitude]= "marker.lat" [longitude]= "marker.lng" (markerClick)="select_marker(infoWindow)">
+                        <agm-info-window class="marker-container" [disableAutoPan]="false" #infoWindow>
+                                    <div class="marker-info"> 
+                                          <label class="marker-label">Name</label> <br> 
+                                          <p class="marker-text"> {{marker.name}} </p>
+                                          <div class="marker-infot-price">
+                                                <label class="marker-label">Price</label> {{ marker.price  | currency : marker.priceCurrency }}  
+                                          </div>
+                                         <img class="map-info-image" [src]="marker?.imageUrl">
+                                    </div>
+                        </agm-info-window>
+            </agm-marker>
+</agm-map>

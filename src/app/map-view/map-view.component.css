@@ -1,0 +1,84 @@
+.marker-container{
+    width: 50%;
+  }
+/* The Close Button */
+ .map-close{
+  position: relative;
+  float: right;
+  color: #f1f1f1;
+  font-size: 35px;
+  font-weight: bold;
+ /* top:-15px; */
+ top:-35px;
+  right: 12px;
+  margin-top: .1em;
+ }
+  .map-close:hover,
+  .map-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .marker-info{
+    font-weight: 600;
+    word-break: break-word;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 15px;
+    padding-bottom: 10px;
+    margin: 0 1px 10px 1px;
+    max-width: 200px;
+    background: #f1f1f1;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+  }
+  .marker-info{
+    font-size: 1em;
+    padding: 5px;
+    letter-spacing: 0px;
+  }
+  .marker-label{
+    color: #0d0d0d;
+    opacity: 1;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-right: 5px;
+  }
+  .marker-text{
+    padding: 1px;
+    opacity: .9;
+    width: 95%;
+    color: #072929;
+    margin: 0;
+    letter-spacing: .5px;
+  }
+  .marker-text{
+    width: 100%;
+  }
+  .marker-infot-price{
+    color: #F44336;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .marker-infot-price{
+    font-size: 1.2em;
+    margin-bottom: 5px
+  }
+  .map-info-image{
+    width: 100%;
+  }
+  .map-info-image{
+    max-width: 200px;
+    border-radius: 10px;
+  }
+  
+  agm-map{
+    /* margin: auto; width: 80vw; */
+     height: 95%;
+     display: block;
+     position: relative;
+     left: 10px;
+     right: 10px;
+     margin-top: .5em; 
+   }
