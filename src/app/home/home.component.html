@@ -16,7 +16,7 @@
      </app-map-view>
 </div>
 
-<div id="myModal" class="modal">
+<div id="myModal" (keydown)="onKeyDown($event)" class="modal">
       <span class="close" title="Close" (click)="close()" >X</span>
        <img class="modal-content" *ngIf="imageSrc" alt="Image" [src]="imageSrc" id="image01">
       <div id="caption">

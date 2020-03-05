@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ViewEncapsulation, HostListener } from '@angular/core';
 import { Router , ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { takeWhile, shareReplay } from 'rxjs/operators';
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   previous_info_window = null;
   public currentLat;
   public currentLng;
+  enableKeyDetection: boolean = false;
   empHomeService$ = this.empServiceData.empData$.pipe( takeWhile( () => this.alive),shareReplay(1));
   
   constructor(private empServiceData: HomeService, private router: Router,
@@ -50,6 +51,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   close() {
     // closes imageViewer 
+    this.enableKeyDetection = false;
     const modal = document.getElementById('myModal');
     modal.style.display = 'none';
   }
@@ -82,6 +84,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const modal = document.getElementById('myModal');
     modal.style.display = 'block';
     console.log('imageUrl ' + data.imageUrl);
+    this.enableKeyDetection = true;
     this.imageSrc = data.imageUrl;
   }
   detailsData( paramEmployee , i  ) {
@@ -117,6 +120,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.currentID = this.currentID - 1;
     this.imageSrc = this.Employee[this.currentID].imageUrl;
     }
+  }
+  @HostListener("window:keydown", ['$event'])
+  onKeyDown(keyEvent){
+    if (this.enableKeyDetection) {
+        if(keyEvent.key === 'ArrowRight') this.goNext();
+        if(keyEvent.key === 'ArrowLeft') this.goPrevious();
+    } 
   }
 
   showMapView() {
