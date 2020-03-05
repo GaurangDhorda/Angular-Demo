@@ -1,22 +1,22 @@
 {
   "configVersion": 1,
-  "timestamp": 1583407972100,
-  "index": "/Angular-Demo/index.html",
+  "timestamp": 1583408623810,
+  "index": "/Angular-Demo/cls/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/Angular-Demo/5.1f95d2dbfcdc97bd4623.js",
-        "/Angular-Demo/6.03c492410d07c0eb429d.js",
-        "/Angular-Demo/favicon.ico",
-        "/Angular-Demo/index.html",
-        "/Angular-Demo/main.2b4b364684348c52d7d1.js",
-        "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js",
-        "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js",
-        "/Angular-Demo/runtime.617a1076af65b1c2dbf9.js",
-        "/Angular-Demo/styles.103713dc221cdb5ed17d.css"
+        "/Angular-Demo/cls/5.1f95d2dbfcdc97bd4623.js",
+        "/Angular-Demo/cls/6.03c492410d07c0eb429d.js",
+        "/Angular-Demo/cls/favicon.ico",
+        "/Angular-Demo/cls/index.html",
+        "/Angular-Demo/cls/main.2b4b364684348c52d7d1.js",
+        "/Angular-Demo/cls/polyfills-es5.248e185763c86f9327cb.js",
+        "/Angular-Demo/cls/polyfills.0395cd0cf800210f1ae7.js",
+        "/Angular-Demo/cls/runtime.617a1076af65b1c2dbf9.js",
+        "/Angular-Demo/cls/styles.103713dc221cdb5ed17d.css"
       ],
       "patterns": [
         "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.8\\.1\\/css\\/all\\.css",
@@ -29,16 +29,16 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "/Angular-Demo/assets/cooking-api.json",
-        "/Angular-Demo/assets/grdTech.jpg",
-        "/Angular-Demo/assets/icons/icon-128x128.png",
-        "/Angular-Demo/assets/icons/icon-144x144.png",
-        "/Angular-Demo/assets/icons/icon-152x152.png",
-        "/Angular-Demo/assets/icons/icon-192x192.png",
-        "/Angular-Demo/assets/icons/icon-384x384.png",
-        "/Angular-Demo/assets/icons/icon-512x512.png",
-        "/Angular-Demo/assets/icons/icon-72x72.png",
-        "/Angular-Demo/assets/icons/icon-96x96.png"
+        "/Angular-Demo/cls/assets/cooking-api.json",
+        "/Angular-Demo/cls/assets/grdTech.jpg",
+        "/Angular-Demo/cls/assets/icons/icon-128x128.png",
+        "/Angular-Demo/cls/assets/icons/icon-144x144.png",
+        "/Angular-Demo/cls/assets/icons/icon-152x152.png",
+        "/Angular-Demo/cls/assets/icons/icon-192x192.png",
+        "/Angular-Demo/cls/assets/icons/icon-384x384.png",
+        "/Angular-Demo/cls/assets/icons/icon-512x512.png",
+        "/Angular-Demo/cls/assets/icons/icon-72x72.png",
+        "/Angular-Demo/cls/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
@@ -59,25 +59,25 @@
     }
   ],
   "hashTable": {
-    "/Angular-Demo/5.1f95d2dbfcdc97bd4623.js": "8b0c8dff6b3eb23ee98ab93896753e7cd8315dfb",
-    "/Angular-Demo/6.03c492410d07c0eb429d.js": "93f4e25f002806cfc6d87b30738a2ce956ed86f5",
-    "/Angular-Demo/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
-    "/Angular-Demo/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
-    "/Angular-Demo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/Angular-Demo/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/Angular-Demo/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/Angular-Demo/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/Angular-Demo/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/Angular-Demo/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/Angular-Demo/index.html": "ee85077c1d38d157a0d762f71e8303c466ca6372",
-    "/Angular-Demo/main.2b4b364684348c52d7d1.js": "54f6a214258250776dbe671fb9ee35df0fa3ea70",
-    "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
-    "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
-    "/Angular-Demo/runtime.617a1076af65b1c2dbf9.js": "cec36396c21bac913d744532e14662877be904c7",
-    "/Angular-Demo/styles.103713dc221cdb5ed17d.css": "371f7f7b7207adc6b58b4646d81b36cdb30dc6a6"
+    "/Angular-Demo/cls/5.1f95d2dbfcdc97bd4623.js": "8b0c8dff6b3eb23ee98ab93896753e7cd8315dfb",
+    "/Angular-Demo/cls/6.03c492410d07c0eb429d.js": "93f4e25f002806cfc6d87b30738a2ce956ed86f5",
+    "/Angular-Demo/cls/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
+    "/Angular-Demo/cls/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
+    "/Angular-Demo/cls/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/Angular-Demo/cls/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/Angular-Demo/cls/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/Angular-Demo/cls/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/Angular-Demo/cls/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Angular-Demo/cls/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Angular-Demo/cls/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/Angular-Demo/cls/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/Angular-Demo/cls/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/Angular-Demo/cls/index.html": "04a3744b29443c2b8ad5b1294e82480ea332b49b",
+    "/Angular-Demo/cls/main.2b4b364684348c52d7d1.js": "54f6a214258250776dbe671fb9ee35df0fa3ea70",
+    "/Angular-Demo/cls/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
+    "/Angular-Demo/cls/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
+    "/Angular-Demo/cls/runtime.617a1076af65b1c2dbf9.js": "cec36396c21bac913d744532e14662877be904c7",
+    "/Angular-Demo/cls/styles.103713dc221cdb5ed17d.css": "371f7f7b7207adc6b58b4646d81b36cdb30dc6a6"
   },
   "navigationUrls": [
     {
