@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CookingServiceService } from '../cooking-service.service';
-import { cookingComponent } from '../cooking-routing.module';
 import { ICooking } from '../icooking';
-import {  tap, map } from 'rxjs/operators';
-import { of, Observable } from 'rxjs';
+import {  tap } from 'rxjs/operators';
+import {  Observable } from 'rxjs';
 
 
 @Component({

@@ -9,7 +9,7 @@ import { EmployeeService } from '@employee/employee.service';
   declarations: [],
   imports: [
     CommonModule,
-    ServiceWorkerModule.register('/Angular-Demo/ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ]
 })
 export class ServicesWorkersModule { 
