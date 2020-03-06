@@ -5,7 +5,7 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/Angular-Demo/",
-  "start_url": "/Angular-Demo",
+  "start_url": "/Angular-Demo/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
