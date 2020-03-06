@@ -13,6 +13,11 @@ import { environment } from 'src/environments/environment';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+  ],
+  exports : [
+    AngularFireDatabaseModule,
+    AngularFireModule,
+    AngularFireAuthModule
   ]
 })
 export class FirebaseModule { }

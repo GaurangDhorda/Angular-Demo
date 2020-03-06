@@ -10,8 +10,8 @@ if (environment.production) {
   console.log('production mode detected');
 }
 
-// platformBrowserDynamic().bootstrapModule(AppModule)
-  // .catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule)
+   .catch(err => console.error(err));
 
   /*
 

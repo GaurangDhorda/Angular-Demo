@@ -16,6 +16,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ScrollingModule,
     MatProgressBarModule
 
+  ],
+  exports:[
+    CookingRoutingModule,
+    ScrollingModule,
+    MatProgressBarModule,
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class CookingModule { 

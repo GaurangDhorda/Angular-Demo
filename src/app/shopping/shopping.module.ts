@@ -12,7 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 
 const MaterialComponentsArray = [ MatToolbarModule, MatCardModule, MatButtonModule, MatIconModule,
-                                  MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule
+                                  MatDialogModule, MatFormFieldModule, MatInputModule, MatBadgeModule, ShoppingRoutingModule
                                 ]
 import { CartComponent } from './cart/cart.component';
 
@@ -25,7 +25,6 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ShoppingRoutingModule,
     MaterialComponentsArray
   ],
   exports:[MaterialComponentsArray]
