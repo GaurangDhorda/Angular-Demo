@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1583494636411,
+  "timestamp": 1583495117479,
   "index": "/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
         "/Angular-Demo/6.34d7e801f6a8a2d9407b.js",
         "/Angular-Demo/favicon.ico",
         "/Angular-Demo/index.html",
-        "/Angular-Demo/main.c8b04615c8d4fbf90391.js",
+        "/Angular-Demo/main.96a6b579017fd0ca5e0b.js",
         "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js",
         "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js",
         "/Angular-Demo/runtime.2f0ce69c7eb8951bb6a2.js",
@@ -72,8 +72,8 @@
     "/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/Angular-Demo/index.html": "b834dfd17c08dda4c77a0e9217123961c71f1e9f",
-    "/Angular-Demo/main.c8b04615c8d4fbf90391.js": "632ee06d07dbf51681e40d1cbad42944af3b1b9f",
+    "/Angular-Demo/index.html": "b60611c55f2bb829dd85e15ddc97cbeb6a7c9cd1",
+    "/Angular-Demo/main.96a6b579017fd0ca5e0b.js": "47643a5ffffbf4c90734e9edadb31b40f8946517",
     "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
     "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
     "/Angular-Demo/runtime.2f0ce69c7eb8951bb6a2.js": "7fee6d2bb94636503a981ea623e37f3b3fe77f15",
