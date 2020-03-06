@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Router , ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { takeWhile, shareReplay } from 'rxjs/operators';
@@ -50,7 +50,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   close() {
-    // closes imageViewer 
+    // closes imageViewer
+    console.log('%c close fire', 'color:red') 
     this.enableKeyDetection = false;
     const modal = document.getElementById('myModal');
     modal.style.display = 'none';
@@ -78,19 +79,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   details( data, i, first, last ) {
     // opens Image viewer dialog window.. 
+    this.enableKeyDetection = true;
     this.currentID = parseInt(i, 10); // 10 is radix number to tell i value is going to be converted into decimal number..
     this.first = first;
     this.last = last;
-    const modal = document.getElementById('myModal');
-    modal.style.display = 'block';
-    console.log('imageUrl ' + data.imageUrl);
-    this.enableKeyDetection = true;
     this.imageSrc = data.imageUrl;
   }
-  detailsData( paramEmployee , i  ) {
+  detailsData(i) {
     // opens more details of image selected component fire HomeDetailsComponent by router..
 //    this.router.navigate(['home/homedetails', paramEmployee.id]);
-      this.router.navigate([ i], { relativeTo: this.activatedRoute});
+      this.router.navigate([i], { relativeTo: this.activatedRoute});
       // this is relative path navigation so that works always when path changes too.
   }
   goNext() {
@@ -120,13 +118,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.currentID = this.currentID - 1;
     this.imageSrc = this.Employee[this.currentID].imageUrl;
     }
-  }
-  @HostListener("window:keydown", ['$event'])
-  onKeyDown(keyEvent){
-    if (this.enableKeyDetection) {
-        if(keyEvent.key === 'ArrowRight') this.goNext();
-        if(keyEvent.key === 'ArrowLeft') this.goPrevious();
-    } 
   }
 
   showMapView() {

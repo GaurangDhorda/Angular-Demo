@@ -54,11 +54,13 @@ export class ContactComponent implements OnInit, AfterViewInit {
   }
   uploadFile(){
     const fd = new FormData();
-    fd.append('image', this.fileUpload , this.fileUpload.name);
-    this.onFileUpload(fd).subscribe( file =>{
-      console.log('success ' + file.msg);
-   });
-  }
+    if (this.fileUpload){
+      fd.append('image', this.fileUpload , this.fileUpload.name);
+      this.onFileUpload(fd).subscribe( file =>{
+        console.log('success ' + file.msg);
+      });
+    }
+    }
   onFileUpload(path: FormData) {
     console.log('jsonData' + path);
     // console.log( JSON.stringify(path.get('image')));

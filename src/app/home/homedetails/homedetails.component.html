@@ -1,4 +1,4 @@
-<div class= "fla" *ngIf="chk; else notFound"  >
+<div appKeyDetect (close)="goBack()" (goNext)="goNext()" (goPrevious)="goPrevious()" class= "fla" *ngIf="chk; else notFound"  >
       
       <div class="nextprevious">
               <div > 

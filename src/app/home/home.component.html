@@ -5,7 +5,7 @@
 <div class= "flats">
      <div class="flat" *ngFor = "let employee of Employee; index as i; first as first;  last as last">
           <app-home-line-item [employee]="employee" (clickImage) = "details(employee,i, first, last)" 
-                              (showMoreDetails) = "detailsData(employee,i)">
+                              (showMoreDetails) = "detailsData(i)">
           </app-home-line-item>
             <!--  <img style="vertical-align: middle" [src] = "employee.imageUrl" class="flat-picture" /> --> 
      </div>
@@ -16,7 +16,8 @@
      </app-map-view>
 </div>
 
-<div id="myModal" (keydown)="onKeyDown($event)" class="modal">
+<div id="myModal" *ngIf="enableKeyDetection" appKeyDetect (close)="close()"
+(goNext)="goNext()" (goPrevious)="goPrevious()" class="modal">
       <span class="close" title="Close" (click)="close()" >X</span>
        <img class="modal-content" *ngIf="imageSrc" alt="Image" [src]="imageSrc" id="image01">
       <div id="caption">
