@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { SwPush } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, NavigationEnd, Event, NavigationStart, NavigationCancel, NavigationError, ActivatedRoute } from '@angular/router';
@@ -19,7 +19,9 @@ export class AppComponent {
   public name: string;
   constructor(private mapService: MapserviceService, private router: Router,
               private route: ActivatedRoute,
-              private snackbar: MatSnackBar, private swPush: SwPush) {
+              private snackbar: MatSnackBar, private swPush: SwPush,
+              private viewContainerRef: ViewContainerRef,
+              private cfr: ComponentFactoryResolver) {
     // Google Analytics ... 
     const navEndEvents = this.router.events.pipe(
       filter (events =>  events instanceof NavigationEnd),
@@ -45,6 +47,13 @@ export class AppComponent {
       }, err => { this.snackbar.open(err, '', {duration: 3000})},
          () => console.log('locatoin received')
       );
+  }
+  async onLoadLazy(){
+    this.viewContainerRef.clear();
+    const {LazyCmpComponent} = await import ('./lazy-cmp.component');
+    this.viewContainerRef.createComponent(
+      this.cfr.resolveComponentFactory(LazyCmpComponent)
+    )
   }
   onActivate(componentReference) {
     this.name = componentReference.title;

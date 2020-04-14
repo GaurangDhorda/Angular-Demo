@@ -13,6 +13,7 @@
             <section>                
                 <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
             </section>
+            <button mat-raised-button color="primary" (click)="onLoadLazy()">Load</button>
 </body>
 
 </html>
