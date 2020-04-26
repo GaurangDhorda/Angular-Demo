@@ -8,6 +8,10 @@
 # Only exists if Bazel was run
 /bazel-out
 
+# hide environment variable.
+/environments/environment.prod.ts
+/environments/environment.ts
+
 # dependencies
 /node_modules
 
