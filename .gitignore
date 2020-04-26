@@ -9,8 +9,8 @@
 /bazel-out
 
 # hide environment variable.
-/environments/environment.prod.ts
-/environments/environment.ts
+/src/environments/environment.prod.ts
+/src/environments/environment.ts
 
 # dependencies
 /node_modules
