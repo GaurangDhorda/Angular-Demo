@@ -2,9 +2,10 @@ import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/
 import { SwPush } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, NavigationEnd, Event, NavigationStart, NavigationCancel, NavigationError, ActivatedRoute } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, map, first } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { MapserviceService } from '@map/mapservice.service';
+import { MaterialFirebaseService } from '@material-firebase/material-firebase.service';
 
 declare var gtag;
 @Component({
@@ -17,11 +18,16 @@ export class AppComponent {
   public isWaiting: boolean;
   message: string ='';
   public name: string;
+  fireData = [];
+  newData = [];
+  mainKeys = [];
+
   constructor(private mapService: MapserviceService, private router: Router,
               private route: ActivatedRoute,
               private snackbar: MatSnackBar, private swPush: SwPush,
               private viewContainerRef: ViewContainerRef,
-              private cfr: ComponentFactoryResolver) {
+              private cfr: ComponentFactoryResolver,
+              private fService: MaterialFirebaseService) {
     // Google Analytics ... 
     const navEndEvents = this.router.events.pipe(
       filter (events =>  events instanceof NavigationEnd),
@@ -35,12 +41,45 @@ export class AppComponent {
     } );
   }
 
+  objectKeys(data){
+    //console.log(data);
+    this.newData = [];
+    data.map(element => {
+      Object.keys(element).forEach( keys => keys !== '$key' ? this.newData.push(element[keys]) : '' )
+      
+    });
+  }
+  detail(row, i){
+    console.log(this.fireData)
+    let keys = [];
+    
+    Object.keys (this.fireData[0][i]).forEach(key => key !== '$key' ? keys.push ( {subKeys: key}) : 
+      keys.push({mainKey : this.fireData[0][i]['$key'] })  )
+  console.log(...keys)
+  this.mainKeys.push(...keys)
+ 
+
+    //console.log(row, i)
+    //console.log(this.fireData[0][i])
+    //this.fireData.forEach(val => console.log('data ', val))
+    //Object.keys(tmp[i]).forEach(val => console.log(val));
+  }
   ngOnInit() {
+
+        this.fService.a.list('/orders').  snapshotChanges().pipe(
+           map(action => action.map(a => ({$key: a.key, ...a.payload.val() as object })))
+          ).subscribe(val =>  { 
+            this.fireData = [];
+            this.fireData.push (val)
+            console.log(this.fireData)
+            this.objectKeys(val);
+          })
    // navigator.serviceWorker.register('/Angular-Demo/ngsw-worker.js');
-      this.router.events.subscribe(   (event: Event) => {
+     
+        this.router.events.subscribe(   (event: Event) => {
             this.checkEvent(event);
       });
-      this.subscription = this.mapService.getCurrentLocation().subscribe(location => {
+        this.subscription = this.mapService.getCurrentLocation().subscribe(location => {
         /*  this.snackbar.open(location.currentLat + ' and ' + location.currentLng, '', {
           duration: 3000
         }); */

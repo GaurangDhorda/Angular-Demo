@@ -13,7 +13,34 @@
             <section>                
                 <router-outlet (activate)="onActivate($event)"></router-outlet>  <!-- Routed Views goes here in <router-outlet>  -->
             </section>
-            <button mat-raised-button color="primary" (click)="onLoadLazy()">Load</button>
+<!--            <button mat-raised-button color="primary" (click)="onLoadLazy()">Load</button> -->
+            <hr>
+            <ng-container *ngIf="fireData">
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th scope="col" >Item ID</th>
+                          <th scope="col"  >Status</th>
+                          <th scope="col"  >Tot</th>
+                        </tr>
+                      </thead>
+                    <tr *ngFor="let row of newData; let i = index">
+                        <td class="float">
+                            {{ row?.data?.newproduct?.item?.itemid}}
+                        </td>
+                        <td>
+                            {{row?.status }}
+                        </td>
+                        <td>
+                            {{row?.data?.Tot }}
+                        </td>
+                        <td>
+                            <button (click)="detail(row, i)">click</button>
+                        </td>
+                    </tr>
+                </table>
+            
+            </ng-container>
 </body>
 
 </html>
