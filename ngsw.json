@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1584433821566,
+  "timestamp": 1587990006221,
   "index": "/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -9,13 +9,14 @@
       "updateMode": "prefetch",
       "urls": [
         "/Angular-Demo/5.d901ecea5dfc2f4aa0d4.js",
-        "/Angular-Demo/6.34d7e801f6a8a2d9407b.js",
+        "/Angular-Demo/6.29bf32a7223db9e273dd.js",
+        "/Angular-Demo/7.517af280d61f1f2a9cd5.js",
         "/Angular-Demo/favicon.ico",
         "/Angular-Demo/index.html",
-        "/Angular-Demo/main.4516f1e605fe10c0a5c0.js",
+        "/Angular-Demo/main.6849b2837040313229c6.js",
         "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js",
         "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js",
-        "/Angular-Demo/runtime.2f0ce69c7eb8951bb6a2.js",
+        "/Angular-Demo/runtime.eb02478fc32444c30e17.js",
         "/Angular-Demo/styles.d5b267381618a654749a.css"
       ],
       "patterns": [
@@ -60,7 +61,8 @@
   ],
   "hashTable": {
     "/Angular-Demo/5.d901ecea5dfc2f4aa0d4.js": "69416d4c1875895587db664a270d07de6d9c9d49",
-    "/Angular-Demo/6.34d7e801f6a8a2d9407b.js": "212b6a697bf889f9d155ad839b229361489a2766",
+    "/Angular-Demo/6.29bf32a7223db9e273dd.js": "6233d6a1e74264de1c1512a71cbb3d29a577d6ec",
+    "/Angular-Demo/7.517af280d61f1f2a9cd5.js": "35eb7049a00d1e15579a5d24365718b0f5104772",
     "/Angular-Demo/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
     "/Angular-Demo/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
     "/Angular-Demo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
@@ -72,11 +74,11 @@
     "/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/Angular-Demo/index.html": "07f5ad2c90be4e5044331dded011d9a0889db7a8",
-    "/Angular-Demo/main.4516f1e605fe10c0a5c0.js": "76fe0c522eb419cc50917c0d6d8fd6d72be97ed5",
+    "/Angular-Demo/index.html": "ff9ad32af87c4659f4f45f19463cffe6c771280d",
+    "/Angular-Demo/main.6849b2837040313229c6.js": "b0c2504a537b012bf29ab9f1eb86ad5b91cdae2b",
     "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
     "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
-    "/Angular-Demo/runtime.2f0ce69c7eb8951bb6a2.js": "7fee6d2bb94636503a981ea623e37f3b3fe77f15",
+    "/Angular-Demo/runtime.eb02478fc32444c30e17.js": "40996cae1d3dcd8992b60d05d211f76269037a1f",
     "/Angular-Demo/styles.d5b267381618a654749a.css": "14ddc0bf9531bb0386aa4cb6ebdbb28fb73877f7"
   },
   "navigationUrls": [
