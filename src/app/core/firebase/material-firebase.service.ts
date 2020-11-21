@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-
-import { map } from 'rxjs/operators';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+// import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -22,16 +21,17 @@ export class MaterialFirebaseService {
 
   createNewUser(email: string, password: string) {
     return new Promise<any>((resolve, reject) => {
-      this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
+      this.angularFireAuth.createUserWithEmailAndPassword(email, password)
       .then (res => resolve(res) , err => reject(err)) ;
     });
   }
 
   login(email: string, password: string) {
-   return this.angularFireAuth.auth.signInWithEmailAndPassword(email, password);
+    
+   return this.angularFireAuth.signInWithEmailAndPassword(email, password);
   }
 
   logout() {
-    return this.angularFireAuth.auth.signOut();
+    return this.angularFireAuth.signOut();
   }
 }

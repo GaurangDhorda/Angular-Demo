@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, Subscription } from 'rxjs';
 import { catchError, tap, throttleTime, distinctUntilChanged, first, switchMap, shareReplay, take   } from 'rxjs/operators';
 import * as io from 'socket.io-client';
-import { User } from 'firebase';
+import { User } from '@firebase/auth-types';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MaterialFirebaseService } from '@material-firebase/material-firebase.service';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewChecked, AfterContentChecked } from '@angular/core';
 import { catchError, tap, throttleTime, distinctUntilChanged, filter, scan, skipWhile } from 'rxjs/operators';
-import * as moment from 'moment';
+
 import { EmployeeService } from '@employee/employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -191,7 +191,10 @@ export class ChatComponent implements OnInit, AfterViewChecked {
          )
     .subscribe((message) => {
       console.log( JSON.stringify(message));
-      let currentTime = moment().format('hh:mm:ss a');
+      
+      let d = new Date();
+      let currentTime = d.toLocaleTimeString();
+      // let n = d.toLocaleTimeString();
       let messageWithTimestamp =  `${currentTime}: ${message}`;
       this.timeStamp.push( currentTime );
       this.messages.push(message);
