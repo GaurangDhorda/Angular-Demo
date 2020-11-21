@@ -2,7 +2,7 @@ import { Component, ViewContainerRef, ComponentFactoryResolver } from '@angular/
 import { SwPush } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, NavigationEnd, Event, NavigationStart, NavigationCancel, NavigationError, ActivatedRoute } from '@angular/router';
-import { filter, map, first } from 'rxjs/operators';
+import { filter, map, first, tap } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { MapserviceService } from '@map/mapservice.service';
 import { MaterialFirebaseService } from '@material-firebase/material-firebase.service';
@@ -18,9 +18,27 @@ export class AppComponent {
   public isWaiting: boolean;
   message: string ='';
   public name: string;
+  hide : boolean = false;
+  showIndex: number;
   fireData = [];
   newData = [];
   mainKeys = [];
+  mapData = [];
+  keyArray = [];
+  
+  todo$= this.fService.angularFirestore.doc('xhfPvZBx9QWo4II1JTUM'). valueChanges().pipe(
+    map(val => {
+          let m = Object.keys(val).map(element => {
+            if(element === 'created'){
+              return {[element] : val[element].toDate().toDateString()}
+            }else{
+              return {[element] : val[element]}
+            }
+          });
+           return m;
+        } )
+  );
+
 
   constructor(private mapService: MapserviceService, private router: Router,
               private route: ActivatedRoute,
@@ -29,6 +47,9 @@ export class AppComponent {
               private cfr: ComponentFactoryResolver,
               private fService: MaterialFirebaseService) {
     // Google Analytics ... 
+    this.fService.angularFirestore.valueChanges().pipe(     map(val => {console.log(val[1]) ; return val;}) ).subscribe(v => {
+
+    });
     const navEndEvents = this.router.events.pipe(
       filter (events =>  events instanceof NavigationEnd),
     );
@@ -41,35 +62,61 @@ export class AppComponent {
     } );
   }
 
+
   objectKeys(data){
     //console.log(data);
     this.newData = [];
+
+    //data.map(e => console.log ( 'length of keys ' ,Object.keys(e).length));
+
     data.map(element => {
-      Object.keys(element).forEach( keys => keys !== '$key' ? this.newData.push(element[keys]) : '' )
-      
+
+          Object.keys(element).forEach( keys => keys !== '$key' ? this.newData.push(element[keys]) : '' )
+
     });
   }
-  detail(row, i){
-    console.log(this.fireData)
-    let keys = [];
-    
-    Object.keys (this.fireData[0][i]).forEach(key => key !== '$key' ? keys.push ( {subKeys: key}) : 
-      keys.push({mainKey : this.fireData[0][i]['$key'] })  )
-  console.log(...keys)
-  this.mainKeys.push(...keys)
- 
 
-    //console.log(row, i)
-    //console.log(this.fireData[0][i])
-    //this.fireData.forEach(val => console.log('data ', val))
-    //Object.keys(tmp[i]).forEach(val => console.log(val));
+  hideFun(index){
+      this.hide = !this.hide;
+      this.showIndex = index;
+    
+  }
+  detail(row, i, subRow?, j?){
+
+    this.mainKeys = [];
+    let keys = [];
+
+    Object.keys (this.fireData[0][i]).forEach( (key,j) => key !== '$key' ? keys.push ( {'subkey' : key}) : 
+            keys.push({mainKey : this.fireData[0][i]['$key'] })  )
+  
+    this.mainKeys.push(...keys)
   }
   ngOnInit() {
 
+        console.log(this.fService.a.database);
         this.fService.a.list('/orders').  snapshotChanges().pipe(
-           map(action => action.map(a => ({$key: a.key, ...a.payload.val() as object })))
+           map(action => action.map(a => ({$key: a.key, ...a.payload.val() as object }))),
+           tap(val =>  this.keyArray = []),
+           map ( data => {
+                   data.forEach( (row , dataObj) => {
+                      Object.keys(row).forEach( (r,objIndex) => {
+                        if (r === '$key'){
+                            this.keyArray.push ( {row : row['$key'], 'value' : [] });
+                        }else{
+                         this.keyArray[dataObj]['value'].push(  { 'subRowKey' : r , 'subRowValue' : row[r]})
+                        }
+                        return row;
+                      })
+                    //  this.mapData.push({'key' : row['$key'] , 'value' : row });
+                      return row;
+                   })
+                    console.log(this.keyArray)
+
+                    return data;
+           })
           ).subscribe(val =>  { 
             this.fireData = [];
+            
             this.fireData.push (val)
             console.log(this.fireData)
             this.objectKeys(val);
@@ -87,6 +134,11 @@ export class AppComponent {
          () => console.log('locatoin received')
       );
   }
+
+  rowClick(data, key, j){
+    console.log(key,data, j)
+  }
+
   async onLoadLazy(){
     this.viewContainerRef.clear();
     const {LazyCmpComponent} = await import ('./lazy-cmp.component');

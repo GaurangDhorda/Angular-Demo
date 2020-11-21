@@ -15,6 +15,8 @@
             </section>
 <!--            <button mat-raised-button color="primary" (click)="onLoadLazy()">Load</button> -->
             <hr>
+<!--
+
             <ng-container *ngIf="fireData">
                 <table class="table">
                     <thead>
@@ -25,7 +27,11 @@
                         </tr>
                       </thead>
                     <tr *ngFor="let row of newData; let i = index">
+                        
+                            
+                        
                         <td class="float">
+                                
                             {{ row?.data?.newproduct?.item?.itemid}}
                         </td>
                         <td>
@@ -37,10 +43,85 @@
                         <td>
                             <button (click)="detail(row, i)">click</button>
                         </td>
+                        
                     </tr>
                 </table>
             
+                
             </ng-container>
+
+        -->
+<!-- <hr>
+<ng-container *ngIf="keyArray">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Row Index</th>
+              <th scope="col" >Item ID</th>
+              <th scope="col"  >Status</th>
+              <th scope="col"  >Tot</th>
+            </tr>
+          </thead>
+        <tr *ngFor="let row of keyArray; let i = index">
+            <ng-container *ngIf=" row.value.length > 1; else elseTmp" >
+                <button (click) = "hideFun(i)" > {{ hide === true ? 'hide' : 'show' }}  </button>
+                
+        </ng-container>
+        
+        <ng-template #elseTmp>
+            <div *ngFor = "let subRow of row.value; let j=index" >
+                <tr  >
+                    <td style="width: 20%;">
+                    {{subRow?.subRowValue.data?.newproduct?.item?.itemid}}
+                </td>
+                <td style="width: 20%;">
+                    {{subRow?.subRowValue?.status}}
+                </td>
+                <td style="width: 20%;">
+                    {{subRow?.subRowValue?.data?.Tot }}
+                </td>
+                <td>
+                    <button (click)="rowClick(subRow,row.row,subRow.subRowKey)">click</button>
+                </td>
+                </tr>
+
+            </div>    
+        </ng-template>
+            <ng-container *ngIf="hide">
+            <div *ngFor = "let subRow of row.value; let j=index" >
+                <tr *ngIf = " i === showIndex ">
+                    <td style="width: 20%;">
+                    {{subRow?.subRowValue.data?.newproduct?.item?.itemid}}
+                </td>
+                <td style="width: 20%;">
+                    {{subRow?.subRowValue?.status}}
+                </td>
+                <td style="width: 20%;">
+                    {{subRow?.subRowValue?.data?.Tot }}
+                </td>
+                <td>
+                    <button (click)="rowClick(subRow,row.row,subRow.subRowKey)">click</button>
+                </td>
+                </tr>
+
+            </div>
+        </ng-container>
+            
+            </tr>
+            </table>
+</ng-container>
+
+            <ng-container *ngIf="mainKeys">
+                    <div *ngFor="let keys of mainKeys">
+                        {{keys | json}}
+                    </div>
+
+            </ng-container>
+
+            <hr>
+            <div *ngIf="todo$ | async as users">
+                {{users | json}}
+            </div> -->
 </body>
 
 </html>

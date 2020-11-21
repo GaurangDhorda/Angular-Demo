@@ -14,6 +14,28 @@ export const environment = {
       messagingSenderId: '345026705484',
       appId: '1:345026705484:web:962e5b869e82de52'
     }
+  /*
+ firebaseConfig: {apiKey: "AIzaSyCRSUp139hwdn8joo-Zc6jM4jynwRxTjso",
+ authDomain: "stauchdigital.firebaseapp.com",
+ databaseURL: "https://stauchdigital.firebaseio.com",
+ projectId: "stauchdigital",
+ storageBucket: "stauchdigital.appspot.com",
+ messagingSenderId: "330745353845",
+ appId: "1:330745353845:web:5f4235d05ab543e03c8a3c",
+ measurementId: "G-G8LSRLZGP2"
+}*/
+  };
+
+export const testData = {
+    firebaseConfig: {
+      apiKey: 'AIzaSyCRSUp139hwdn8joo-Zc6jM4jynwRxTjso',
+      authDomain: 'stauchdigital.firebaseapp.com',
+      databaseURL: 'https://stauchdigital.firebaseio.com',
+      projectId: 'stauchdigital',
+      storageBucket: 'stauchdigital.appspot.com',
+      messagingSenderId: '330745353845',
+      appId: '1:330745353845:web:5f4235d05ab543e03c8a3c'
+    }
   };
 
   /*

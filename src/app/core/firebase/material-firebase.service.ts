@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -9,7 +11,9 @@ import { map } from 'rxjs/operators';
 export class MaterialFirebaseService {
   authState$ = this.angularFireAuth.authState;
   a = this.af;
-  constructor(private angularFireAuth : AngularFireAuth, private af: AngularFireDatabase) {
+  angularFirestore: AngularFirestoreCollection<any>  = this.afs.collection<any>('users') ;
+  constructor(private angularFireAuth : AngularFireAuth, private af: AngularFireDatabase,
+              private afs: AngularFirestore) {
     //this.af.database.ref('/orders').push( JSON.parse ( JSON.stringify( {order: '1'})))
    // this.a.list('/orders').snapshotChanges().pipe(
      // map( action => action.map(ab=> ({$key: ab.key, ...ab.payload.val() as object })  ) )

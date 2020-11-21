@@ -16,6 +16,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
   currentDate = new Date();
   end = new Date();
   private _userName: string;
+  imgSrc;
   fileUpload: File;
   get userName(): string{ // two way binding using getters and setters in input type="name"
     return this._userName;
@@ -49,7 +50,17 @@ export class ContactComponent implements OnInit, AfterViewInit {
     this.nameElementRef.nativeElement.focus(); // this line focus input type=name with #nameRef
   }
   onFileSelected(event){
+
     this.fileUpload = <File> event.target.files[0];
+    if(event.target.files && event.target.files[0]){
+      const reader = new FileReader();
+      reader.onload = (e: any ) => this.imgSrc = e.target.result;
+      reader.readAsDataURL(event.target.files[0]);
+      console.log(this.imgSrc)
+
+      console.log(event.target.files)
+
+    }
     // console.log(event.target.files[0]);
   }
   uploadFile(){
