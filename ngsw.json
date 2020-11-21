@@ -1,23 +1,22 @@
 {
   "configVersion": 1,
-  "timestamp": 1588008757285,
-  "index": "/Angular-Demo/index.html",
+  "timestamp": 1582895380091,
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/Angular-Demo/5.99198cedb883fef35a54.js",
-        "/Angular-Demo/6.29bf32a7223db9e273dd.js",
-        "/Angular-Demo/7.8ddd97714b83390c2e06.js",
-        "/Angular-Demo/favicon.ico",
-        "/Angular-Demo/index.html",
-        "/Angular-Demo/main.4a9b021440b30e059278.js",
-        "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js",
-        "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js",
-        "/Angular-Demo/runtime.ccc1f5ada10e414094de.js",
-        "/Angular-Demo/styles.d5b267381618a654749a.css"
+        "/5.184c7937d0cd149bb839.js",
+        "/6.26be8ac50790e925ddfc.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.d51187715fee26fbc6d6.js",
+        "/polyfills-es5.248e185763c86f9327cb.js",
+        "/polyfills.0395cd0cf800210f1ae7.js",
+        "/runtime.af8cf662ee4275869633.js",
+        "/styles.103713dc221cdb5ed17d.css"
       ],
       "patterns": [
         "https:\\/\\/use\\.fontawesome\\.com\\/releases\\/v5\\.8\\.1\\/css\\/all\\.css",
@@ -30,16 +29,16 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "/Angular-Demo/assets/cooking-api.json",
-        "/Angular-Demo/assets/grdTech.jpg",
-        "/Angular-Demo/assets/icons/icon-128x128.png",
-        "/Angular-Demo/assets/icons/icon-144x144.png",
-        "/Angular-Demo/assets/icons/icon-152x152.png",
-        "/Angular-Demo/assets/icons/icon-192x192.png",
-        "/Angular-Demo/assets/icons/icon-384x384.png",
-        "/Angular-Demo/assets/icons/icon-512x512.png",
-        "/Angular-Demo/assets/icons/icon-72x72.png",
-        "/Angular-Demo/assets/icons/icon-96x96.png"
+        "/assets/cooking-api.json",
+        "/assets/grdTech.jpg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
@@ -60,26 +59,25 @@
     }
   ],
   "hashTable": {
-    "/Angular-Demo/5.99198cedb883fef35a54.js": "e6b66125d6ea8ec9d7be372aef39e5849b4965e6",
-    "/Angular-Demo/6.29bf32a7223db9e273dd.js": "6233d6a1e74264de1c1512a71cbb3d29a577d6ec",
-    "/Angular-Demo/7.8ddd97714b83390c2e06.js": "212c2ae41573cc920f709b4adf8c0230ccddb822",
-    "/Angular-Demo/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
-    "/Angular-Demo/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
-    "/Angular-Demo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/Angular-Demo/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/Angular-Demo/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/Angular-Demo/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/Angular-Demo/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/Angular-Demo/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/Angular-Demo/index.html": "e97f27273e1f745f65e83b21a4687ab3c3824a9d",
-    "/Angular-Demo/main.4a9b021440b30e059278.js": "addb0db8c42a65544d93cf8ce4c28355bb617244",
-    "/Angular-Demo/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
-    "/Angular-Demo/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
-    "/Angular-Demo/runtime.ccc1f5ada10e414094de.js": "f87f9ae10b998c7426746f719210985bc4fd3534",
-    "/Angular-Demo/styles.d5b267381618a654749a.css": "14ddc0bf9531bb0386aa4cb6ebdbb28fb73877f7"
+    "/5.184c7937d0cd149bb839.js": "8b0c8dff6b3eb23ee98ab93896753e7cd8315dfb",
+    "/6.26be8ac50790e925ddfc.js": "93f4e25f002806cfc6d87b30738a2ce956ed86f5",
+    "/assets/cooking-api.json": "0086140345e820c82f4701175076a5bc04fd3cff",
+    "/assets/grdTech.jpg": "aed9d66203456106c3f2fed5d967a4d81dcadf2f",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "e6a23374e0a0dd31ce88fcb6500f5d3c045c2e4e",
+    "/main.d51187715fee26fbc6d6.js": "7c9a74c3f9951ca58bd915248440c6c913bd0848",
+    "/polyfills-es5.248e185763c86f9327cb.js": "6f8f51d46004a9d84c3158e7d99a3b55b5477dee",
+    "/polyfills.0395cd0cf800210f1ae7.js": "9d8b3c1ce968a03d4bfa057ce42d480b9b625ab1",
+    "/runtime.af8cf662ee4275869633.js": "0950e7788c67e2fdb7ba870d6d250562fefabf19",
+    "/styles.103713dc221cdb5ed17d.css": "371f7f7b7207adc6b58b4646d81b36cdb30dc6a6"
   },
   "navigationUrls": [
     {
