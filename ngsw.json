@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1605969838536,
+  "timestamp": 1610643092118,
   "index": "https://gaurangdhorda.github.io/Angular-Demo/index.html",
   "assetGroups": [
     {
@@ -17,7 +17,7 @@
         "https://gaurangdhorda.github.io/Angular-Demo/8.05196ef4f711bbd1fb13.js",
         "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico",
         "https://gaurangdhorda.github.io/Angular-Demo/index.html",
-        "https://gaurangdhorda.github.io/Angular-Demo/main.ac921d119b28a41f9b48.js",
+        "https://gaurangdhorda.github.io/Angular-Demo/main.f47f355e0ffedf5d5c00.js",
         "https://gaurangdhorda.github.io/Angular-Demo/polyfills-es5.5a4df2ae2d1fdcf7621c.js",
         "https://gaurangdhorda.github.io/Angular-Demo/polyfills.4285bf014e9c4b227e08.js",
         "https://gaurangdhorda.github.io/Angular-Demo/runtime.01676d5bf73f95e3d9b4.js",
@@ -85,8 +85,8 @@
     "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://gaurangdhorda.github.io/Angular-Demo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://gaurangdhorda.github.io/Angular-Demo/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "2f448bcbaa65fdf80418e101e2ad63b2b3646584",
-    "https://gaurangdhorda.github.io/Angular-Demo/main.ac921d119b28a41f9b48.js": "ee6e278297f0073f2e52f21d0216b0da924cb303",
+    "https://gaurangdhorda.github.io/Angular-Demo/index.html": "78ea099d0318026861f92f4b1991b39bf7b7aea7",
+    "https://gaurangdhorda.github.io/Angular-Demo/main.f47f355e0ffedf5d5c00.js": "8decce88b1340a8a268168c99892bf18130bb804",
     "https://gaurangdhorda.github.io/Angular-Demo/polyfills-es5.5a4df2ae2d1fdcf7621c.js": "bba4c3cbbbf1742e58fe128ebc25f7991e760dd6",
     "https://gaurangdhorda.github.io/Angular-Demo/polyfills.4285bf014e9c4b227e08.js": "469147884fc674bf3425eac19bf0a93970f15e21",
     "https://gaurangdhorda.github.io/Angular-Demo/runtime.01676d5bf73f95e3d9b4.js": "0045b92430189cef682c1809c54f19b0ff11695e",
