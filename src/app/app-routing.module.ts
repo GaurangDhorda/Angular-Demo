@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'home/:id', component: HomedetailsComponent},
   { path: 'shopping', loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule) },
   { path: 'cooking', loadChildren: () => import('./cooking/cooking.module').then(m => m.CookingModule) },
-  { path: 'chat', component: ChatComponent },
+  // { path: 'chat', component: ChatComponent },
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'material-contact', component: MaterialContactComponent},
